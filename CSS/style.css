@@ -1,0 +1,13 @@
+figure{
+    position: relative;
+    right: -37%;
+}
+nav{
+    position: relative;
+    right:-41%;
+    top: -5px;
+}
+figcaption{
+    transform: translate(100px);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
