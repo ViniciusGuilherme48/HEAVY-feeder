@@ -1,125 +1,230 @@
+```html
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Calculadoras</title>
+
     <link rel="stylesheet" href="../CSS/style.css">
+
 </head>
 
 <body>
 
     <header>
+
         <figure>
+
             <img src="../calculadora/imagens/LOGO_HEAVY_FEEDER.jpg"
                  alt="LOGO HEAVY FEEDER"
                  width="300">
 
             <figcaption>HEAVY Feeder</figcaption>
+
         </figure>
+
     </header>
 
+
     <nav>
+
         <a href="QuemSomos.html">Quem Somos</a>
+
         <a href="treinos.html">Treinos</a>
+
         <a href="dieta.html">Dieta</a>
+
         <a href="calculadora.html">Calculadoras</a>
+
     </nav>
+
 
     <main>
 
         <h1>Calculadoras</h1>
 
+
         <section>
 
             <table border="1">
 
+                <!-- ================================= -->
+                <!-- TÍTULOS -->
+                <!-- ================================= -->
+
                 <tr>
+
                     <th>Método de 7 Dobras</th>
-                    <th>Método NAV</th>
+
+                    <th>Macronutrientes</th>
+
+                    <th>Gasto Energético</th>
+
                 </tr>
 
+
+                <!-- ================================= -->
+                <!-- ÍCONES -->
+                <!-- ================================= -->
+
                 <tr>
+
                     <th>🧮</th>
-                    <th>⚓</th>
+
+                    <th>🥩</th>
+
+                    <th>🔥</th>
+
                 </tr>
 
+
+                <!-- ================================= -->
+                <!-- DESCRIÇÕES -->
+                <!-- ================================= -->
+
                 <tr>
+
                     <td>
+
                         Calcule seu percentual de gordura
                         utilizando o método de 7 dobras cutâneas.
+
                     </td>
 
+
                     <td>
-                        Calcule seu percentual de gordura
-                        utilizando o método NAV.
+
+                        Calcule uma estimativa dos seus
+                        macronutrientes diários.
+
                     </td>
+
+
+                    <td>
+
+                        Calcule uma estimativa do seu
+                        gasto energético diário.
+
+                    </td>
+
                 </tr>
+
+
+                <!-- ================================= -->
+                <!-- CAMPOS -->
+                <!-- ================================= -->
 
                 <tr>
 
+
+                    <!-- ============================= -->
                     <!-- 7 DOBRAS -->
+                    <!-- ============================= -->
+
                     <td>
 
                         <form>
 
                             <label>Idade:</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 20">
+
+                            <input type="number"
+                                   placeholder="Ex: 20">
 
                             <br><br>
+
 
                             <label>Peso (kg):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 75">
+
+                            <input type="number"
+                                   placeholder="Ex: 75">
 
                             <br><br>
+
 
                             <label>Peitoral (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 10">
+
+                            <input type="number"
+                                   placeholder="Ex: 10">
 
                             <br><br>
+
 
                             <label>Axilar média (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 12">
+
+                            <input type="number"
+                                   placeholder="Ex: 12">
 
                             <br><br>
+
 
                             <label>Tríceps (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 15">
+
+                            <input type="number"
+                                   placeholder="Ex: 15">
 
                             <br><br>
+
 
                             <label>Subescapular (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 18">
+
+                            <input type="number"
+                                   placeholder="Ex: 18">
 
                             <br><br>
+
 
                             <label>Abdominal (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 20">
+
+                            <input type="number"
+                                   placeholder="Ex: 20">
 
                             <br><br>
+
 
                             <label>Suprailíaca (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 16">
+
+                            <input type="number"
+                                   placeholder="Ex: 16">
 
                             <br><br>
+
 
                             <label>Coxa (mm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 20">
+
+                            <input type="number"
+                                   placeholder="Ex: 20">
 
                             <br><br>
 
+
                             <button type="button">
+
                                 Calcular
+
                             </button>
 
                         </form>
@@ -127,53 +232,160 @@
                     </td>
 
 
-                    <!-- NAV -->
+                    <!-- ============================= -->
+                    <!-- MACRONUTRIENTES -->
+                    <!-- ============================= -->
+
+                    <td>
+
+                        <form>
+
+                            <label>Peso (kg):</label>
+
+                            <br>
+
+                            <input type="number"
+                                   placeholder="Ex: 75">
+
+                            <br><br>
+
+
+                            <label>Objetivo:</label>
+
+                            <br>
+
+                            <select>
+
+                                <option>
+                                    Emagrecimento
+                                </option>
+
+                                <option>
+                                    Manutenção
+                                </option>
+
+                                <option>
+                                    Ganho de massa
+                                </option>
+
+                            </select>
+
+                            <br><br>
+
+
+                            <label>Calorias diárias:</label>
+
+                            <br>
+
+                            <input type="number"
+                                   placeholder="Ex: 2500">
+
+                            <br><br>
+
+
+                            <button type="button">
+
+                                Calcular
+
+                            </button>
+
+                        </form>
+
+                    </td>
+
+
+                    <!-- ============================= -->
+                    <!-- GASTO ENERGÉTICO -->
+                    <!-- ============================= -->
+
                     <td>
 
                         <form>
 
                             <label>Sexo:</label>
+
                             <br>
 
                             <select>
-                                <option>Masculino</option>
-                                <option>Feminino</option>
+
+                                <option>
+                                    Masculino
+                                </option>
+
+                                <option>
+                                    Feminino
+                                </option>
+
                             </select>
 
                             <br><br>
 
-                            <label>Altura (cm):</label>
+
+                            <label>Idade:</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 175">
+
+                            <input type="number"
+                                   placeholder="Ex: 20">
 
                             <br><br>
+
 
                             <label>Peso (kg):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 75">
+
+                            <input type="number"
+                                   placeholder="Ex: 75">
 
                             <br><br>
 
-                            <label>Cintura (cm):</label>
+
+                            <label>Altura (cm):</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 85">
+
+                            <input type="number"
+                                   placeholder="Ex: 175">
 
                             <br><br>
 
-                            <label>Pescoço (cm):</label>
+
+                            <label>Nível de atividade:</label>
+
                             <br>
-                            <input type="number" placeholder="Ex: 40">
+
+                            <select>
+
+                                <option>
+                                    Sedentário
+                                </option>
+
+                                <option>
+                                    Pouco ativo
+                                </option>
+
+                                <option>
+                                    Moderadamente ativo
+                                </option>
+
+                                <option>
+                                    Muito ativo
+                                </option>
+
+                                <option>
+                                    Extremamente ativo
+                                </option>
+
+                            </select>
 
                             <br><br>
 
-                            <label>Quadril (cm):</label>
-                            <br>
-                            <input type="number" placeholder="Ex: 95">
-
-                            <br><br>
 
                             <button type="button">
+
                                 Calcular
+
                             </button>
 
                         </form>
@@ -183,48 +395,91 @@
                 </tr>
 
 
+                <!-- ================================= -->
                 <!-- RESULTADOS -->
+                <!-- ================================= -->
+
                 <tr>
+
+
+                    <!-- RESULTADO 7 DOBRAS -->
 
                     <td>
 
                         <h3>Resultado</h3>
 
                         <p>
+
                             Gordura corporal:
                             <strong>--%</strong>
+
                         </p>
 
                         <p>
+
                             Massa gorda:
                             <strong>-- kg</strong>
+
                         </p>
 
                         <p>
+
                             Massa magra:
                             <strong>-- kg</strong>
+
                         </p>
 
                     </td>
 
 
+                    <!-- RESULTADO MACROS -->
+
                     <td>
 
                         <h3>Resultado</h3>
 
                         <p>
-                            Gordura corporal:
-                            <strong>--%</strong>
+
+                            Proteínas:
+                            <strong>-- g</strong>
+
                         </p>
 
                         <p>
-                            Massa gorda:
-                            <strong>-- kg</strong>
+
+                            Carboidratos:
+                            <strong>-- g</strong>
+
                         </p>
 
                         <p>
-                            Massa magra:
-                            <strong>-- kg</strong>
+
+                            Gorduras:
+                            <strong>-- g</strong>
+
+                        </p>
+
+                    </td>
+
+
+                    <!-- RESULTADO GASTO -->
+
+                    <td>
+
+                        <h3>Resultado</h3>
+
+                        <p>
+
+                            Metabolismo basal:
+                            <strong>-- kcal</strong>
+
+                        </p>
+
+                        <p>
+
+                            Gasto energético:
+                            <strong>-- kcal</strong>
+
                         </p>
 
                     </td>
@@ -235,14 +490,19 @@
 
         </section>
 
+
+        <br>
+
+        <a href="index.html">
+            <button type="button">
+            Voltar
+            </button>
+
+        </a>
+
     </main>
 
 </body>
 
-<a href="index.html">
-    <button>
-        Voltar
-    </button>
-</a>
-
 </html>
+
