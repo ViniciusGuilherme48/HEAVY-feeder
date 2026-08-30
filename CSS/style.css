@@ -1,13 +1,37 @@
-figure{
-    position: relative;
-    right: -37%;
+body {
+  background-color: #0f2e16;
+  font-family: 'Poppins', sans-serif;
 }
-nav{
-    position: relative;
-    right:-41%;
-    top: -5px;
+h1 {
+    color: aliceblue;
 }
-figcaption{
-    transform: translate(100px);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+a {
+  color: #4ef84e; /* verde claro */
+}
+.destaque {
+  font-family: 'Permanent Marker', cursive;
+  color: #4ef84e; /* verde clarinho, pra combinar com o resto */
+}
+figure {
+    text-align: center;
+}
+
+figure img {
+    width: 400px;
+}
+figure img {
+    border-radius: 20px;
+}
+.destaque {
+  border-bottom: 4px solid #90ee90;
+  padding-bottom: 4px;
+}
+h2 {
+    color: aliceblue;
+}
+p {
+    color: aliceblue;
+}
+h3 {
+    color: aliceblue;
 }
