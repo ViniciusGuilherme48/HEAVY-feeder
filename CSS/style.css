@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #0f2e16;
+    background-color: black;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -13,7 +17,7 @@ a {
 }
 
 .destaque {
-    /* font-family: 'Permanent Marker', cursive;*/
+    font-family: 'Permanent Marker', cursive;
     color: #4ef84e;
     /* verde clarinho, pra combinar com o resto */
 }
@@ -23,7 +27,7 @@ figure {
 }
 
 figure img {
-    width: 283px;
+    width: 200px;
 }
 
 figure img {
@@ -47,7 +51,53 @@ h3 {
     color: aliceblue;
 }
 
-nav {
+.menu {
+    background:black;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+.menu ul{
+     list-style: none;
+}
+
+.menu ul li{
+    margin: 15px 0;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.5s ease;
+}
+
+.menu ul li a:hover{
+    background: white;
+}
+
+.Bem-vindo , footer{
+    margin-left: 250px;
+}
+
+
+#conteudo-principal {
+    
+    max-width: 500px;
+    margin:30px auto;
+    text-align: center;
     display: flex;
+    gap: 20px;
     justify-content: center;
+}
+
+.card {
+    border: none;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 22px;
 }

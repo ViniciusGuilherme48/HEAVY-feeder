@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,70 +9,53 @@
 </head>
 
 <body>
-    <header>
+    <header id="cabecalho-principal">
         <figure>
             <img src="../IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
-            <FIgcaption>HEAVY Feeder</FIgcaption>
         </figure>
-    </header>
-    <nav>
-        <a href="QuemSomos.html"><b>Quem Somos</b> |</a>
-        <a href="treinos.html"><b>Treinos</b> |</a>
-        <a href="Inicio-dieta.html"><b>Dieta</b> |</a>
-        <a href="calculadora.html"><b>Calculadoras</b></a>
-    </nav>
-    <hr>
-    <main>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="QuemSomos.html">Quem Somos</a></li>
+                <li><a href="treinos.html">Treino</a></li>
+                <li><a href="Inicio-dieta.html">Dieta</a></li>
+                <li><a href="calculadora.html">Calculadora</a></li>
+            </ul>
+        </nav>
+        <section class="Bem-vindo">
         <h2>Bem-vindo ao HEAVY FEEDER, seu ponto de partida para uma vida mais saudável!</h2>
-        <p>Aqui, acreditamos que ter uma rotina de treinos e alimentação saudável deve ser simples, acessível e flexível
-            para todos. Seja você alguém que busca uma guia prática para começar hoje mesmo ou uma orientação exclusiva
+        <p>Aqui, acreditamos que ter uma rotina de treinos e alimentação saudável deve ser simples, acessível e
+            flexível
+            para todos. Seja você alguém que busca uma guia prática para começar hoje mesmo ou uma orientação
+            exclusiva
             sob medida, nós temos a solução ideal para o seu objetivo.</p>
         <p>Não importa o seu nível de experiência ou quanto tempo você tem disponível — o mais importante é dar o
             primeiro passo.</p>
         <p><b>Escolha o plano que melhor se adapta a você e comece sua transformação hoje!</b></p>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Quem somos?</th>
-                    <th>Treinos</th>
-                    <th>Dieta</th>
-                    <th>Calculadora</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <figure><a href="QuemSomos.html"><img src="../IMAGEM/quemsomos (2).png" width="300px"
-                                    alt="Quem Somos"></a></figure>
-                    </td>
-                    <td>
-                        <figure><a href="treinos.html"><img src="../IMAGEM/Treinos.png" width="300px" alt="Treinos"></a>
-                        </figure>
-                    </td>
-                    <td>
-                        <figure><a href="Inicio-dieta.html"><img src="../IMAGEM/Dieta.png" width="300px"
-                                    alt="Dieta"></a></figure>
-                    </td>
-                    <td>
-                        <figure><a href="calculadora.html"><img src="../IMAGEM/Calculadora.png" width="300px"
-                                    alt="Calculadora"></a></figure>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Na HEAVY FEEDER, acreditamos que resultados de verdade começam com equilibrio, conhecimento
-                        e constancia...</td>
-                    <td>Treinos adaptados para a sua rotina com focos especificos para atingir o seu objetivo...
-                    </td>
-                    <td>Dietas adaptadas para a sua rotina...</td>
-                    <td>Calculadoras para te ajudar a acompanhar a quantidade de gordura, massa magra e macros...
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+        </section>
+    </header>
+    <main id="conteudo-principal">
+        <section class="card">
+            <h2>Treinos</h2>
+            <figure><a href="treinos.html"> <img src="../IMAGEM/Treinos.png" alt="treinos" width="300px"></a></figure>
+            <p>Treinos adaptados para a sua rotina com focos especificos para atingir o seu objetivo...</p>
+        </section>
+        <section class="card">
+            <h2>Dieta</h2>
+            <figure><a href="Inicio-dieta.html"><img src="../IMAGEM/Dieta.png" alt="Dietas" width="300px"></a></figure>
+            <p>Dietas adaptadas para a sua rotina...</p>
+        </section>
+        <section class="card">
+            <h2>Calculadora</h2>
+            <figure><a href="calculadora.html"><img src="../IMAGEM/Calculadora.png" alt="Calculadoras"
+                        width="300px"></a></figure>
+            <p> Calculadoras para te ajudar a acompanhar a quantidade de gordura, massa magra e macros...</p>
         </section>
     </main>
+    <footer>
+        <a href="QuemSomos.html">Quem somos</a>
+        <p>Desenvolvido por alunos da Unisal - Campos São jose 2026</p>
+    </footer>
 </body>
 
 </html>
