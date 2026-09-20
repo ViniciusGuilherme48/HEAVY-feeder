@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar Conta - HEAVY Feeder</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="criar_conta.css">
+
+</head>
+
+<body>
+
+    <header class="cabecalho-principal">
+
+    <nav>
+        <a href="index.html"><b>Inicio</b></a>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="treinos.html"><b>Treinos</b></a>
+        <a href="calculadora.html"><b>Calculadoras</b></a>
+        <a href="login.html"><button class="botao-login">Login</button></a>
+    </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+
+            <img
+                src="IMAGEM/logo heavy feeder png.png"
+                alt="Logo HEAVY Feeder"
+                class="logo"
+            >
+
+            <h1>Criar sua conta</h1>
+
+            <p class="subtitulo">
+                Preencha seus dados para começar
+            </p>
+
+            <form action="cadastro-concluido.html">
+
+                <div class="campo">
+
+                    <label for="nome">Nome completo</label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="email">E-mail</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="senha">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Crie uma senha"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="confirmar">Confirmar senha</label>
+
+                    <input
+                        type="password"
+                        id="confirmar"
+                        placeholder="Digite a senha novamente"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+                <div class="termos">
+
+                    <input type="checkbox" id="termos" required>
+
+                    <label for="termos">
+                        Concordo com os
+                        <a href="#">termos de uso</a>
+                        e a
+                        <a href="#">política de privacidade</a>.
+                    </label>
+
+                </div>
+
+                <button type="submit">
+                    Criar conta
+                </button>
+
+            </form>
+
+            <a href="login.html" class="voltar">
+                ← Voltar para o login
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

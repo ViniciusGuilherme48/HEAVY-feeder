@@ -1,0 +1,110 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f2e16;
+            font-family: 'Poppins', sans-serif;
+            color: aliceblue;
+        }
+ .cabecalho-principal{
+    border: 1px solid #4ef84e;
+    border-radius: 12px;
+    padding: 10px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+}
+
+nav a, .botao-login{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 5px;
+    font-weight: 30px;
+    font-size: 22px;
+    text-decoration: underline;
+    text-decoration-color: #0f2e16;
+    color: #4ef84e;
+    border: 0px solid #0f2e16;
+    font-weight: 30px;
+    text-decoration: none;
+    background-color: #0f2e16;
+    color: #4ef84e;
+}
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background-color: #142f1b;
+            padding: 45px 40px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+    .logo {
+            display: flex;
+            width: 300px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin: 0 auto 25px;
+        }
+
+        .check {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background-color: #4ef84e;
+            color: #0b1d0e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #b8c9bb;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        a {
+            display: block;
+            padding: 13px;
+            border-radius: 13px;
+            background-color: #4ef84e;
+            color: #0b1d0e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        a:hover {
+            filter: brightness(0.95);
+        }

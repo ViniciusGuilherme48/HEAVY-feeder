@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de 7 Dobras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-principal">
+        <figure>
+            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
+        </figure>
+
+    <nav>
+        <a href="index.html"><b>Inicio</b></a>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="treinos.html"><b>Treinos</b></a>
+        <a href="calculadora.html"><b>Calculadoras</b></a>
+        <a href="login.html"><button class="botao-login">Login</button></a>
+    </nav>
+    </header>
+
+    <main>
+
+        <h1>🧮 Método de 7 Dobras Cutâneas</h1>
+        <p>Calcule seu percentual de gordura corporal utilizando o método de 7 dobras cutâneas.</p>
+
+        <section>
+            <form id="form7dobras">
+
+                <label>Idade:</label>
+                <br>
+                <input type="number" id="idade" placeholder="Ex: 20">
+                <br><br>
+
+                <label>Peso (kg):</label>
+                <br>
+                <input type="number" id="peso" placeholder="Ex: 75">
+                <br><br>
+
+                <label>Peitoral (mm):</label>
+                <br>
+                <input type="number" id="peitoral" placeholder="Ex: 10">
+                <br><br>
+
+                <label>Axilar média (mm):</label>
+                <br>
+                <input type="number" id="axilar" placeholder="Ex: 12">
+                <br><br>
+
+                <label>Tríceps (mm):</label>
+                <br>
+                <input type="number" id="triceps" placeholder="Ex: 15">
+                <br><br>
+
+                <label>Subescapular (mm):</label>
+                <br>
+                <input type="number" id="subescapular" placeholder="Ex: 18">
+                <br><br>
+
+                <label>Abdominal (mm):</label>
+                <br>
+                <input type="number" id="abdominal" placeholder="Ex: 20">
+                <br><br>
+
+                <label>Suprailíaca (mm):</label>
+                <br>
+                <input type="number" id="suprailiaca" placeholder="Ex: 16">
+                <br><br>
+
+                <label>Coxa (mm):</label>
+                <br>
+                <input type="number" id="coxa" placeholder="Ex: 20">
+                <br><br>
+
+                <button type="button" onclick="calcular7dobras()">
+                    Calcular
+                </button>
+
+            </form>
+        </section>
+
+        <section id="resultado7dobras" style="display: none;">
+            <h3>Resultado</h3>
+            <p>Gordura corporal: <strong id="resGordura">--%</strong></p>
+            <p>Massa gorda: <strong id="resMassaGorda">-- kg</strong></p>
+            <p>Massa magra: <strong id="resMassaMagra">-- kg</strong></p>
+        </section>
+
+        <br>
+
+        <a href="calculadoras.html">
+            <button type="button">
+                Voltar
+            </button>
+        </a>
+
+    </main>
+
+</body>
+
+</html>

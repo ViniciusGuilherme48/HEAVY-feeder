@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar Dieta</title>
+    <link rel="stylesheet" href="css/stylePerso.css">
+   
+</head>
+
+<body>
+
+    <h1>Personalize sua dieta</h1>
+
+    <p>
+        Responda algumas perguntas para criarmos um plano alimentar
+        personalizado para você.
+    </p>
+
+    <form>
+
+        <fieldset>
+            <legend>1. Objetivo</legend>
+
+            <label for="objetivo">Qual é o seu objetivo?</label>
+            <br>
+
+            <select id="objetivo" name="objetivo" required>
+                <option value="">Selecione</option>
+                <option value="emagrecer">Emagrecer</option>
+                <option value="ganhar-massa">Ganhar massa muscular</option>
+                <option value="manter-peso">Manter o peso</option>
+                <option value="melhorar-alimentacao">
+                    Melhorar minha alimentação
+                </option>
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>2. Informações pessoais</legend>
+
+            <label for="idade">Idade:</label>
+            <br>
+            <input
+                type="number"
+                id="idade"
+                name="idade"
+                min="1"
+                max="120"
+                required
+            >
+
+            <br><br>
+
+            <label for="sexo">Sexo:</label>
+            <br>
+
+            <select id="sexo" name="sexo" required>
+                <option value="">Selecione</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+            </select>
+
+            <br><br>
+
+            <label for="altura">Altura (cm):</label>
+            <br>
+            <input
+                type="number"
+                id="altura"
+                name="altura"
+                placeholder="Ex: 175"
+                required
+            >
+
+            <br><br>
+
+            <label for="peso">Peso atual (kg):</label>
+            <br>
+            <input
+                type="number"
+                id="peso"
+                name="peso"
+                step="0.1"
+                placeholder="Ex: 75.5"
+                required
+            >
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>3. Atividade física</legend>
+
+            <label for="frequencia">
+                Com que frequência você pratica exercícios?
+            </label>
+            <br>
+
+            <select id="frequencia" name="frequencia" required>
+                <option value="">Selecione</option>
+                <option value="nenhuma">Não pratico</option>
+                <option value="1-2">1–2 vezes por semana</option>
+                <option value="3-4">3–4 vezes por semana</option>
+                <option value="5+">5 vezes ou mais por semana</option>
+            </select>
+
+            <br><br>
+
+            <label for="tipo-exercicio">
+                Qual exercício você pratica?
+            </label>
+            <br>
+
+            <select id="tipo-exercicio" name="tipo-exercicio">
+                <option value="">Selecione</option>
+                <option value="musculacao">Musculação</option>
+                <option value="corrida">Corrida</option>
+                <option value="caminhada">Caminhada</option>
+                <option value="ciclismo">Ciclismo</option>
+                <option value="natacao">Natação</option>
+                <option value="esportes">Esportes</option>
+                <option value="outro">Outro</option>
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>4. Alimentação</legend>
+
+            <label for="refeicoes">
+                Quantas refeições você prefere fazer por dia?
+            </label>
+            <br>
+
+            <select id="refeicoes" name="refeicoes" required>
+                <option value="">Selecione</option>
+                <option value="3">3 refeições</option>
+                <option value="4">4 refeições</option>
+                <option value="5">5 refeições</option>
+                <option value="6">6 ou mais refeições</option>
+            </select>
+
+            <br><br>
+
+            <label for="restricao">
+                Você possui alguma restrição alimentar?
+            </label>
+            <br>
+
+            <select id="restricao" name="restricao">
+                <option value="nenhuma">Nenhuma</option>
+                <option value="vegetariano">Vegetariano</option>
+                <option value="vegano">Vegano</option>
+                <option value="lactose">Intolerância à lactose</option>
+                <option value="gluten">Restrição ao glúten</option>
+                <option value="outra">Outra</option>
+            </select>
+
+        
+            <br><br>
+
+            <label for="alimentos-gosta">
+                Quais alimentos você gosta?
+            </label>
+            <br>
+
+            <textarea
+                id="alimentos-gosta"
+                name="alimentos-gosta"
+                rows="4"
+                cols="40"
+                placeholder="Ex: arroz, frango, ovos, banana, aveia..."
+            ></textarea>
+
+            <br><br>
+
+            <label for="alimentos-nao-gosta">
+                Quais alimentos você não gosta?
+            </label>
+            <br>
+
+            <textarea
+                id="alimentos-nao-gosta"
+                name="alimentos-nao-gosta"
+                rows="4"
+                cols="40"
+                placeholder="Ex: peixe, brócolis, abacate..."
+            ></textarea>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>5. Rotina</legend>
+
+            <label for="cozinha">
+                Quanto tempo você tem para preparar suas refeições?
+            </label>
+            <br>
+
+            <select id="cozinha" name="cozinha">
+                <option value="">Selecione</option>
+                <option value="pouco">Quase nenhum</option>
+                <option value="15">Até 15 minutos</option>
+                <option value="30">15–30 minutos</option>
+                <option value="60">30–60 minutos</option>
+                <option value="mais">Mais de 1 hora</option>
+            </select>
+
+            <br><br>
+
+            <label for="refeicoes-fora">
+                Com que frequência você come fora de casa?
+            </label>
+            <br>
+
+            <select id="refeicoes-fora" name="refeicoes-fora">
+                <option value="">Selecione</option>
+                <option value="nunca">Nunca ou quase nunca</option>
+                <option value="1-2">1–2 vezes por semana</option>
+                <option value="3-5">3–5 vezes por semana</option>
+                <option value="todos-dias">Quase todos os dias</option>
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <button type="submit">
+            Personalizar minha dieta
+        </button>
+
+    </form>
+
+</body>
+
+</html>

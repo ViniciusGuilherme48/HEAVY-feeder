@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macronutrientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho-principal">
+        <figure>
+            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
+        </figure>
+
+    <nav>
+        <a href="index.html"><b>Inicio</b></a>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="treinos.html"><b>Treinos</b></a>
+        <a href="calculadora.html"><b>Calculadoras</b></a>
+        <a href="login.html"><button class="botao-login">Login</button></a>
+    </nav>
+    </header>
+
+    <main>
+
+        <h1>🥩 Calculadora de Macronutrientes</h1>
+        <p>Calcule uma estimativa dos seus macronutrientes diários com base no seu objetivo.</p>
+
+        <section>
+            <form id="formMacro">
+
+                <label>Peso (kg):</label>
+                <br>
+                <input type="number" id="peso" placeholder="Ex: 75">
+                <br><br>
+
+                <label>Objetivo:</label>
+                <br>
+                <select id="objetivo">
+                    <option value="emagrecimento">Emagrecimento</option>
+                    <option value="manutencao">Manutenção</option>
+                    <option value="ganho">Ganho de massa</option>
+                </select>
+                <br><br>
+
+                <label>Calorias diárias (kcal):</label>
+                <br>
+                <input type="number" id="calorias" placeholder="Ex: 2500">
+                <br><br>
+
+                <button type="button" onclick="calcularMacro()">
+                    Calcular
+                </button>
+
+            </form>
+        </section>
+
+        <section id="resultadoMacro" style="display: none;">
+            <h3>Resultado</h3>
+            <p>Proteínas: <strong id="resProteina">-- g</strong></p>
+            <p>Carboidratos: <strong id="resCarboidrato">-- g</strong></p>
+            <p>Gorduras: <strong id="resGordura">-- g</strong></p>
+        </section>
+
+        <br>
+
+        <a href="calculadoras.html">
+            <button type="button">
+                Voltar
+            </button>
+        </a>
+
+    </main>
+
+</body>
+
+</html>

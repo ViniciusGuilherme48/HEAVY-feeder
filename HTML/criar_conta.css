@@ -1,0 +1,151 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f2e16;
+            font-family: 'Poppins', sans-serif;
+            color: aliceblue;
+            min-height: 100vh;
+        }
+.cabecalho-principal{
+    border: 1px solid #4ef84e;
+    border-radius: 12px;
+    padding: 10px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+}
+
+nav a, .botao-login{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 5px;
+    font-weight: 30px;
+    font-size: 22px;
+    text-decoration: underline;
+    text-decoration-color: #0f2e16;
+    color: #4ef84e;
+    border: 0px solid #0f2e16;
+    font-weight: 30px;
+    text-decoration: none;
+    background-color: #0f2e16;
+    color: #4ef84e;
+}
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 460px;
+            background-color: #142f1b;
+            padding: 40px;
+            border-radius: 28px;
+            border: 1px solid rgba(144, 238, 144, 0.12);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+    .logo {
+            display: flex;
+            width: 300px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin: 0 auto 25px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 27px;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #b8c9bb;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .campo {
+            margin-bottom: 16px;
+        }
+
+        .campo label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .campo input {
+            width: 100%;
+            padding: 13px;
+            border-radius: 12px;
+            border: 1px solid #315c3a;
+            background-color: #102619;
+            color: aliceblue;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+        }
+
+        .campo input:focus {
+            border-color: #4ef84e;
+        }
+
+        .termos {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            color: #9eafa1;
+            font-size: 12px;
+            margin: 20px 0;
+        }
+
+        .termos input {
+            margin-top: 4px;
+            accent-color: #4ef84e;
+        }
+
+        .termos a {
+            color: #4ef84e;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 13px;
+            background-color: #4ef84e;
+            color: #0b1d0e;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(0.95);
+        }
+
+        .voltar {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+            color: #4ef84e;
+            font-size: 13px;
+        }

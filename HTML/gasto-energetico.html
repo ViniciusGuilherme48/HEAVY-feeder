@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Energético</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-principal">
+        <figure>
+            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
+        </figure>
+
+    <nav>
+        <a href="index.html"><b>Inicio</b></a>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="treinos.html"><b>Treinos</b></a>
+        <a href="calculadora.html"><b>Calculadoras</b></a>
+        <a href="login.html"><button class="botao-login">Login</button></a>
+    </nav>
+    </header>
+
+    <main>
+
+        <h1>🔥 Calculadora de Gasto Energético</h1>
+        <p>Calcule uma estimativa do seu gasto energético diário (TDEE) com base na fórmula de Harris-Benedict.</p>
+
+        <section>
+            <form id="formGasto">
+
+                <label>Sexo:</label>
+                <br>
+                <select id="sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+                <br><br>
+
+                <label>Idade:</label>
+                <br>
+                <input type="number" id="idade" placeholder="Ex: 20">
+                <br><br>
+
+                <label>Peso (kg):</label>
+                <br>
+                <input type="number" id="peso" placeholder="Ex: 75">
+                <br><br>
+
+                <label>Altura (cm):</label>
+                <br>
+                <input type="number" id="altura" placeholder="Ex: 175">
+                <br><br>
+
+                <label>Nível de atividade:</label>
+                <br>
+                <select id="atividade">
+                    <option value="1.2">Sedentário</option>
+                    <option value="1.375">Pouco ativo</option>
+                    <option value="1.55">Moderadamente ativo</option>
+                    <option value="1.725">Muito ativo</option>
+                    <option value="1.9">Extremamente ativo</option>
+                </select>
+                <br><br>
+
+                <button type="button" onclick="calcularGasto()">
+                    Calcular
+                </button>
+
+            </form>
+        </section>
+
+        <section id="resultadoGasto" style="display: none;">
+            <h3>Resultado</h3>
+            <p>Metabolismo basal (BMR): <strong id="resBMR">-- kcal</strong></p>
+            <p>Gasto energético (TDEE): <strong id="resTDEE">-- kcal</strong></p>
+        </section>
+
+        <br>
+
+        <a href="calculadoras.html">
+            <button type="button">
+                Voltar
+            </button>
+        </a>
+
+    </main>
+
+</body>
+
+</html>

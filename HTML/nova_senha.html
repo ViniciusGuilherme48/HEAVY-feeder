@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova senha - HEAVY Feeder</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nova_senha.css">
+
+</head>
+
+<body>
+    <header class="cabecalho-principal">
+
+    <nav>
+        <a href="index.html"><b>Inicio</b></a>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="treinos.html"><b>Treinos</b></a>
+        <a href="calculadora.html"><b>Calculadoras</b></a>
+        <a href="login.html"><button class="botao-login">Login</button></a>
+    </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+
+            <img
+                src="IMAGEM/logo heavy feeder png.png"
+                alt="Logo HEAVY Feeder"
+                class="logo"
+            >
+
+            <h1>Nova senha</h1>
+
+            <p class="texto">
+                Crie uma nova senha para acessar sua conta.
+            </p>
+
+            <form action="login.html">
+
+                <div class="campo">
+
+                    <label for="senha">
+                        Nova senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua nova senha"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="confirmar">
+                        Confirmar nova senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmar"
+                        placeholder="Digite a senha novamente"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit">
+                    Alterar senha
+                </button>
+
+            </form>
+
+            <a href="login.html" class="voltar">
+                ← Voltar para o login
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
