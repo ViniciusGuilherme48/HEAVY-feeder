@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino Personalizado - Heavy Feeder</title>
+    <link rel="stylesheet" href="../CSS/stylePerso.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-principal">
+
+        <figure>
+            <img src="../IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" width="300">
+        </figure>
+
+        <nav>
+            <a href="index.html"><b>Início</b></a> |
+            <a href="QuemSomos.html"><b>Quem Somos</b></a> |
+            <a href="Inicio-dieta.html"><b>Dieta</b></a> |
+            <a href="calculadora.html"><b>Calculadoras</b></a>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+
+        <section>
+
+            <h1>Monte seu Treino Personalizado!</h1>
+
+            <p>
+                Crie um treino de acordo com seus objetivos, nível de experiência
+                e características individuais. Através de uma breve avaliação,
+                é possível identificar suas necessidades e organizar exercícios,
+                séries e repetições de forma mais adequada ao seu objetivo.
+            </p>
+
+            <hr>
+
+            <h2>Antes de montar seu treino...</h2>
+
+            <p>
+                Vamos conhecer um pouco mais sobre você. Informe seu objetivo,
+                experiência, frequência de treino e outras características
+                importantes para o planejamento.
+            </p>
+
+        </section>
+
+
+        <form>
+
+
+            <fieldset>
+
+                <legend>1. Objetivo</legend>
+
+                <label for="objetivo">
+                    Qual é o seu objetivo principal com o treino?
+                </label>
+
+                <br>
+
+                <textarea id="objetivo" name="objetivo" rows="4" cols="50"
+                    placeholder="Ex: Quero ganhar massa muscular..." required></textarea>
+
+                <br><br>
+
+
+                <label for="tempo">
+                    Em quanto tempo você gostaria de atingir esse objetivo?
+                </label>
+
+                <br>
+
+                <select id="tempo" name="tempo" required>
+
+                    <option value="">Selecione</option>
+
+                    <option value="curto">
+                        Curto prazo (1 a 3 meses)
+                    </option>
+
+                    <option value="medio">
+                        Médio prazo (4 a 9 meses)
+                    </option>
+
+                    <option value="longo">
+                        Longo prazo (12 meses ou mais)
+                    </option>
+
+                </select>
+
+                <br><br>
+
+
+                <label for="objetivo-anterior">
+                    Você já tentou atingir esse objetivo antes?
+                    Se sim, explique o que deu errado.
+                </label>
+
+                <br>
+
+                <textarea id="objetivo-anterior" name="objetivo-anterior" rows="4" cols="50"
+                    placeholder="Sua resposta..." required></textarea>
+
+            </fieldset>
+
+            <br>
+
+
+            <fieldset>
+
+                <legend>2. Informações pessoais</legend>
+
+
+                <label for="idade">Idade:</label>
+
+                <br>
+
+                <input type="number" id="idade" name="idade" min="1" max="120" required>
+
+                <br><br>
+
+
+                <label for="sexo">Sexo:</label>
+
+                <br>
+
+                <select id="sexo" name="sexo" required>
+
+                    <option value="">Selecione</option>
+
+                    <option value="feminino">
+                        Feminino
+                    </option>
+
+                    <option value="masculino">
+                        Masculino
+                    </option>
+
+                </select>
+
+                <br><br>
+
+
+                <label for="altura">
+                    Altura (cm):
+                </label>
+
+                <br>
+
+                <input type="number" id="altura" name="altura" placeholder="Ex: 175" required>
+
+                <br><br>
+
+
+                <label for="peso">
+                    Peso atual (kg):
+                </label>
+
+                <br>
+
+                <input type="number" id="peso" name="peso" step="0.1" placeholder="Ex: 75.5" required>
+
+            </fieldset>
+
+            <br>
+
+
+            <fieldset>
+
+                <legend>3. Atividade física</legend>
+
+
+                <label for="frequencia">
+                    Com que frequência você pratica exercícios?
+                </label>
+
+                <br>
+
+                <select id="frequencia" name="frequencia" required>
+
+                    <option value="">Selecione</option>
+
+                    <option value="nenhuma">
+                        Não pratico
+                    </option>
+
+                    <option value="1-2">
+                        1–2 vezes por semana
+                    </option>
+
+                    <option value="3-4">
+                        3–4 vezes por semana
+                    </option>
+
+                    <option value="5+">
+                        5 vezes ou mais por semana
+                    </option>
+
+                </select>
+
+                <br><br>
+
+
+                <label for="tipo-exercicio">
+                    Qual exercício você pratica?
+                </label>
+
+                <br>
+
+                <select id="tipo-exercicio" name="tipo-exercicio">
+
+                    <option value="">Selecione</option>
+
+                    <option value="musculacao">
+                        Musculação
+                    </option>
+
+                    <option value="corrida">
+                        Corrida
+                    </option>
+
+                    <option value="caminhada">
+                        Caminhada
+                    </option>
+
+                    <option value="ciclismo">
+                        Ciclismo
+                    </option>
+
+                    <option value="natacao">
+                        Natação
+                    </option>
+
+                    <option value="esportes">
+                        Esportes
+                    </option>
+
+                    <option value="outro">
+                        Outro
+                    </option>
+
+                </select>
+
+                <br><br>
+
+
+                <label for="treino-atual">
+                    Você treina atualmente? Descreva como é seu treino.
+                </label>
+
+                <br>
+
+                <textarea id="treino-atual" name="treino-atual" rows="4" cols="50"
+                    placeholder="Descreva seu treino atual..." required></textarea>
+
+                <br><br>
+
+
+                <label for="tempo-treino">
+                    Há quanto tempo você treina?
+                </label>
+
+                <br>
+
+                <input type="text" id="tempo-treino" name="tempo-treino" placeholder="Ex: 2 anos" required>
+
+                <br><br>
+
+
+                <label for="dias-semana">
+                    Quantos dias por semana você treina?
+                </label>
+
+                <br>
+
+                <input type="number" id="dias-semana" name="dias-semana" min="0" max="7" placeholder="Ex: 4" required>
+
+                <br><br>
+
+
+                <label for="disponibilidade">
+                    Qual a sua disponibilidade em minutos para realizar
+                    o treino diário?
+                </label>
+
+                <br>
+
+                <input type="number" id="disponibilidade" name="disponibilidade" min="1" placeholder="Ex: 60" required>
+
+                <br><br>
+
+
+                <label for="local-treino">
+                    Onde treina?
+                </label>
+
+                <br>
+
+                <select id="local-treino" name="local-treino" required>
+
+                    <option value="">Selecione</option>
+
+                    <option value="bairro">
+                        Academia de bairro
+                    </option>
+
+                    <option value="centro">
+                        Centro de Treinamento
+                    </option>
+
+                    <option value="rede">
+                        Academia de rede
+                        (Smart Fit, Sky Fit, Panobianco etc.)
+                    </option>
+
+                </select>
+
+            </fieldset>
+
+            <br>
+
+
+            <fieldset>
+
+                <legend>4. Experiência e preferências</legend>
+
+
+                <label for="acompanhamento">
+                    Já teve acompanhamento profissional? Explique.
+                </label>
+
+                <br>
+
+                <textarea id="acompanhamento" name="acompanhamento" rows="4" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+                <br><br>
+
+
+                <label for="exercicios-evitados">
+                    Exercícios que não gosta ou evita por algum motivo,
+                    e por quê?
+                </label>
+
+                <br>
+
+                <textarea id="exercicios-evitados" name="exercicios-evitados" rows="4" cols="50"
+                    placeholder="Sua resposta..." required></textarea>
+
+            </fieldset>
+
+            <br>
+
+
+            <fieldset>
+
+                <legend>5. Dificuldades no treino</legend>
+
+
+                <label for="constancia">
+                    De 0 a 10, qual sua dificuldade em manter
+                    constância no treino?
+                </label>
+
+                <br>
+
+                <input type="number" id="constancia" name="constancia" min="0" max="10" required>
+
+                <br><br>
+
+                <label for="explicacao-constancia">
+                    Explique o porquê:
+                </label>
+
+                <br>
+
+                <textarea id="explicacao-constancia" name="explicacao-constancia" rows="3" cols="50"
+                    placeholder="Explique sua resposta..." required></textarea>
+
+                <br><br>
+
+
+                <label for="execucao">
+                    De 0 a 10, qual sua dificuldade na execução
+                    dos exercícios?
+                </label>
+
+                <br>
+
+                <input type="number" id="execucao" name="execucao" min="0" max="10" required>
+
+                <br><br>
+
+                <label for="explicacao-execucao">
+                    Explique o porquê:
+                </label>
+
+                <br>
+
+                <textarea id="explicacao-execucao" name="explicacao-execucao" rows="3" cols="50"
+                    placeholder="Explique sua resposta..." required></textarea>
+
+                <br><br>
+
+
+                <label for="carga">
+                    De 0 a 10, qual sua dificuldade em progredir carga?
+                </label>
+
+                <br>
+
+                <input type="number" id="carga" name="carga" min="0" max="10" required>
+
+                <br><br>
+
+                <label for="explicacao-carga">
+                    Explique o porquê:
+                </label>
+
+                <br>
+
+                <textarea id="explicacao-carga" name="explicacao-carga" rows="3" cols="50"
+                    placeholder="Explique sua resposta..." required></textarea>
+
+            </fieldset>
+
+            <br>
+
+
+            <fieldset>
+
+                <legend>6. Saúde e limitações</legend>
+
+
+                <label for="lesao">
+                    Possui alguma lesão? Qual?
+                </label>
+
+                <br>
+
+                <textarea id="lesao" name="lesao" rows="3" cols="50" placeholder="Sua resposta..." required></textarea>
+
+                <br><br>
+
+
+                <label for="dor">
+                    Sente dor ao treinar? Explique.
+                </label>
+
+                <br>
+
+                <textarea id="dor" name="dor" rows="3" cols="50" placeholder="Sua resposta..." required></textarea>
+
+                <br><br>
+
+
+                <label for="cirurgia">
+                    Já realizou cirurgia? Qual e quando?
+                </label>
+
+                <br>
+
+                <textarea id="cirurgia" name="cirurgia" rows="3" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+                <br><br>
+
+
+                <label for="limitacao">
+                    Possui limitação de movimento? Se sim, quais?
+                </label>
+
+                <br>
+
+                <textarea id="limitacao" name="limitacao" rows="3" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+                <br><br>
+
+
+                <label for="medicamento">
+                    Usa medicamento contínuo? Qual?
+                </label>
+
+                <br>
+
+                <textarea id="medicamento" name="medicamento" rows="3" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+                <br><br>
+
+
+                <label for="diagnostico">
+                    Possui algum diagnóstico médico? Descreva.
+                </label>
+
+                <br>
+
+                <textarea id="diagnostico" name="diagnostico" rows="3" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+                <br><br>
+
+
+                <label for="restricao-medica">
+                    Existe restrição médica para exercícios?
+                </label>
+
+                <br>
+
+                <textarea id="restricao-medica" name="restricao-medica" rows="3" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+                <br><br>
+
+
+
+                <label for="mal-estar">
+                    Já teve mal-estar em treino? Descreva.
+                </label>
+
+                <br>
+
+                <textarea id="mal-estar" name="mal-estar" rows="3" cols="50" placeholder="Sua resposta..."
+                    required></textarea>
+
+            </fieldset>
+
+            <br>
+
+
+            <fieldset>
+
+                <legend>7. Perguntas de segurança</legend>
+
+
+                <p>
+                    <strong>
+                        Problema cardíaco com restrição médica?
+                    </strong>
+                </p>
+
+                <input type="radio" id="cardiaco-sim" name="problema-cardiaco" value="sim" required>
+
+                <label for="cardiaco-sim">SIM</label>
+
+                <input type="radio" id="cardiaco-nao" name="problema-cardiaco" value="nao">
+
+                <label for="cardiaco-nao">NÃO</label>
+
+                <br><br>
+
+
+                <p>
+                    <strong>
+                        Dor no peito durante exercício?
+                    </strong>
+                </p>
+
+                <input type="radio" id="dor-exercicio-sim" name="dor-peito-exercicio" value="sim" required>
+
+                <label for="dor-exercicio-sim">SIM</label>
+
+                <input type="radio" id="dor-exercicio-nao" name="dor-peito-exercicio" value="nao">
+
+                <label for="dor-exercicio-nao">NÃO</label>
+
+                <br><br>
+
+
+                <p>
+                    <strong>
+                        Dor no peito recente sem exercício?
+                    </strong>
+                </p>
+
+                <input type="radio" id="dor-recente-sim" name="dor-peito-recente" value="sim" required>
+
+                <label for="dor-recente-sim">SIM</label>
+
+                <input type="radio" id="dor-recente-nao" name="dor-peito-recente" value="nao">
+
+                <label for="dor-recente-nao">NÃO</label>
+
+                <br><br>
+
+
+                <p>
+                    <strong>
+                        Tontura ou desmaio recente?
+                    </strong>
+                </p>
+
+                <input type="radio" id="tontura-sim" name="tontura" value="sim" required>
+
+                <label for="tontura-sim">SIM</label>
+
+                <input type="radio" id="tontura-nao" name="tontura" value="nao">
+
+                <label for="tontura-nao">NÃO</label>
+
+                <br><br>
+
+
+                <p>
+                    <strong>
+                        Problema ósseo/articular agravado por exercício?
+                    </strong>
+                </p>
+
+                <input type="radio" id="osseo-sim" name="problema-osseo" value="sim" required>
+
+                <label for="osseo-sim">SIM</label>
+
+                <input type="radio" id="osseo-nao" name="problema-osseo" value="nao">
+
+                <label for="osseo-nao">NÃO</label>
+
+                <br><br>
+
+
+                <p>
+                    <strong>
+                        Uso de medicamento para pressão/coração?
+                    </strong>
+                </p>
+
+                <input type="radio" id="medicamento-coracao-sim" name="medicamento-coracao" value="sim" required>
+
+                <label for="medicamento-coracao-sim">SIM</label>
+
+                <input type="radio" id="medicamento-coracao-nao" name="medicamento-coracao" value="nao">
+
+                <label for="medicamento-coracao-nao">NÃO</label>
+
+                <br><br>
+
+
+                <p>
+                    <strong>
+                        Algum outro impedimento para exercício?
+                    </strong>
+                </p>
+
+                <input type="radio" id="impedimento-sim" name="impedimento" value="sim" required>
+
+                <label for="impedimento-sim">SIM</label>
+
+                <input type="radio" id="impedimento-nao" name="impedimento" value="nao">
+
+                <label for="impedimento-nao">NÃO</label>
+
+            </fieldset>
+
+            <fieldset>
+
+                <legend>8. Rotina e sono</legend>
+
+
+                <label for="rotina">
+                    Descreva sua rotina diária:
+                </label>
+
+                <br>
+
+                <textarea id="rotina" name="rotina" rows="5" cols="50"
+                    placeholder="Descreva como é sua rotina durante o dia..." required></textarea>
+
+                <br><br>
+
+
+                <label for="horas-sono">
+                    Horas de sono:
+                </label>
+
+                <br>
+
+                <input type="number" id="horas-sono" name="horas-sono" min="0" max="24" step="0.5" placeholder="Ex: 7.5"
+                    required>
+
+                <br><br>
+
+
+                <label for="qualidade-sono">
+                    Qualidade do sono (0–10):
+                </label>
+
+                <br>
+
+                <input type="number" id="qualidade-sono" name="qualidade-sono" min="0" max="10" required>
+
+                <br><br>
+
+
+                <label for="explicacao-sono">
+                    Explique:
+                </label>
+
+                <br>
+
+                <textarea id="explicacao-sono" name="explicacao-sono" rows="3" cols="50"
+                    placeholder="Explique como considera a qualidade do seu sono..." required></textarea>
+
+                <br><br>
+
+
+                <label for="acordar">
+                    Como se sente ao acordar (0–10):
+                </label>
+
+                <br>
+
+                <input type="number" id="acordar" name="acordar" min="0" max="10" required>
+
+                <br><br>
+
+
+                <label for="explicacao-acordar">
+                    Explique:
+                </label>
+
+                <br>
+
+                <textarea id="explicacao-acordar" name="explicacao-acordar" rows="3" cols="50"
+                    placeholder="Explique como você costuma se sentir ao acordar..." required></textarea>
+
+                <br><br>
+
+
+                <label for="estresse">
+                    Nível de estresse (0–10):
+                </label>
+
+                <br>
+
+                <input type="number" id="estresse" name="estresse" min="0" max="10" required>
+
+                <br><br>
+
+
+                <label for="explicacao-estresse">
+                    Explique:
+                </label>
+
+                <br>
+
+                <textarea id="explicacao-estresse" name="explicacao-estresse" rows="3" cols="50"
+                    placeholder="Explique o que influencia seu nível de estresse..." required></textarea>
+
+                <br><br>
+
+
+                <label for="horarios-treino">
+                    Horários disponíveis para treinar:
+                </label>
+
+                <br>
+
+                <textarea id="horarios-treino" name="horarios-treino" rows="3" cols="50"
+                    placeholder="Ex: Segunda, quarta e sexta das 18h às 20h..." required></textarea>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>9. Hábitos</legend>
+
+                <label for="agua">Consumo de água (litros/dia):</label>
+                <br>
+                <input type="number" id="agua" name="agua" min="0" step="0.1" placeholder="Ex: 2.5" required>
+
+                <br><br>
+
+                <label for="suplementos">Uso de suplementos:</label>
+                <br>
+                <textarea id="suplementos" name="suplementos" rows="3" cols="50"
+                    placeholder="Informe quais suplementos utiliza, se houver..."></textarea>
+
+                <br><br>
+
+                <label for="cafeina">Consumo de cafeína:</label>
+                <br>
+                <textarea id="cafeina" name="cafeina" rows="3" cols="50"
+                    placeholder="Ex: café, energético, pré-treino... Informe a frequência e quantidade aproximada."></textarea>
+
+                <br><br>
+
+                <label>Você fuma?</label>
+                <br>
+                <input type="radio" id="fuma-sim" name="fuma" value="sim" required>
+                <label for="fuma-sim">Sim</label>
+
+                <br>
+
+                <input type="radio" id="fuma-nao" name="fuma" value="nao">
+                <label for="fuma-nao">Não</label>
+
+            </fieldset>
+
+
+
+
+            <br>
+
+
+
+            <button type="submit">
+                Personalizar meu treino
+            </button>
+
+        </form>
+
+
+        <br>
+        <hr>
+        <br>
+
+
+
+        <section id="anamnese">
+
+            <h2>
+                SAIBA MAIS!
+            </h2>
+
+            <h2>
+                O que é <strong><u>ANAMNESE</u></strong>?
+            </h2>
+
+
+            <p>
+                A anamnese é uma avaliação realizada antes da elaboração
+                de um treino personalizado. Seu objetivo é reunir
+                informações importantes sobre a pessoa, permitindo
+                entender melhor suas necessidades, rotina e objetivos.
+            </p>
+
+
+            <p>
+                Durante a anamnese, podem ser coletadas informações
+                sobre o objetivo do treino, como hipertrofia,
+                emagrecimento, força ou condicionamento. Também é
+                importante identificar o nível de experiência da pessoa,
+                podendo ser iniciante, intermediário ou avançado.
+            </p>
+
+
+            <p>
+                O histórico de treinamento também pode ser analisado,
+                principalmente para conhecer experiências anteriores
+                com musculação e outros tipos de exercícios. Essas
+                informações ajudam a compreender melhor o nível atual
+                de treinamento.
+            </p>
+
+
+            <p>
+                Também podem ser identificadas possíveis limitações
+                e cuidados que precisam ser considerados antes da
+                prática dos exercícios. Em uma aplicação real,
+                questões relacionadas à saúde e possíveis limitações
+                devem ser avaliadas por um profissional habilitado.
+            </p>
+
+
+            <p>
+                Com todas essas informações, o treino pode ser
+                organizado de maneira mais adequada, definindo
+                exercícios, séries, repetições e intensidade de acordo
+                com as características e o objetivo da pessoa.
+            </p>
+
+
+            <p>
+                A anamnese é uma etapa importante para tornar o
+                planejamento do treino mais individualizado e
+                organizado, ajudando a criar uma rotina adequada
+                às necessidades de cada pessoa.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            <strong>Heavy Feeder</strong>
+        </p>
+
+        <p>
+            Treino personalizado de acordo com seus objetivos.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
