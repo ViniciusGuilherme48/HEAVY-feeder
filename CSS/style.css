@@ -20,14 +20,20 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--fundo);
-    background-image: url("IMAGEM/logo heavy feeder png.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 500px;
     font-family: 'Poppins', sans-serif;
     color: var(--texto-principal);
     min-height: 100vh;
-
+}
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(../HTML/IMAGEM/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .cabecalho-principal {
@@ -41,7 +47,7 @@ body {
     padding: 10px 20px;
 }
 
-footer {
+.rodape-principal {
     display: flex;
     justify-content:space-evenly;
     align-items: center;
@@ -55,7 +61,7 @@ footer {
 footer a{
      padding: 5px;
     text-decoration: none;
-    transition: transform .2 ease text-decoration .2 ease,
+    transition: transform .2 ease,
         color .2 ease;
     font-weight: 20px;
     font-size: 18px;
@@ -63,7 +69,6 @@ footer a{
 }
 
 footer a:hover{
-     text-decoration: underline var(--verde-secundario);
     color: var(--verde-secundario);
 }
 
@@ -80,7 +85,7 @@ button {
     align-items: flex-start;
     padding: 5px;
     text-decoration: none;
-    transition: transform .2 ease text-decoration .2 ease,
+    transition: transform .2 ease,
         color .2 ease;
     font-weight: 30px;
     font-size: 22px;
@@ -88,7 +93,6 @@ button {
 }
 
 nav a:hover {
-    text-decoration: underline var(--verde-secundario);
     color: var(--verde-secundario);
 }
 
@@ -100,10 +104,11 @@ nav button:hover {
     border: 3px solid var(--verde-secundario);
     border-radius: 24px;
     padding: 5px 30px;
-    font-weight: 30px;
+    font-weight: 600;
     text-decoration: none;
     background-color: var(--verde-secundario);
     color: var(--verde-escuro);
+    
 }
 
 h1 {
