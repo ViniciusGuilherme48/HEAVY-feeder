@@ -6,8 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalizar Dieta</title>
     <link rel="stylesheet" href="../CSS/stylePerso.css">
-   
+    <link rel="stylesheet" href="../CSS/style.css">
+
 </head>
+<header class="cabecalho-principal">
+    <figure>
+        <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
+    </figure>
+
+    <nav>
+        <a href="index.html"><b>Inicio</b></a>
+        <a href="treinos.html"><b>Treinos</b></a>
+        <a href="Inicio-dieta.html"><b>Dietas</b></a>
+        <a href="calculadora.html"><b>Calculadoras</b></a>
+        <a href="login.html"><button class="botao-login">Login</button></a>
+    </nav>
+</header>
 
 <body>
 
@@ -45,14 +59,7 @@
 
             <label for="idade">Idade:</label>
             <br>
-            <input
-                type="number"
-                id="idade"
-                name="idade"
-                min="1"
-                max="120"
-                required
-            >
+            <input type="number" id="idade" name="idade" min="1" max="120" required>
 
             <br><br>
 
@@ -69,26 +76,13 @@
 
             <label for="altura">Altura (cm):</label>
             <br>
-            <input
-                type="number"
-                id="altura"
-                name="altura"
-                placeholder="Ex: 175"
-                required
-            >
+            <input type="number" id="altura" name="altura" placeholder="Ex: 175" required>
 
             <br><br>
 
             <label for="peso">Peso atual (kg):</label>
             <br>
-            <input
-                type="number"
-                id="peso"
-                name="peso"
-                step="0.1"
-                placeholder="Ex: 75.5"
-                required
-            >
+            <input type="number" id="peso" name="peso" step="0.1" placeholder="Ex: 75.5" required>
 
         </fieldset>
 
@@ -164,7 +158,7 @@
                 <option value="outra">Outra</option>
             </select>
 
-        
+
             <br><br>
 
             <label for="alimentos-gosta">
@@ -172,13 +166,8 @@
             </label>
             <br>
 
-            <textarea
-                id="alimentos-gosta"
-                name="alimentos-gosta"
-                rows="4"
-                cols="40"
-                placeholder="Ex: arroz, frango, ovos, banana, aveia..."
-            ></textarea>
+            <textarea id="alimentos-gosta" name="alimentos-gosta" rows="4" cols="40"
+                placeholder="Ex: arroz, frango, ovos, banana, aveia..."></textarea>
 
             <br><br>
 
@@ -187,13 +176,8 @@
             </label>
             <br>
 
-            <textarea
-                id="alimentos-nao-gosta"
-                name="alimentos-nao-gosta"
-                rows="4"
-                cols="40"
-                placeholder="Ex: peixe, brócolis, abacate..."
-            ></textarea>
+            <textarea id="alimentos-nao-gosta" name="alimentos-nao-gosta" rows="4" cols="40"
+                placeholder="Ex: peixe, brócolis, abacate..."></textarea>
 
         </fieldset>
 
@@ -240,7 +224,11 @@
         </button>
 
     </form>
-
+    <footer class="rodape-principal">
+        <p>Desenvolvido por alunos da Unisal - Campus São jose 2026</p>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="#"><b>Fale Conosco</b></a>
+    </footer>
 </body>
 
 </html>
