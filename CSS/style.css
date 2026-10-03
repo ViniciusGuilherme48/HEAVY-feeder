@@ -192,3 +192,26 @@ footer {
 a {
     text-decoration: none;
 }
+
+.treino-hipertrofia{
+    margin: auto;
+    padding: 28px;
+}
+
+.treino-hipertrofia h1{
+    text-align: center;
+}
+
+.treino-hipertrofia p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.treino-hipertrofia h2{
+    text-align: center;
+}
+
+.treino-sugerido{
+    display: flex;
+    justify-content: center;
+}
