@@ -10,7 +10,6 @@
             color: aliceblue;
         }
  .cabecalho-principal{
-    border: 1px solid #4ef84e;
     border-radius: 12px;
     padding: 10px;
 }
@@ -28,18 +27,9 @@ nav a, .botao-login{
     font-weight: 30px;
     font-size: 22px;
     text-decoration: underline;
-    text-decoration-color: #0f2e16;
-    color: #4ef84e;
-    border: 0px solid #0f2e16;
     font-weight: 30px;
-    text-decoration: none;
-    background-color: #0f2e16;
-    color: #4ef84e;
+    text-decoration: none
 }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
 
         .container {
             min-height: 100vh;
@@ -49,13 +39,12 @@ nav a, .botao-login{
             padding: 20px;
         }
 
-        .card {
+        .card-cadastro-concluido {
             width: 100%;
             max-width: 420px;
-            background-color: #142f1b;
-            padding: 45px 40px;
-            border-radius: 28px;
-            text-align: center;
+            border: 2px solid #2DD98A;
+            padding: 40px;
+            border-radius: 28px;   
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
 
@@ -72,7 +61,7 @@ nav a, .botao-login{
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            background-color: #4ef84e;
+            background-color: #2DD98A;
             color: #0b1d0e;
             display: flex;
             justify-content: center;
@@ -94,17 +83,21 @@ nav a, .botao-login{
             margin-bottom: 25px;
         }
 
-        a {
+        .conta-criada {
             display: block;
             padding: 13px;
             border-radius: 13px;
-            background-color: #4ef84e;
+            background-color: #2DD98A;
             color: #0b1d0e;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
         }
 
-        a:hover {
-            filter: brightness(0.95);
+        .conta-criada:hover {
+            transform: scale(1.02);
+        }
+
+        .conta-criada:active{
+            transform: translateZ(1);
         }

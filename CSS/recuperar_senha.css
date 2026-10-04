@@ -10,10 +10,10 @@
             color: aliceblue;
         }
 .cabecalho-principal{
-    border: 1px solid #4ef84e;
     border-radius: 12px;
     padding: 10px;
 }
+
 nav {
     display: flex;
     justify-content: center;
@@ -28,18 +28,9 @@ nav a, .botao-login{
     font-weight: 30px;
     font-size: 22px;
     text-decoration: underline;
-    text-decoration-color: #0f2e16;
-    color: #4ef84e;
-    border: 0px solid #0f2e16;
     font-weight: 30px;
     text-decoration: none;
-    background-color: #0f2e16;
-    color: #4ef84e;
 }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
 
         .container {
             min-height: 100vh;
@@ -49,13 +40,13 @@ nav a, .botao-login{
             padding: 20px;
         }
 
-        .card {
-            width: 100%;
-            max-width: 420px;
-            background-color: #142f1b;
-            padding: 40px;
-            border-radius: 28px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        .recuperar-card {
+        width: 100%;
+        max-width: 420px;
+        border: 2px solid #2DD98A;
+        padding: 40px;
+        border-radius: 28px;   
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
 
          .logo {
@@ -103,21 +94,25 @@ nav a, .botao-login{
             border-color: #4ef84e;
         }
 
-        button {
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 13px;
-            background-color: #4ef84e;
-            color: #0b1d0e;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-        }
+.botao-continuar {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 13px;
+    background-color: #2DD98A;
+    color: #0b1d0e;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-        button:hover {
-            filter: brightness(0.95);
-        }
+.botao-continuar:hover {
+    transform: scale(1.02);
+}
+
+.botao-continuar:active{
+    transform: scale(1);
+}
 
         .voltar {
             display: block;
@@ -125,5 +120,9 @@ nav a, .botao-login{
             margin-top: 22px;
             color: #4ef84e;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 15px;
+        }
+
+        .voltar:hover{
+            transform: scale(1.02);
         }

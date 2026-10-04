@@ -11,7 +11,6 @@
             min-height: 100vh;
         }
 .cabecalho-principal{
-    border: 1px solid #4ef84e;
     border-radius: 12px;
     padding: 10px;
 }
@@ -28,19 +27,9 @@ nav a, .botao-login{
     padding: 5px;
     font-weight: 30px;
     font-size: 22px;
-    text-decoration: underline;
-    text-decoration-color: #0f2e16;
-    color: #4ef84e;
-    border: 0px solid #0f2e16;
     font-weight: 30px;
     text-decoration: none;
-    background-color: #0f2e16;
-    color: #4ef84e;
 }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
 
         .container {
             min-height: 100vh;
@@ -50,13 +39,12 @@ nav a, .botao-login{
             padding: 30px 20px;
         }
 
-        .card {
-            width: 100%;
-            max-width: 460px;
-            background-color: #142f1b;
+        .criar-conta-card {
+             width: 100%;
+            max-width: 420px;
+            border: 2px solid #2DD98A;
             padding: 40px;
-            border-radius: 28px;
-            border: 1px solid rgba(144, 238, 144, 0.12);
+            border-radius: 28px;   
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
 
@@ -112,7 +100,7 @@ nav a, .botao-login{
             gap: 8px;
             align-items: flex-start;
             color: #9eafa1;
-            font-size: 12px;
+            font-size: 13px;
             margin: 20px 0;
         }
 
@@ -125,27 +113,36 @@ nav a, .botao-login{
             color: #4ef84e;
         }
 
-        button {
+        .botao-criar-conta {
             width: 100%;
             padding: 13px;
             border: none;
             border-radius: 13px;
-            background-color: #4ef84e;
+            background-color: #2DD98A;
             color: #0b1d0e;
             font-family: 'Poppins', sans-serif;
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 600;
             cursor: pointer;
         }
 
-        button:hover {
-            filter: brightness(0.95);
+        .botao-criar-conta:hover {
+            transform: scale(1.02);
+        }
+
+        .botao-criar-conta:active{
+            transform: scale(1);
         }
 
         .voltar {
             display: block;
             text-align: center;
             margin-top: 22px;
-            color: #4ef84e;
-            font-size: 13px;
+            color: #2DD98A;
+            font-size: 15px;
+        }
+
+
+        .voltar:hover{
+            transform: scale(1.02);
         }

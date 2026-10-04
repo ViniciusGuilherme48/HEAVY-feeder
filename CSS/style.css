@@ -109,7 +109,18 @@ nav button:hover {
     text-decoration: none;
     background-color: var(--verde-secundario);
     color: var(--verde-escuro);
+    cursor: pointer;
+}
 
+.botao-login:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 8px var(--verde-escuro);
+    transition: 0.3 ease;
+}
+
+.botao-login:active{
+    box-shadow: 0 0 8px var(--verde-principal);
+    transform: translateZ(-4px);
 }
 
 h1 {
