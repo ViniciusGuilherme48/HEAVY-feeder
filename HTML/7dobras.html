@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método de 7 Dobras</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/calculadora.css">
 </head>
 
 <body>
@@ -23,80 +23,72 @@
             <a href="login.html"><button class="botao-login">Login</button></a>
         </nav>
     </header>
-    <main>
+   <main class="pagina-calculadora larga">
 
-        <h1>🧮 Método de 7 Dobras Cutâneas</h1>
-        <p>Calcule seu percentual de gordura corporal utilizando o método de 7 dobras cutâneas.</p>
+    <h1>🧮 Método de 7 Dobras Cutâneas</h1>
 
-        <section>
-            <form id="form7dobras">
+    <section class="card-calculadora">
+        <form id="form7dobras">
 
-                <label>Idade:</label>
-                <br>
-                <input type="number" id="idade" placeholder="Ex: 20">
-                <br><br>
+            <div class="grade-campos">
+                <div class="campo">
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade">
+                </div>
 
-                <label>Peso (kg):</label>
-                <br>
-                <input type="number" id="peso" placeholder="Ex: 75">
-                <br><br>
+                <div class="campo">
+                    <label for="peso">Peso (kg)</label>
+                    <input type="number" id="peso">
+                </div>
 
-                <label>Peitoral (mm):</label>
-                <br>
-                <input type="number" id="peitoral" placeholder="Ex: 10">
-                <br><br>
+                <div class="campo">
+                    <label for="peitoral">Peitoral (mm)</label>
+                    <input type="number" id="peitoral">
+                </div>
 
-                <label>Axilar média (mm):</label>
-                <br>
-                <input type="number" id="axilar" placeholder="Ex: 12">
-                <br><br>
+                <div class="campo">
+                    <label for="axilar">Axilar média (mm)</label>
+                    <input type="number" id="axilar">
+                </div>
 
-                <label>Tríceps (mm):</label>
-                <br>
-                <input type="number" id="triceps" placeholder="Ex: 15">
-                <br><br>
+                <div class="campo">
+                    <label for="triceps">Tríceps (mm)</label>
+                    <input type="number" id="triceps">
+                </div>
 
-                <label>Subescapular (mm):</label>
-                <br>
-                <input type="number" id="subescapular" placeholder="Ex: 18">
-                <br><br>
+                <div class="campo">
+                    <label for="subescapular">Subescapular (mm)</label>
+                    <input type="number" id="subescapular">
+                </div>
 
-                <label>Abdominal (mm):</label>
-                <br>
-                <input type="number" id="abdominal" placeholder="Ex: 20">
-                <br><br>
+                <div class="campo">
+                    <label for="abdominal">Abdominal (mm)</label>
+                    <input type="number" id="abdominal">
+                </div>
 
-                <label>Suprailíaca (mm):</label>
-                <br>
-                <input type="number" id="suprailiaca" placeholder="Ex: 16">
-                <br><br>
+                <div class="campo">
+                    <label for="suprailiaca">Suprailíaca (mm)</label>
+                    <input type="number" id="suprailiaca">
+                </div>
 
-                <label>Coxa (mm):</label>
-                <br>
-                <input type="number" id="coxa" placeholder="Ex: 20">
-                <br><br>
+                <div class="campo">
+                    <label for="coxa">Coxa (mm)</label>
+                    <input type="number" id="coxa">
+                </div>
+            </div>
 
-                <button type="button" onclick="calcular7dobras()">
-                    Calcular
-                </button>
+            <button type="button" class="botao-entrar" onclick="calcular7dobras()">Calcular</button>
+        </form>
+    </section>
 
-            </form>
-        </section>
+    <section id="resultado7dobras" class="resultado" style="display: none;">
+        <h3>Resultado</h3>
+        <p>Gordura corporal: <strong id="resGordura">--%</strong></p>
+        <p>Massa gorda: <strong id="resMassaGorda">-- kg</strong></p>
+        <p>Massa magra: <strong id="resMassaMagra">-- kg</strong></p>
+    </section>
 
-        <section id="resultado7dobras" style="display: none;">
-            <h3>Resultado</h3>
-            <p>Gordura corporal: <strong id="resGordura">--%</strong></p>
-            <p>Massa gorda: <strong id="resMassaGorda">-- kg</strong></p>
-            <p>Massa magra: <strong id="resMassaMagra">-- kg</strong></p>
-        </section>
-
-        <br>
-
-        <a href="calculadoras.html">
-            <button type="button">
-                Voltar
-            </button>
-        </a>
+    <a href="calculadora.html" class="botao-voltar">← Voltar</a>
 
     </main>
     <footer class="rodape-principal">
