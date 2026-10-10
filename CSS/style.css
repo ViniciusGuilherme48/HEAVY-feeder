@@ -76,6 +76,7 @@ footer a:hover {
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 130px;
 }
 
@@ -164,25 +165,29 @@ h3 {
 .Bem-vindo,
 footer {
     margin: auto;
+   text-align: center;
 }
 
 
 #conteudo-principal {
-
-    max-width: 500px;
+    width: 100%;
+    max-width: 1600px;
     margin: auto;
     padding: 28px;
     text-align: center;
     display: flex;
-    gap: 50px;
+    flex: 1 1 280px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 320px;
+    flex: 1 1 280px;
+    width: 280px;
     min-width: 320px;
     min-height: 240px;
     border: 2px solid var(--borda);
