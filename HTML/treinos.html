@@ -1,68 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinos</title>
+    <meta name="description" content="Conheça as modalidades de treino da Heavy Feeder e encontre uma opção para seus objetivos.">
+    <title>Treinos | Heavy Feeder</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/treinos-responsive.css">
+    
 </head>
+<body class="pagina-treinos">
+<header class="cabecalho-principal">
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal"><a href="index.html">Início</a><a href="treinos.html" aria-current="page">Treinos</a><a href="Inicio-dieta.html">Dietas</a><a href="calculadora.html">Calculadoras</a><a href="login.html" class="botao-login">Login</a></nav>
+</header>
+<main id="conteudo-principal" class="pagina-lista-treinos">
+    <section class="introducao-treinos">
+        <h1>Treine com propósito!</h1>
+        <p>Escolha seus objetivos, conheça os exercícios e acompanhe sua evolução. A combinação entre consistência, planejamento e dedicação é o que transforma pequenos esforços em grandes resultados.</p>
+        <p class="frase-destaque"><strong>Seu objetivo. Seu treino. Sua evolução.</strong></p>
+    </section>
+    <section class="secao-treinos" aria-labelledby="titulo-treinos">
+        <h2 id="titulo-treinos">Escolha seu objetivo</h2>
+        <div class="carrossel-treinos" data-carousel>
+            <button class="carrossel-controle carrossel-anterior" type="button" aria-label="Ver treinos anteriores" data-carousel-prev>
+                <span aria-hidden="true">&#8592;</span>
+            </button>
 
-<body>
-    <header class="cabecalho-principal">
-        <figure>
-            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
-        </figure>
+            <div class="lista-treinos" id="lista-treinos" data-carousel-track tabindex="0" aria-label="Opções de treino">
+                <a href="hipertrofia.html" class="card-link">
+                    <article class="card">
+                        <span class="card-numero" aria-hidden="true">01</span>
+                        <h3>Hipertrofia</h3>
+                        <p>Treinamento de força para favorecer o desenvolvimento muscular, com progressão, alimentação adequada e recuperação.</p>
+                        <span class="card-acao">Conheça o treino <span aria-hidden="true">→</span></span>
+                    </article>
+                </a>
+                <a href="emagrecimento.html" class="card-link">
+                    <article class="card">
+                        <span class="card-numero" aria-hidden="true">02</span>
+                        <h3>Emagrecimento</h3>
+                        <p>Combine musculação e atividades aeróbicas para apoiar a redução de gordura e preservar a massa muscular.</p>
+                        <span class="card-acao">Conheça o treino <span aria-hidden="true">→</span></span>
+                    </article>
+                </a>
+                <a href="força.html" class="card-link">
+                    <article class="card">
+                        <span class="card-numero" aria-hidden="true">03</span>
+                        <h3>Força</h3>
+                        <p>Desenvolva a capacidade de produzir força com técnica, planejamento e progressão gradual de cargas.</p>
+                        <span class="card-acao">Conheça o treino <span aria-hidden="true">→</span></span>
+                    </article>
+                </a>
+                <a href="treino-personalizado.html" class="card-link">
+                    <article class="card">
+                        <span class="card-numero" aria-hidden="true">04</span>
+                        <h3>Personalizado</h3>
+                        <p>Organize o treinamento de acordo com seus objetivos, experiência, rotina, disponibilidade e preferências.</p>
+                        <span class="card-acao">Monte seu treino <span aria-hidden="true">→</span></span>
+                    </article>
+                </a>
+            </div>
 
-        <nav>
-            <a href="index.html"><b>Inicio</b></a>
-            <a href="treinos.html"><b>Treinos</b></a>
-            <a href="Inicio-dieta.html"><b>Dietas</b></a>
-            <a href="calculadora.html"><b>Calculadoras</b></a>
-            <a href="login.html"><button class="botao-login">Login</button></a>
-        </nav>
-    </header>
+            <button class="carrossel-controle carrossel-proximo" type="button" aria-label="Ver próximos treinos" data-carousel-next>
+                <span aria-hidden="true">&#8594;</span>
+            </button>
+        </div>
+        <p class="carrossel-instrucao">Use as setas para explorar as opções de treino.</p>
+    </section>
+</main>
+<footer class="rodape-principal">
+    <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
+    <nav aria-label="Links do rodapé">
+        <a href="QuemSomos.html">Quem Somos</a>
+        <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
+    </nav>
+</footer>
+<script>
+    (() => {
+        const carousel = document.querySelector('[data-carousel]');
+        if (!carousel) return;
 
+        const track = carousel.querySelector('[data-carousel-track]');
+        const previous = carousel.querySelector('[data-carousel-prev]');
+        const next = carousel.querySelector('[data-carousel-next]');
 
-    <h2>Treine com propósito! </h2>
-    <p>Escolha seus objetivos, conheça os exercícios e acompanhe sua evolução. A combinação entre consistência,
-        planejamento e dedicação é o que transforma pequenos esforços em grandes resultados.
-    </p>
-    <p><b>Seu objetivo. Seu treino. Sua evolução.</b></p>
+        const scrollByCard = (direction) => {
+            const card = track.querySelector('.card-link');
+            if (!card) return;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        };
 
-    </header>
-    <main id="conteudo-principal">
-        <a href="hipertrofia.html">
-            <section class="card">
-                <h2>Hipertrofia</h2>
-                <p>Treinamento de força com estímulos adequados para favorecer o aumento do tamanho e volume muscular.</p>
-            </section>
-        </a>
-        <a href="emagrecimento.html">
-            <section class="card">
-                <h2>Emagrecimento</h2>
-                <p>Combine treino de força e exercícios aeróbicos para apoiar a redução de gordura e preservar massa muscular.</p>
-            </section>
-        </a>
-        <a href="força.html">
-            <section class="card">
-                <h2>Força</h2>
-                <p>Treinamento com sobrecarga para aumentar a capacidade de produzir força e evoluir nos principais movimentos.</p>
-            </section>
-        </a>
-        <a href="treino-personalizado.html">
-            <section class="card">
-                <h2>Personalizado</h2>
-                <p>Monte um treino considerando seu objetivo, experiência, rotina, frequência e características individuais.</p>
-            </section>
-        </a>
-    </main>
+        previous.addEventListener('click', () => scrollByCard(-1));
+        next.addEventListener('click', () => scrollByCard(1));
 
-    <footer class="rodape-principal">
-        <p>Desenvolvido por alunos da Unisal - Campus São jose 2026</p>
-        <a href="QuemSomos.html"><b>Quem Somos</b></a>
-        <a href="#"><b>Fale Conosco</b></a>
-    </footer>
+        const updateControls = () => {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            previous.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft >= maxScroll - 2;
+        };
+
+        track.addEventListener('scroll', updateControls, { passive: true });
+        window.addEventListener('resize', updateControls);
+        updateControls();
+    })();
+</script>
 </body>
-
 </html>
