@@ -1,62 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hipertrofia</title>
+    <meta name="description" content="Entenda o treinamento para hipertrofia, volume semanal e exemplos de exercícios.">
+    <title>Hipertrofia | Heavy Feeder</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/treinos-responsive.css">
+    
 </head>
-
-<body>
-    <header class="cabecalho-principal">
-        <figure>
-            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
-        </figure>
-
-        <nav>
-            <a href="index.html"><b>Inicio</b></a>
-            <a href="treinos.html"><b>Treinos</b></a>
-            <a href="Inicio-dieta.html"><b>Dietas</b></a>
-            <a href="calculadora.html"><b>Calculadoras</b></a>
-            <a href="login.html"><button class="botao-login">Login</button></a>
-        </nav>
-    </header>
-
-    <main class="treino-hipertrofia">
-        <section>
+<body class="pagina-treinos">
+<header class="cabecalho-principal">
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal"><a href="index.html">Início</a><a href="treinos.html" aria-current="page">Treinos</a><a href="Inicio-dieta.html">Dietas</a><a href="calculadora.html">Calculadoras</a><a href="login.html" class="botao-login">Login</a></nav>
+</header>
+<main id="conteudo-principal" class="conteudo-artigo">
+    <button class="botao-voltar" type="button" onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = 'treinos.html'; }" aria-label="Voltar à página anterior">← Voltar</button>
+    <article>
+        <header class="titulo-artigo">
             <h1>Hipertrofia</h1>
-            <p>Hipertrofia é o aumento do tamanho dos músculos em resposta ao treinamento de força. <br> Para favorecer
-                esse
-                processo, é importante combinar estímulo adequado, alimentação equilibrada, progressão de carga e
-                recuperação.
-            </p>
+            <p>Hipertrofia muscular é o aumento do tamanho dos músculos em resposta a estímulos de treinamento. Para favorecer esse processo, combine treino de força, alimentação adequada, progressão planejada e recuperação suficiente.</p>
+        </header>
+        <figure class="imagem-artigo"><img src="IMAGEM/ronniecoleman-hipertrofia.png" alt="Ronnie Coleman, atleta de fisiculturismo" loading="lazy"></figure>
+        <section>
+            <h2>Volume de treino</h2>
+            <p>O volume pode ser acompanhado pelo número de séries de trabalho realizadas por grupo muscular ao longo da semana. Uma faixa de aproximadamente 10 a 20 séries semanais pode servir como referência para algumas pessoas, mas não é uma regra universal. A quantidade ideal depende da experiência, da intensidade, da recuperação e da resposta individual.</p>
+            <ul class="lista-destaques">
+                <li>Priorize a execução correta dos movimentos.</li>
+                <li>Aumente gradualmente a carga ou as repetições quando conseguir manter a técnica.</li>
+                <li>Inclua descanso e recuperação no planejamento.</li>
+            </ul>
         </section>
         <section>
-            <h2>Volume de treino </h2>
-            <p>10–20 séries/semana
-
-                Essa é uma faixa geral que pode ser adequada para muitas pessoas. <br> O volume deve ser ajustado de acordo
-                com experiência, intensidade, recuperação e resposta individual.
-                <div class="card-informaçoes">
-                    <ul>
-                        <li>10-20 series/semana</li>
-                        <li>Progressão de carga</li>
-                        <li>Recuperação adequada</li>
-                    </ul>
-                </div>
-            </p>
+            <h2>Exercícios frequentemente utilizados</h2>
+            <div class="tabela-responsiva"><table>
+                <thead><tr><th>Grupo muscular</th><th>Exemplos de exercícios</th><th>Observação</th></tr></thead>
+                <tbody>
+                    <tr><td>Peito</td><td>Supino reto, supino inclinado, crucifixo</td><td>Escolha variações confortáveis e controladas.</td></tr>
+                    <tr><td>Costas</td><td>Remadas, puxadas, pulldown</td><td>Varie puxadas horizontais e verticais.</td></tr>
+                    <tr><td>Ombros</td><td>Desenvolvimento, elevação lateral</td><td>Controle a amplitude e a postura.</td></tr>
+                    <tr><td>Bíceps</td><td>Rosca direta, rosca inclinada</td><td>Evite usar impulso excessivo.</td></tr>
+                    <tr><td>Tríceps</td><td>Extensão na polia, extensão acima da cabeça</td><td>Use carga compatível com a execução.</td></tr>
+                    <tr><td>Quadríceps</td><td>Agachamento, leg press, cadeira extensora</td><td>Adapte a amplitude à sua mobilidade.</td></tr>
+                    <tr><td>Posteriores de coxa</td><td>Stiff, mesa flexora, cadeira flexora</td><td>Faça os movimentos de forma controlada.</td></tr>
+                    <tr><td>Glúteos</td><td>Hip thrust, agachamento, afundo</td><td>Selecione exercícios que consiga executar bem.</td></tr>
+                    <tr><td>Panturrilhas</td><td>Elevação em pé ou sentado</td><td>Trabalhe a amplitude com controle.</td></tr>
+                </tbody>
+            </table></div>
         </section>
-        <h2>Treino Sugerido a ser seguido</h2>
-
-    </main>
-
-    <footer class="rodape-principal">
-        <p>Desenvolvido por alunos da Unisal - Campus São jose 2026</p>
-        <a href="QuemSomos.html"><b>Quem Somos</b></a>
-        <a href="#"><b>Fale Conosco</b></a>
-    </footer>
-
+        <section>
+            <h2>Como organizar o treino</h2>
+            <p>Não existe uma divisão semanal única que funcione para todo mundo. Organize os grupos musculares de acordo com os dias disponíveis e distribua o volume para permitir uma boa execução e recuperação. Iniciantes devem priorizar consistência e técnica antes de aumentar muito o volume.</p>
+        </section>
+        <section class="fontes">
+            <h2>Fontes para consulta</h2>
+            <ul>
+                <li>Schoenfeld, B. J. <em>Science and Development of Muscle Hypertrophy</em>. 2ª edição. Human Kinetics, 2020.</li>
+                <li>Schoenfeld, B. J.; Ogborn, D.; Krieger, J. W. Dose-response relationship between weekly resistance training volume and increases in muscle mass. <em>Journal of Sports Sciences</em>, 2017.</li>
+            </ul>
+        </section>
+    
+        <section class="plano-semanal" aria-labelledby="plano-hipertrofia">
+            <h2 id="plano-hipertrofia">Exemplo de divisão semanal para hipertrofia</h2>
+            <p>Esta sugestão usa a divisão Push / Pull / Legs + Upper / Lower (PPL + Upper/Lower). As séries são exemplos iniciais: ajuste o volume à sua experiência, recuperação e orientação profissional. Faça as séries com técnica controlada e termine, em geral, com cerca de 1 a 3 repetições “na reserva”.</p>
+            <div class="treinos-semana">
+                <article class="dia-treino"><h3>Segunda — Push (peito, ombros e tríceps)</h3><ul><li>Supino reto com barra — 3–4 × 6–10</li><li>Supino inclinado com halteres — 3 × 8–12</li><li>Desenvolvimento de ombros — 3 × 8–12</li><li>Elevação lateral — 3 × 12–15</li><li>Tríceps na polia — 3 × 10–15</li></ul></article>
+                <article class="dia-treino"><h3>Terça — Pull (costas e bíceps)</h3><ul><li>Puxada alta — 3–4 × 8–12</li><li>Remada baixa — 3 × 8–12</li><li>Remada com halter — 3 × 8–12</li><li>Crucifixo inverso — 2–3 × 12–15</li><li>Rosca direta — 3 × 8–12</li><li>Rosca martelo — 2 × 10–15</li></ul></article>
+                <article class="dia-treino"><h3>Quarta — Legs (pernas completas)</h3><ul><li>Agachamento ou leg press — 3–4 × 6–10</li><li>Levantamento romeno (stiff) — 3 × 8–10</li><li>Cadeira extensora — 3 × 10–15</li><li>Mesa flexora — 3 × 10–15</li><li>Elevação de panturrilhas — 3 × 12–20</li></ul></article>
+                <article class="dia-treino"><h3>Quinta — Upper (parte superior)</h3><ul><li>Supino inclinado — 3 × 8–12</li><li>Remada com apoio no peito — 3 × 8–12</li><li>Puxada neutra — 3 × 8–12</li><li>Elevação lateral — 3 × 12–15</li><li>Rosca alternada — 2–3 × 10–15</li><li>Extensão de tríceps — 2–3 × 10–15</li></ul></article>
+                <article class="dia-treino"><h3>Sexta — Lower (ênfase em pernas e glúteos)</h3><ul><li>Leg press — 3 × 10–12</li><li>Hip thrust — 3 × 8–12</li><li>Afundo ou passada — 3 × 8–12 por perna</li><li>Cadeira flexora — 3 × 10–15</li><li>Abdução de quadril — 2–3 × 12–20</li><li>Panturrilha sentado — 3 × 12–20</li></ul></article>
+                <article class="dia-treino dia-recuperacao"><h3>Sábado — Recuperação opcional</h3><p>Caminhada leve, mobilidade ou atividade recreativa, sem transformar o dia em mais um treino pesado.</p></article>
+                <article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Priorize sono, alimentação adequada e recuperação para a próxima semana.</p></article>
+            </div>
+            <p class="nota-treino">Descanso entre séries: em geral, 2–3 minutos nos exercícios multiarticulares e 1–2 minutos nos isoladores, ajustando conforme o esforço. Aumente carga ou repetições gradualmente quando completar as séries com boa técnica.</p>
+        </section>
+</article>
+</main>
+<footer class="rodape-principal">
+    <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
+    <nav aria-label="Links do rodapé">
+        <a href="QuemSomos.html">Quem Somos</a>
+        <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
+    </nav>
+</footer>
 </body>
-
 </html>
