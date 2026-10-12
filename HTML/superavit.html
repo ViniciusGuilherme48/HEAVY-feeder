@@ -5,274 +5,597 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superávit Calórico</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+
     <style>
-        table,
+        :root {
+            --bg: #010a12;
+            --bg-card: #070d16;
+            --bg-header: #0a111b;
+            --borda: #1c2a3a;
+            --titulo: #a9b4c4;
+            --texto: #ffffff;
+            --texto-suave: #c3ccd9;
+            --verde: #22d68a;
+            --verde-escuro: #0c2a2a;
+            --verde-fundo: rgba(34, 214, 138, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0 6px 6px;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--texto);
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            z-index: -1;
+            width: 70px;
+            background: var(--verde-fundo);
+            border-radius: 14px;
+            pointer-events: none;
+        }
+
+        body::before {
+            height: 620px;
+            right: 12%;
+            top: 12%;
+            transform: rotate(28deg);
+        }
+
+        body::after {
+            height: 360px;
+            right: 24%;
+            top: 8%;
+            transform: rotate(-48deg);
+        }
+
+        h1,
+        h2 {
+            margin: 0 0 12px;
+            color: var(--titulo);
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            color: var(--verde);
+            font-size: 1.1rem;
+        }
+
+        p {
+            max-width: 75ch;
+            margin: 0 0 14px;
+        }
+
+        a {
+            color: var(--verde);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header,
+        footer {
+            background: var(--bg-header);
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 18px 40px;
+        }
+
+        header figure {
+            margin: 0;
+        }
+
+        header img {
+            display: block;
+            width: 150px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        header figcaption {
+            display: none;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 56px;
+        }
+
+        nav a {
+            color: var(--titulo);
+            font-size: 1.05rem;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--verde);
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px 20px 40px;
+        }
+
+        main > section {
+            padding: 28px 0;
+            border-top: 1px solid var(--borda);
+        }
+
+        main > section:first-child {
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        main > section:last-child {
+            padding-bottom: 0;
+        }
+
+        .exemplo {
+            display: inline-grid;
+            gap: 6px;
+            margin: 0;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+        }
+
+        .exemplo div {
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .exemplo dt {
+            color: var(--texto-suave);
+        }
+
+        .exemplo dd {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .exemplo .resultado {
+            margin-top: 6px;
+            padding-top: 10px;
+            border-top: 1px solid var(--borda);
+            color: var(--verde);
+            font-weight: 700;
+        }
+
+        .exemplo .resultado dt {
+            color: var(--verde);
+        }
+
+        .opcao + .opcao {
+            margin-top: 32px;
+        }
+
+        .tabela {
+            overflow-x: auto;
+            background: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
         th,
         td {
-            color: white;
-            border-color: white;
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--borda);
         }
-   
-    
-    table,
-    th,
-    td {
-        color: white;
-        border-color: white;
-    }
 
-    ul,
-    li {
-        color: white;
-    }
-</style>
+        thead th,
+        tfoot th {
+            background: var(--verde-escuro);
+            color: var(--verde);
+        }
+
+        tfoot th {
+            border-bottom: 0;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        tbody tr:hover td {
+            background: rgba(34, 214, 138, 0.04);
+        }
+
+        tbody td:first-child {
+            color: var(--titulo);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .dicas {
+            display: grid;
+            gap: 10px;
+            margin: 0 0 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .dicas li {
+            padding: 12px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-left: 3px solid var(--verde);
+            border-radius: 10px;
+        }
+
+        small {
+            color: var(--texto-suave);
+        }
+
+        .links-pagina {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 18px 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        footer a {
+            color: var(--titulo);
+        }
+
+        footer a:hover {
+            color: var(--verde);
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            header,
+            footer {
+                padding: 16px 20px;
+            }
+
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 22px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            tbody td:first-child {
+                white-space: normal;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
     <header>
         <figure>
-            <img src="../IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="500">
+            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER">
             <figcaption>HEAVY Feeder</figcaption>
         </figure>
 
         <nav>
-            <a href="index.html"><b>Inicio</b> |</a>
-            <a href="QuemSomos.html"><b>Quem Somos</b> |</a>
-            <a href="treinos.html"><b>Treinos</b> |</a>
-            <a href="calculadora.html"><b>Calculadoras</b></a>
+            <a href="index.html">Inicio</a>
+            <a href="QuemSomos.html">Quem Somos</a>
+            <a href="treinos.html">Treinos</a>
+            <a href="calculadora.html">Calculadoras</a>
         </nav>
     </header>
 
-    <hr>
-
     <main>
-        <h1>SUPERÁVIT CALÓRICO</h1>
 
-        <a href="Inicio-dieta.html">← Voltar para dietas</a>
+        <section>
+            <h1>SUPERÁVIT CALÓRICO</h1>
+            <a href="Inicio-dieta.html">← Voltar para dietas</a>
+        </section>
 
-        <hr>
+        <section>
+            <h2>O que é?</h2>
+            <p>
+                Superávit calórico é consumir mais calorias do que o corpo gasta no dia.
+                Esse excesso de energia, combinado com musculação, pode ajudar no ganho de massa muscular.
+            </p>
+        </section>
 
-        <h2>O que é?</h2>
-        <p>
-            Superávit calórico é consumir mais calorias do que o corpo gasta no dia.
-            Esse excesso de energia, combinado com musculação, pode ajudar no ganho de massa muscular.
-        </p>
+        <section>
+            <h2>Exemplo</h2>
+            <dl class="exemplo">
+                <div>
+                    <dt>Gasto diário</dt>
+                    <dd>2.500 kcal</dd>
+                </div>
+                <div>
+                    <dt>Consumo</dt>
+                    <dd>2.900 kcal</dd>
+                </div>
+                <div class="resultado">
+                    <dt>Superávit</dt>
+                    <dd>400 kcal</dd>
+                </div>
+            </dl>
+        </section>
 
-        <h2>Exemplo</h2>
-        <p>
-            Gasto diário: 2.500 kcal<br>
-            Consumo: 2.900 kcal<br>
-            <b>Superávit: 400 kcal</b>
-        </p>
+        <section>
+            <h2>Opções de dieta para ganhar massa</h2>
+            <p>
+                Escolha a opção mais próxima do seu gasto diário (use a
+                <a href="calculadora.html">calculadora</a>). O ideal é comer cerca de
+                300 a 500 kcal acima do que você gasta.
+            </p>
 
-        <hr>
+            <article class="opcao">
+                <h3>Opção 1: cerca de 2.500 kcal</h3>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Refeição</th>
+                                <th>Exemplo</th>
+                                <th>Calorias (aprox.)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Café da manhã</td>
+                                <td>3 ovos, 2 fatias de pão integral, 1 banana</td>
+                                <td>500 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Lanche da manhã</td>
+                                <td>1 iogurte natural com aveia e mel</td>
+                                <td>300 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Almoço</td>
+                                <td>Arroz, feijão, frango grelhado, legumes e salada</td>
+                                <td>700 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Lanche da tarde</td>
+                                <td>Sanduíche de frango desfiado com queijo</td>
+                                <td>350 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Jantar</td>
+                                <td>Carne magra, batata-doce e legumes</td>
+                                <td>450 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Ceia</td>
+                                <td>1 copo de leite com 1 colher de pasta de amendoim</td>
+                                <td>200 kcal</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">Total</th>
+                                <th>2.500 kcal</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
 
-        <h2>Opções de dieta para ganhar massa</h2>
-        <p>
-            Escolha a opção mais próxima do seu gasto diário (use a
-            <a href="calculadora.html">calculadora</a>). O ideal é comer cerca de
-            300 a 500 kcal acima do que você gasta.
-        </p>
+            <article class="opcao">
+                <h3>Opção 2: cerca de 2.900 kcal</h3>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Refeição</th>
+                                <th>Exemplo</th>
+                                <th>Calorias (aprox.)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Café da manhã</td>
+                                <td>3 ovos, 3 fatias de pão integral, 1 banana com aveia</td>
+                                <td>600 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Lanche da manhã</td>
+                                <td>Vitamina de leite, banana e aveia</td>
+                                <td>350 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Almoço</td>
+                                <td>Arroz, feijão, frango ou carne, legumes e salada</td>
+                                <td>800 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Lanche da tarde</td>
+                                <td>Sanduíche de frango com queijo e 1 fruta</td>
+                                <td>400 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Jantar</td>
+                                <td>Macarrão com carne moída e salada</td>
+                                <td>550 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Ceia</td>
+                                <td>Iogurte com pasta de amendoim</td>
+                                <td>200 kcal</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">Total</th>
+                                <th>2.900 kcal</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
 
-        <h3>Opção 1: cerca de 2.500 kcal</h3>
-        <table border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Refeição</th>
-                    <th>Exemplo</th>
-                    <th>Calorias (aprox.)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Café da manhã</td>
-                    <td>3 ovos, 2 fatias de pão integral, 1 banana</td>
-                    <td>500 kcal</td>
-                </tr>
-                <tr>
-                    <td>Lanche da manhã</td>
-                    <td>1 iogurte natural com aveia e mel</td>
-                    <td>300 kcal</td>
-                </tr>
-                <tr>
-                    <td>Almoço</td>
-                    <td>Arroz, feijão, frango grelhado, legumes e salada</td>
-                    <td>700 kcal</td>
-                </tr>
-                <tr>
-                    <td>Lanche da tarde</td>
-                    <td>Sanduíche de frango desfiado com queijo</td>
-                    <td>350 kcal</td>
-                </tr>
-                <tr>
-                    <td>Jantar</td>
-                    <td>Carne magra, batata-doce e legumes</td>
-                    <td>450 kcal</td>
-                </tr>
-                <tr>
-                    <td>Ceia</td>
-                    <td>1 copo de leite com 1 colher de pasta de amendoim</td>
-                    <td>200 kcal</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="2">Total</th>
-                    <th>2.500 kcal</th>
-                </tr>
-            </tfoot>
-        </table>
+            <article class="opcao">
+                <h3>Opção 3: cerca de 3.300 kcal</h3>
+                <div class="tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Refeição</th>
+                                <th>Exemplo</th>
+                                <th>Calorias (aprox.)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Café da manhã</td>
+                                <td>4 ovos, 3 fatias de pão, 1 copo de leite, 1 banana</td>
+                                <td>700 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Lanche da manhã</td>
+                                <td>Vitamina com leite, banana, aveia e pasta de amendoim</td>
+                                <td>400 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Almoço</td>
+                                <td>Arroz, feijão, carne ou frango (150 g), legumes e azeite</td>
+                                <td>900 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Lanche da tarde</td>
+                                <td>Tapioca com frango e queijo, 1 fruta</td>
+                                <td>450 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Jantar</td>
+                                <td>Macarrão com carne moída, salada e azeite</td>
+                                <td>650 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Ceia</td>
+                                <td>Iogurte com granola</td>
+                                <td>200 kcal</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">Total</th>
+                                <th>3.300 kcal</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
+        </section>
 
-        <br>
+        <section>
+            <h2>Alimentos que ajudam a ganhar massa</h2>
+            <div class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Exemplos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proteínas</td>
+                            <td>Ovos, frango, carne magra, peixe, leite, iogurte</td>
+                        </tr>
+                        <tr>
+                            <td>Carboidratos</td>
+                            <td>Arroz, batata-doce, macarrão, aveia, pão integral, banana</td>
+                        </tr>
+                        <tr>
+                            <td>Gorduras boas</td>
+                            <td>Azeite, pasta de amendoim, castanhas, abacate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <h3>Opção 2: cerca de 2.900 kcal</h3>
-        <table border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Refeição</th>
-                    <th>Exemplo</th>
-                    <th>Calorias (aprox.)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Café da manhã</td>
-                    <td>3 ovos, 3 fatias de pão integral, 1 banana com aveia</td>
-                    <td>600 kcal</td>
-                </tr>
-                <tr>
-                    <td>Lanche da manhã</td>
-                    <td>Vitamina de leite, banana e aveia</td>
-                    <td>350 kcal</td>
-                </tr>
-                <tr>
-                    <td>Almoço</td>
-                    <td>Arroz, feijão, frango ou carne, legumes e salada</td>
-                    <td>800 kcal</td>
-                </tr>
-                <tr>
-                    <td>Lanche da tarde</td>
-                    <td>Sanduíche de frango com queijo e 1 fruta</td>
-                    <td>400 kcal</td>
-                </tr>
-                <tr>
-                    <td>Jantar</td>
-                    <td>Macarrão com carne moída e salada</td>
-                    <td>550 kcal</td>
-                </tr>
-                <tr>
-                    <td>Ceia</td>
-                    <td>Iogurte com pasta de amendoim</td>
-                    <td>200 kcal</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="2">Total</th>
-                    <th>2.900 kcal</th>
-                </tr>
-            </tfoot>
-        </table>
+        <section>
+            <h2>Dicas</h2>
+            <ul class="dicas">
+                <li>Faça de 5 a 6 refeições por dia para atingir as calorias com mais facilidade.</li>
+                <li>Coma proteína em todas as refeições.</li>
+                <li>Evite superávits muito grandes: o excesso vira gordura, não músculo.</li>
+                <li>O treino de musculação é o que direciona o ganho para a massa muscular.</li>
+                <li>Durma bem e beba bastante água.</li>
+            </ul>
+            <p>
+                <small>Valores aproximados. Ajuste as porções ao seu gasto diário e, se possível,
+                    procure um nutricionista.</small>
+            </p>
+        </section>
 
-        <br>
+        <section class="links-pagina">
+            <a href="Inicio-dieta.html">← Voltar para dietas</a>
+            <a href="calculadora.html">Calcule suas calorias →</a>
+        </section>
 
-        <h3>Opção 3: cerca de 3.300 kcal</h3>
-        <table border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Refeição</th>
-                    <th>Exemplo</th>
-                    <th>Calorias (aprox.)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Café da manhã</td>
-                    <td>4 ovos, 3 fatias de pão, 1 copo de leite, 1 banana</td>
-                    <td>700 kcal</td>
-                </tr>
-                <tr>
-                    <td>Lanche da manhã</td>
-                    <td>Vitamina com leite, banana, aveia e pasta de amendoim</td>
-                    <td>400 kcal</td>
-                </tr>
-                <tr>
-                    <td>Almoço</td>
-                    <td>Arroz, feijão, carne ou frango (150 g), legumes e azeite</td>
-                    <td>900 kcal</td>
-                </tr>
-                <tr>
-                    <td>Lanche da tarde</td>
-                    <td>Tapioca com frango e queijo, 1 fruta</td>
-                    <td>450 kcal</td>
-                </tr>
-                <tr>
-                    <td>Jantar</td>
-                    <td>Macarrão com carne moída, salada e azeite</td>
-                    <td>650 kcal</td>
-                </tr>
-                <tr>
-                    <td>Ceia</td>
-                    <td>Iogurte com granola</td>
-                    <td>200 kcal</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="2">Total</th>
-                    <th>3.300 kcal</th>
-                </tr>
-            </tfoot>
-        </table>
-
-        <hr>
-
-        <h2>Alimentos que ajudam a ganhar massa</h2>
-        <table border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Exemplos</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Proteínas</td>
-                    <td>Ovos, frango, carne magra, peixe, leite, iogurte</td>
-                </tr>
-                <tr>
-                    <td>Carboidratos</td>
-                    <td>Arroz, batata-doce, macarrão, aveia, pão integral, banana</td>
-                </tr>
-                <tr>
-                    <td>Gorduras boas</td>
-                    <td>Azeite, pasta de amendoim, castanhas, abacate</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <hr>
-
-        <h2>Dicas</h2>
-        <ul>
-            <li>Faça de 5 a 6 refeições por dia para atingir as calorias com mais facilidade.</li>
-            <li>Coma proteína em todas as refeições.</li>
-            <li>Evite superávits muito grandes: o excesso vira gordura, não músculo.</li>
-            <li>O treino de musculação é o que direciona o ganho para a massa muscular.</li>
-            <li>Durma bem e beba bastante água.</li>
-        </ul>
-
-        <p>
-            <small>Valores aproximados. Ajuste as porções ao seu gasto diário e, se possível,
-                procure um nutricionista.</small>
-        </p>
-
-        <hr>
-
-        <p><a href="calculadora.html">Calcule suas calorias →</a></p>
-        <a href="Inicio-dieta.html">← Voltar para dietas</a>
     </main>
+
+    <footer>
+        <span>Desenvolvido por alunos da Unisal - Campus São José 2026</span>
+        <a href="QuemSomos.html">Quem Somos</a>
+        <a href="#">Fale Conosco</a>
+    </footer>
+
 </body>
 
 </html>
