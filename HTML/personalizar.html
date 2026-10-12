@@ -5,230 +5,487 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalizar Dieta</title>
-    <link rel="stylesheet" href="../CSS/stylePerso.css">
-    <link rel="stylesheet" href="../CSS/style.css">
 
+    <style>
+        :root {
+            --bg: #010a12;
+            --bg-card: #070d16;
+            --bg-header: #0a111b;
+            --bg-campo: #0c1520;
+            --borda: #1c2a3a;
+            --titulo: #a9b4c4;
+            --texto: #ffffff;
+            --texto-suave: #c3ccd9;
+            --verde: #22d68a;
+            --verde-escuro: #0c2a2a;
+            --verde-fundo: rgba(34, 214, 138, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0 6px 6px;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--texto);
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            color-scheme: dark;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            z-index: -1;
+            width: 70px;
+            background: var(--verde-fundo);
+            border-radius: 14px;
+            pointer-events: none;
+        }
+
+        body::before {
+            height: 620px;
+            right: 12%;
+            top: 12%;
+            transform: rotate(28deg);
+        }
+
+        body::after {
+            height: 360px;
+            right: 24%;
+            top: 8%;
+            transform: rotate(-48deg);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            color: var(--titulo);
+            font-size: 2rem;
+        }
+
+        p {
+            max-width: 75ch;
+            margin: 0 0 14px;
+        }
+
+        a {
+            color: var(--verde);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        header,
+        footer {
+            background: var(--bg-header);
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 18px 40px;
+        }
+
+        header figure {
+            margin: 0;
+        }
+
+        header img {
+            display: block;
+            width: 150px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 56px;
+        }
+
+        nav a {
+            color: var(--titulo);
+            font-size: 1.05rem;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--verde);
+        }
+
+        nav a.botao-login {
+            padding: 8px 32px;
+            background: var(--verde);
+            border-radius: 999px;
+            color: #05221a;
+            transition: filter 0.2s;
+        }
+
+        nav a.botao-login:hover,
+        nav a.botao-login:focus-visible {
+            color: #05221a;
+            filter: brightness(1.1);
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 32px 20px 40px;
+        }
+
+        form {
+            display: grid;
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        fieldset {
+            display: grid;
+            gap: 18px;
+            min-width: 0;
+            margin: 0;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+        }
+
+        fieldset.duas-colunas {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        legend {
+            padding: 0 10px;
+            color: var(--verde);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .campo {
+            display: grid;
+            gap: 6px;
+        }
+
+        label {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 11px 14px;
+            background: var(--bg-campo);
+            border: 1px solid var(--borda);
+            border-radius: 10px;
+            color: var(--texto);
+            font: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        select {
+            appearance: none;
+            padding-right: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2322d68a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
+        select option {
+            background: var(--bg-card);
+            color: var(--texto);
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #6c7a8c;
+        }
+
+        select:hover,
+        input:hover,
+        textarea:hover {
+            border-color: #2c4157;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            outline: 0;
+            border-color: var(--verde);
+            box-shadow: 0 0 0 3px rgba(34, 214, 138, 0.18);
+        }
+
+        button[type="submit"] {
+            justify-self: start;
+            padding: 12px 36px;
+            background: var(--verde);
+            border: 0;
+            border-radius: 999px;
+            color: #05221a;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+            transition: filter 0.2s;
+        }
+
+        button[type="submit"]:hover,
+        button[type="submit"]:focus-visible {
+            filter: brightness(1.1);
+        }
+
+        button[type="submit"]:focus-visible {
+            outline: 2px solid var(--titulo);
+            outline-offset: 3px;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 18px 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--titulo);
+        }
+
+        footer a:hover {
+            color: var(--verde);
+        }
+
+        @media (max-width: 700px) {
+            header,
+            footer {
+                padding: 16px 20px;
+            }
+
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 22px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            fieldset {
+                padding: 18px;
+            }
+
+            button[type="submit"] {
+                justify-self: stretch;
+            }
+        }
+    </style>
 </head>
-<header class="cabecalho-principal">
-    <figure>
-        <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
-    </figure>
-
-    <nav>
-        <a href="index.html"><b>Inicio</b></a>
-        <a href="treinos.html"><b>Treinos</b></a>
-        <a href="Inicio-dieta.html"><b>Dietas</b></a>
-        <a href="calculadora.html"><b>Calculadoras</b></a>
-        <a href="login.html"><button class="botao-login">Login</button></a>
-    </nav>
-</header>
 
 <body>
 
-    <h1>Personalize sua dieta</h1>
+    <header>
+        <figure>
+            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER">
+        </figure>
 
-    <p>
-        Responda algumas perguntas para criarmos um plano alimentar
-        personalizado para você.
-    </p>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="treinos.html">Treinos</a>
+            <a href="Inicio-dieta.html">Dietas</a>
+            <a href="calculadora.html">Calculadoras</a>
+            <a href="login.html" class="botao-login">Login</a>
+        </nav>
+    </header>
 
-    <form>
+    <main>
 
-        <fieldset>
-            <legend>1. Objetivo</legend>
+        <h1>Personalize sua dieta</h1>
+        <p>
+            Responda algumas perguntas para criarmos um plano alimentar
+            personalizado para você.
+        </p>
 
-            <label for="objetivo">Qual é o seu objetivo?</label>
-            <br>
+        <form>
 
-            <select id="objetivo" name="objetivo" required>
-                <option value="">Selecione</option>
-                <option value="emagrecer">Emagrecer</option>
-                <option value="ganhar-massa">Ganhar massa muscular</option>
-                <option value="manter-peso">Manter o peso</option>
-                <option value="melhorar-alimentacao">
-                    Melhorar minha alimentação
-                </option>
-            </select>
+            <fieldset>
+                <legend>1. Objetivo</legend>
 
-        </fieldset>
+                <div class="campo">
+                    <label for="objetivo">Qual é o seu objetivo?</label>
+                    <select id="objetivo" name="objetivo" required>
+                        <option value="">Selecione</option>
+                        <option value="emagrecer">Emagrecer</option>
+                        <option value="ganhar-massa">Ganhar massa muscular</option>
+                        <option value="manter-peso">Manter o peso</option>
+                        <option value="melhorar-alimentacao">Melhorar minha alimentação</option>
+                    </select>
+                </div>
+            </fieldset>
 
-        <br>
+            <fieldset class="duas-colunas">
+                <legend>2. Informações pessoais</legend>
 
-        <fieldset>
-            <legend>2. Informações pessoais</legend>
+                <div class="campo">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" min="1" max="120" required>
+                </div>
 
-            <label for="idade">Idade:</label>
-            <br>
-            <input type="number" id="idade" name="idade" min="1" max="120" required>
+                <div class="campo">
+                    <label for="sexo">Sexo:</label>
+                    <select id="sexo" name="sexo" required>
+                        <option value="">Selecione</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+                </div>
 
-            <br><br>
+                <div class="campo">
+                    <label for="altura">Altura (cm):</label>
+                    <input type="number" id="altura" name="altura" placeholder="Ex: 175" required>
+                </div>
 
-            <label for="sexo">Sexo:</label>
-            <br>
+                <div class="campo">
+                    <label for="peso">Peso atual (kg):</label>
+                    <input type="number" id="peso" name="peso" step="0.1" placeholder="Ex: 75.5" required>
+                </div>
+            </fieldset>
 
-            <select id="sexo" name="sexo" required>
-                <option value="">Selecione</option>
-                <option value="feminino">Feminino</option>
-                <option value="masculino">Masculino</option>
-            </select>
+            <fieldset>
+                <legend>3. Atividade física</legend>
 
-            <br><br>
+                <div class="campo">
+                    <label for="frequencia">Com que frequência você pratica exercícios?</label>
+                    <select id="frequencia" name="frequencia" required>
+                        <option value="">Selecione</option>
+                        <option value="nenhuma">Não pratico</option>
+                        <option value="1-2">1–2 vezes por semana</option>
+                        <option value="3-4">3–4 vezes por semana</option>
+                        <option value="5+">5 vezes ou mais por semana</option>
+                    </select>
+                </div>
 
-            <label for="altura">Altura (cm):</label>
-            <br>
-            <input type="number" id="altura" name="altura" placeholder="Ex: 175" required>
+                <div class="campo">
+                    <label for="tipo-exercicio">Qual exercício você pratica?</label>
+                    <select id="tipo-exercicio" name="tipo-exercicio">
+                        <option value="">Selecione</option>
+                        <option value="musculacao">Musculação</option>
+                        <option value="corrida">Corrida</option>
+                        <option value="caminhada">Caminhada</option>
+                        <option value="ciclismo">Ciclismo</option>
+                        <option value="natacao">Natação</option>
+                        <option value="esportes">Esportes</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+            </fieldset>
 
-            <br><br>
+            <fieldset>
+                <legend>4. Alimentação</legend>
 
-            <label for="peso">Peso atual (kg):</label>
-            <br>
-            <input type="number" id="peso" name="peso" step="0.1" placeholder="Ex: 75.5" required>
+                <div class="campo">
+                    <label for="refeicoes">Quantas refeições você prefere fazer por dia?</label>
+                    <select id="refeicoes" name="refeicoes" required>
+                        <option value="">Selecione</option>
+                        <option value="3">3 refeições</option>
+                        <option value="4">4 refeições</option>
+                        <option value="5">5 refeições</option>
+                        <option value="6">6 ou mais refeições</option>
+                    </select>
+                </div>
 
-        </fieldset>
+                <div class="campo">
+                    <label for="restricao">Você possui alguma restrição alimentar?</label>
+                    <select id="restricao" name="restricao">
+                        <option value="nenhuma">Nenhuma</option>
+                        <option value="vegetariano">Vegetariano</option>
+                        <option value="vegano">Vegano</option>
+                        <option value="lactose">Intolerância à lactose</option>
+                        <option value="gluten">Restrição ao glúten</option>
+                        <option value="outra">Outra</option>
+                    </select>
+                </div>
 
-        <br>
+                <div class="campo">
+                    <label for="alimentos-gosta">Quais alimentos você gosta?</label>
+                    <textarea id="alimentos-gosta" name="alimentos-gosta" rows="4"
+                        placeholder="Ex: arroz, frango, ovos, banana, aveia..."></textarea>
+                </div>
 
-        <fieldset>
-            <legend>3. Atividade física</legend>
+                <div class="campo">
+                    <label for="alimentos-nao-gosta">Quais alimentos você não gosta?</label>
+                    <textarea id="alimentos-nao-gosta" name="alimentos-nao-gosta" rows="4"
+                        placeholder="Ex: peixe, brócolis, abacate..."></textarea>
+                </div>
+            </fieldset>
 
-            <label for="frequencia">
-                Com que frequência você pratica exercícios?
-            </label>
-            <br>
+            <fieldset>
+                <legend>5. Rotina</legend>
 
-            <select id="frequencia" name="frequencia" required>
-                <option value="">Selecione</option>
-                <option value="nenhuma">Não pratico</option>
-                <option value="1-2">1–2 vezes por semana</option>
-                <option value="3-4">3–4 vezes por semana</option>
-                <option value="5+">5 vezes ou mais por semana</option>
-            </select>
+                <div class="campo">
+                    <label for="cozinha">Quanto tempo você tem para preparar suas refeições?</label>
+                    <select id="cozinha" name="cozinha">
+                        <option value="">Selecione</option>
+                        <option value="pouco">Quase nenhum</option>
+                        <option value="15">Até 15 minutos</option>
+                        <option value="30">15–30 minutos</option>
+                        <option value="60">30–60 minutos</option>
+                        <option value="mais">Mais de 1 hora</option>
+                    </select>
+                </div>
 
-            <br><br>
+                <div class="campo">
+                    <label for="refeicoes-fora">Com que frequência você come fora de casa?</label>
+                    <select id="refeicoes-fora" name="refeicoes-fora">
+                        <option value="">Selecione</option>
+                        <option value="nunca">Nunca ou quase nunca</option>
+                        <option value="1-2">1–2 vezes por semana</option>
+                        <option value="3-5">3–5 vezes por semana</option>
+                        <option value="todos-dias">Quase todos os dias</option>
+                    </select>
+                </div>
+            </fieldset>
 
-            <label for="tipo-exercicio">
-                Qual exercício você pratica?
-            </label>
-            <br>
+            <button type="submit">Personalizar minha dieta</button>
 
-            <select id="tipo-exercicio" name="tipo-exercicio">
-                <option value="">Selecione</option>
-                <option value="musculacao">Musculação</option>
-                <option value="corrida">Corrida</option>
-                <option value="caminhada">Caminhada</option>
-                <option value="ciclismo">Ciclismo</option>
-                <option value="natacao">Natação</option>
-                <option value="esportes">Esportes</option>
-                <option value="outro">Outro</option>
-            </select>
+        </form>
 
-        </fieldset>
+    </main>
 
-        <br>
-
-        <fieldset>
-            <legend>4. Alimentação</legend>
-
-            <label for="refeicoes">
-                Quantas refeições você prefere fazer por dia?
-            </label>
-            <br>
-
-            <select id="refeicoes" name="refeicoes" required>
-                <option value="">Selecione</option>
-                <option value="3">3 refeições</option>
-                <option value="4">4 refeições</option>
-                <option value="5">5 refeições</option>
-                <option value="6">6 ou mais refeições</option>
-            </select>
-
-            <br><br>
-
-            <label for="restricao">
-                Você possui alguma restrição alimentar?
-            </label>
-            <br>
-
-            <select id="restricao" name="restricao">
-                <option value="nenhuma">Nenhuma</option>
-                <option value="vegetariano">Vegetariano</option>
-                <option value="vegano">Vegano</option>
-                <option value="lactose">Intolerância à lactose</option>
-                <option value="gluten">Restrição ao glúten</option>
-                <option value="outra">Outra</option>
-            </select>
-
-
-            <br><br>
-
-            <label for="alimentos-gosta">
-                Quais alimentos você gosta?
-            </label>
-            <br>
-
-            <textarea id="alimentos-gosta" name="alimentos-gosta" rows="4" cols="40"
-                placeholder="Ex: arroz, frango, ovos, banana, aveia..."></textarea>
-
-            <br><br>
-
-            <label for="alimentos-nao-gosta">
-                Quais alimentos você não gosta?
-            </label>
-            <br>
-
-            <textarea id="alimentos-nao-gosta" name="alimentos-nao-gosta" rows="4" cols="40"
-                placeholder="Ex: peixe, brócolis, abacate..."></textarea>
-
-        </fieldset>
-
-        <br>
-
-        <fieldset>
-            <legend>5. Rotina</legend>
-
-            <label for="cozinha">
-                Quanto tempo você tem para preparar suas refeições?
-            </label>
-            <br>
-
-            <select id="cozinha" name="cozinha">
-                <option value="">Selecione</option>
-                <option value="pouco">Quase nenhum</option>
-                <option value="15">Até 15 minutos</option>
-                <option value="30">15–30 minutos</option>
-                <option value="60">30–60 minutos</option>
-                <option value="mais">Mais de 1 hora</option>
-            </select>
-
-            <br><br>
-
-            <label for="refeicoes-fora">
-                Com que frequência você come fora de casa?
-            </label>
-            <br>
-
-            <select id="refeicoes-fora" name="refeicoes-fora">
-                <option value="">Selecione</option>
-                <option value="nunca">Nunca ou quase nunca</option>
-                <option value="1-2">1–2 vezes por semana</option>
-                <option value="3-5">3–5 vezes por semana</option>
-                <option value="todos-dias">Quase todos os dias</option>
-            </select>
-
-        </fieldset>
-
-        <br>
-
-        <button type="submit">
-            Personalizar minha dieta
-        </button>
-
-    </form>
-    <footer class="rodape-principal">
-        <p>Desenvolvido por alunos da Unisal - Campus São jose 2026</p>
-        <a href="QuemSomos.html"><b>Quem Somos</b></a>
-        <a href="#"><b>Fale Conosco</b></a>
+    <footer>
+        <p>Desenvolvido por alunos da Unisal - Campus São José 2026</p>
+        <a href="QuemSomos.html">Quem Somos</a>
+        <a href="#">Fale Conosco</a>
     </footer>
+
 </body>
 
 </html>
