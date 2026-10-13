@@ -1,9 +1,3 @@
-/* ==========================================================
-   STYLE.CSS - folha única para todas as páginas
-   Base: style.css  |  Inclui: login, criar conta, recuperar
-   senha, nova senha e cadastro concluído
-   ========================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -30,8 +24,6 @@
     --texto-suave: #b8c9bb;
     --texto-suave-2: #9eafa1;
 }
-
-/* ---------- Base ---------- */
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -68,8 +60,6 @@ h3 {
 p {
     color: var(--texto-principal);
 }
-
-/* ---------- Cabeçalho / Rodapé ---------- */
 
 .cabecalho-principal {
     display: flex;
@@ -159,8 +149,6 @@ footer {
     margin: auto;
 }
 
-/* ---------- Home ---------- */
-
 .destaque {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--verde-escuro);
@@ -209,8 +197,6 @@ figure img {
     box-shadow: 8px 8px 8px 8px var(--fundo-secundario);
 }
 
-/* ---------- Treino ---------- */
-
 .treino-hipertrofia {
     margin: auto;
     padding: 28px;
@@ -231,11 +217,6 @@ figure img {
     justify-content: center;
 }
 
-/* ==========================================================
-   PÁGINAS DE CONTA (login, criar conta, recuperar senha,
-   nova senha, cadastro concluído)
-   ========================================================== */
-
 .container,
 .login-container {
     min-height: calc(100vh - 70px);
@@ -244,8 +225,6 @@ figure img {
     align-items: center;
     padding: 20px;
 }
-
-/* Cards (mantém os nomes de classe de cada página) */
 .login-card,
 .criar-conta-card,
 .recuperar-card,
@@ -268,7 +247,6 @@ figure img {
     margin: 0 auto 25px;
 }
 
-/* Títulos e textos dos cards */
 .login-card h1,
 .criar-conta-card h1,
 .recuperar-card h1,
@@ -301,7 +279,6 @@ figure img {
     margin-bottom: 25px;
 }
 
-/* Formulários */
 .campo {
     margin-bottom: 18px;
 }
@@ -323,7 +300,6 @@ input:not([type="checkbox"]):not([type="radio"]) {
     outline: none;
 }
 
-/* recuperar senha: input solto, sem .campo */
 .recuperar-card input:not([type="checkbox"]) {
     margin-bottom: 20px;
 }
@@ -336,7 +312,6 @@ input[type="checkbox"] {
     accent-color: var(--verde-destaque);
 }
 
-/* Login: lembrar / esqueci a senha */
 .opcoes {
     display: flex;
     justify-content: space-between;
@@ -362,7 +337,6 @@ input[type="checkbox"] {
     color: var(--verde-destaque);
 }
 
-/* Criar conta: termos */
 .termos {
     display: flex;
     gap: 8px;
@@ -381,7 +355,6 @@ input[type="checkbox"] {
     font-size: 13px;
 }
 
-/* Botões principais dos formulários */
 .botao-entrar,
 .botao-criar-conta,
 .botao-continuar,
@@ -407,7 +380,6 @@ input[type="checkbox"] {
     margin-top: 7px;
 }
 
-/* Cadastro concluído: botão é um link */
 .conta-criada {
     display: block;
     text-align: center;
@@ -430,7 +402,6 @@ input[type="checkbox"] {
     transform: scale(1);
 }
 
-/* Links de apoio */
 .voltar {
     display: block;
     text-align: center;
@@ -455,7 +426,6 @@ input[type="checkbox"] {
     color: var(--verde-destaque);
 }
 
-/* Ícone de check (cadastro concluído) */
 .check {
     width: 65px;
     height: 65px;
