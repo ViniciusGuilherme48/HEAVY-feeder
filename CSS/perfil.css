@@ -1,15 +1,9 @@
-/* =====================================================
-   RESPONSIVO
-   ===================================================== */
-
-/* Telas grandes (TVs, monitores ultrawide) */
 @media (min-width: 1600px) {
     .perfil {
         max-width: 1280px;
     }
 }
 
-/* Notebooks pequenos e tablets na horizontal */
 @media (max-width: 1024px) {
     .cabecalho-principal {
         justify-content: center;
@@ -20,7 +14,6 @@
     }
 }
 
-/* Tablets na vertical */
 @media (max-width: 768px) {
     .topo {
         justify-content: center;
@@ -47,7 +40,6 @@
     }
 }
 
-/* Celulares */
 @media (max-width: 480px) {
     .cabecalho-principal,
     .rodape-principal {
@@ -69,7 +61,6 @@
         width: 100%;
     }
 
-    /* Área de toque confortável */
     .botao,
     .botao-login {
         min-height: 44px;
@@ -86,14 +77,12 @@
     }
 }
 
-/* Celulares muito pequenos */
 @media (max-width: 340px) {
     .dieta {
         grid-template-columns: 1fr;
     }
 }
 
-/* Respeita quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
     .botao,
     .botao-login {
@@ -106,9 +95,6 @@
     }
 }
 
-/* =====================================================
-   BASE (do style.css até o footer)
-   ===================================================== */
 
 * {
     box-sizing: border-box;
@@ -238,10 +224,6 @@ footer a:hover {
 }
 
 
-/* =====================================================
-   BOTÕES
-   ===================================================== */
-
 .botao,
 .botao-login {
     display: inline-flex;
@@ -292,10 +274,6 @@ footer a:hover {
 }
 
 
-/* =====================================================
-   PERFIL DO USUÁRIO
-   ===================================================== */
-
 .perfil {
     display: flex;
     flex-direction: column;
@@ -307,7 +285,6 @@ footer a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Bloco base (topo, cards e seções) */
 .bloco,
 .card {
     background-color: var(--card);
@@ -331,7 +308,6 @@ footer a:hover {
     color: var(--texto-principal);
 }
 
-/* Topo */
 .topo {
     display: flex;
     align-items: center;
@@ -372,7 +348,6 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
-/* Resumo */
 .resumo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
@@ -402,14 +377,12 @@ footer a:hover {
     color: var(--texto-discreto);
 }
 
-/* Grade de seções */
 .grade {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 24px;
 }
 
-/* Lista (objetivos e histórico) */
 .lista {
     display: flex;
     flex-direction: column;
@@ -445,7 +418,6 @@ footer a:hover {
     background-color: var(--verde-secundario);
 }
 
-/* Dieta */
 .dieta {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -470,7 +442,6 @@ footer a:hover {
     color: var(--texto-secundario);
 }
 
-/* Tabela */
 .tabela-scroll {
     overflow-x: auto;
 }
@@ -506,7 +477,6 @@ footer a:hover {
     color: var(--negativo);
 }
 
-/* Histórico */
 .historico {
     gap: 0;
 }
