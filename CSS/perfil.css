@@ -1,0 +1,537 @@
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+
+/* Telas grandes (TVs, monitores ultrawide) */
+@media (min-width: 1600px) {
+    .perfil {
+        max-width: 1280px;
+    }
+}
+
+/* Notebooks pequenos e tablets na horizontal */
+@media (max-width: 1024px) {
+    .cabecalho-principal {
+        justify-content: center;
+    }
+
+    body::before {
+        background-size: cover;
+    }
+}
+
+/* Tablets na vertical */
+@media (max-width: 768px) {
+    .topo {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .dados {
+        flex-basis: 100%;
+        order: 2;
+    }
+
+    .foto {
+        order: 1;
+    }
+
+    .acoes {
+        order: 3;
+        justify-content: center;
+    }
+
+    .bloco-cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .cabecalho-principal,
+    .rodape-principal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        gap: 4px 14px;
+    }
+
+    .acoes,
+    .acoes .botao,
+    .acoes .botao-login {
+        width: 100%;
+    }
+
+    .bloco-cabecalho .botao {
+        width: 100%;
+    }
+
+    /* Área de toque confortável */
+    .botao,
+    .botao-login {
+        min-height: 44px;
+    }
+
+    .linha {
+        font-size: 15px;
+    }
+
+    .tabela th,
+    .tabela td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 340px) {
+    .dieta {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .botao,
+    .botao-login {
+        transition: none;
+    }
+
+    .botao:hover,
+    .botao-login:hover {
+        transform: none;
+    }
+}
+
+/* =====================================================
+   BASE (do style.css até o footer)
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-principal: #42E89A;
+    --verde-secundario: #2DD98A;
+    --verde-escuro: #123F35;
+
+    --fundo: #070D14;
+    --fundo-secundario: #0B121B;
+    --card: #131C29;
+    --borda: #26374A;
+
+    --texto-principal: #F5F7FA;
+    --texto-secundario: #A8B5C7;
+    --texto-discreto: #718096;
+    --negativo: #F2766B;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto-principal);
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(../HTML/IMAGEM/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--texto-principal);
+}
+
+h2,
+h3 {
+    color: var(--texto-secundario);
+}
+
+p {
+    color: var(--texto-principal);
+}
+
+figure {
+    text-align: center;
+}
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.cabecalho-principal,
+.rodape-principal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    background-color: var(--fundo-secundario);
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+.cabecalho-principal {
+    border-bottom: 2px solid var(--borda);
+}
+
+.rodape-principal {
+    border-top: 2px solid var(--borda);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px clamp(16px, 5vw, 130px);
+}
+
+nav a {
+    padding: 5px;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 500;
+    color: var(--texto-secundario);
+    transition: color .2s ease;
+}
+
+nav a:hover,
+nav a.ativo {
+    color: var(--verde-secundario);
+}
+
+footer {
+    margin: auto;
+}
+
+footer a {
+    padding: 5px;
+    font-size: clamp(15px, 1.6vw, 18px);
+    font-weight: 500;
+    color: var(--texto-secundario);
+    transition: color .2s ease;
+}
+
+footer a:hover {
+    color: var(--verde-secundario);
+}
+
+
+/* =====================================================
+   BOTÕES
+   ===================================================== */
+
+.botao,
+.botao-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 24px;
+    border: 2px solid var(--verde-secundario);
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.botao {
+    background-color: transparent;
+    color: var(--verde-secundario);
+}
+
+.botao-login {
+    background-color: var(--verde-secundario);
+    color: var(--verde-escuro);
+}
+
+@media (hover: hover) {
+    .botao:hover,
+    .botao-login:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(45, 217, 138, .3);
+    }
+
+    .botao:hover {
+        background-color: var(--verde-escuro);
+    }
+}
+
+.botao:active,
+.botao-login:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.botao:focus-visible,
+.botao-login:focus-visible {
+    outline: 2px solid var(--verde-principal);
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   PERFIL DO USUÁRIO
+   ===================================================== */
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Bloco base (topo, cards e seções) */
+.bloco,
+.card {
+    background-color: var(--card);
+    border: 2px solid var(--borda);
+    border-radius: 14px;
+    padding: clamp(16px, 3vw, 24px);
+}
+
+.bloco-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--texto-principal);
+}
+
+/* Topo */
+.topo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--verde-secundario);
+    object-fit: cover;
+    background-color: var(--fundo-secundario);
+}
+
+.dados {
+    flex: 1;
+    min-width: 220px;
+}
+
+.nome {
+    margin: 0 0 4px;
+    font-size: clamp(22px, 4vw, 28px);
+    overflow-wrap: anywhere;
+}
+
+.info {
+    margin: 0;
+    font-size: 15px;
+    color: var(--texto-secundario);
+    overflow-wrap: anywhere;
+}
+
+.acoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Resumo */
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 16px;
+}
+
+.card {
+    padding: 18px 20px;
+}
+
+.rotulo {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.valor {
+    margin: 0;
+    font-size: clamp(22px, 3.5vw, 28px);
+    font-weight: 700;
+    color: var(--verde-principal);
+}
+
+.detalhe {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--texto-discreto);
+}
+
+/* Grade de seções */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 24px;
+}
+
+/* Lista (objetivos e histórico) */
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.percentual {
+    font-weight: 600;
+    color: var(--verde-principal);
+}
+
+.barra {
+    height: 10px;
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progresso {
+    height: 100%;
+    background-color: var(--verde-secundario);
+}
+
+/* Dieta */
+.dieta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dieta div {
+    padding: 14px;
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dieta strong {
+    display: block;
+    font-size: clamp(18px, 2.6vw, 22px);
+}
+
+.dieta span {
+    font-size: 13px;
+    color: var(--texto-secundario);
+}
+
+/* Tabela */
+.tabela-scroll {
+    overflow-x: auto;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.tabela th,
+.tabela td {
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabela th {
+    font-weight: 600;
+    color: var(--texto-secundario);
+}
+
+.tabela tr:last-child td {
+    border-bottom: none;
+}
+
+.positivo {
+    color: var(--verde-principal);
+}
+
+.negativo {
+    color: var(--negativo);
+}
+
+/* Histórico */
+.historico {
+    gap: 0;
+}
+
+.historico li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.historico li:last-child {
+    border-bottom: none;
+}
+
+.historico p {
+    margin: 0;
+}
+
+.historico small,
+.data {
+    font-size: 13px;
+    color: var(--texto-discreto);
+}
+
