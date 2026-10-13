@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="../CSS/perfil.css">
+</head>
+
+<body>
+    <header class="cabecalho-principal">
+        <figure>
+            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
+        </figure>
+
+        <nav>
+            <a href="index.html"><b>Inicio</b></a>
+            <a href="treinos.html"><b>Treinos</b></a>
+            <a href="Inicio-dieta.html"><b>Dietas</b></a>
+            <a href="calculadora.html"><b>Calculadoras</b></a>
+            <a href="perfil.html" class="ativo"><b>Perfil</b></a>
+        </nav>
+    </header>
+
+    <main class="perfil">
+
+        <section class="bloco topo">
+            <img class="foto" src="IMAGEM/avatar-padrao.png" alt="Foto do usuário">
+
+            <div class="dados">
+                <h1 class="nome">Nome do Usuário</h1>
+                <p class="info">usuario@email.com</p>
+                <p class="info">Membro desde março de 2026</p>
+            </div>
+
+            <div class="acoes">
+                <button class="botao" type="button">Editar perfil</button>
+                <a class="botao-login" href="login.html">Sair</a>
+            </div>
+        </section>
+
+        <section class="resumo">
+            <article class="card">
+                <p class="rotulo">Peso atual</p>
+                <p class="valor">78,5 kg</p>
+                <p class="detalhe">Início: 74,0 kg</p>
+            </article>
+            <article class="card">
+                <p class="rotulo">IMC</p>
+                <p class="valor">24,8</p>
+                <p class="detalhe">Peso normal</p>
+            </article>
+            <article class="card">
+                <p class="rotulo">Treinos no mês</p>
+                <p class="valor">14</p>
+                <p class="detalhe">Meta: 16</p>
+            </article>
+        </section>
+
+        <div class="grade">
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Objetivos</h2>
+                    <button class="botao" type="button">Novo objetivo</button>
+                </div>
+
+                <ul class="lista">
+                    <li>
+                        <div class="linha">
+                            <span>Chegar a 82 kg</span>
+                            <span class="percentual">75%</span>
+                        </div>
+                        <div class="barra"><div class="progresso" style="width: 75%"></div></div>
+                    </li>
+                    <li>
+                        <div class="linha">
+                            <span>Treinar 4x por semana</span>
+                            <span class="percentual">88%</span>
+                        </div>
+                        <div class="barra"><div class="progresso" style="width: 88%"></div></div>
+                    </li>
+                    <li>
+                        <div class="linha">
+                            <span>Cintura abaixo de 82 cm</span>
+                            <span class="percentual">40%</span>
+                        </div>
+                        <div class="barra"><div class="progresso" style="width: 40%"></div></div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Dieta atual</h2>
+                    <a class="botao" href="Inicio-dieta.html">Ver dietas</a>
+                </div>
+
+                <div class="dieta">
+                    <div><strong>2.900</strong><span>kcal por dia</span></div>
+                    <div><strong>160 g</strong><span>Proteínas</span></div>
+                    <div><strong>380 g</strong><span>Carboidratos</span></div>
+                    <div><strong>80 g</strong><span>Gorduras</span></div>
+                </div>
+            </section>
+        </div>
+
+        <section class="bloco">
+            <div class="bloco-cabecalho">
+                <h2 class="titulo">Evolução</h2>
+                <button class="botao" type="button">Registrar medidas</button>
+            </div>
+
+            <div class="tabela-scroll">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Peso</th>
+                            <th>Variação</th>
+                            <th>Cintura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/06/2026</td>
+                            <td>78,5 kg</td>
+                            <td class="positivo">+0,6 kg</td>
+                            <td>84 cm</td>
+                        </tr>
+                        <tr>
+                            <td>01/05/2026</td>
+                            <td>77,9 kg</td>
+                            <td class="positivo">+1,1 kg</td>
+                            <td>84 cm</td>
+                        </tr>
+                        <tr>
+                            <td>01/04/2026</td>
+                            <td>76,8 kg</td>
+                            <td class="positivo">+2,8 kg</td>
+                            <td>85 cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bloco">
+            <div class="bloco-cabecalho">
+                <h2 class="titulo">Histórico de treinos</h2>
+                <a class="botao" href="treinos.html">Ver treinos</a>
+            </div>
+
+            <ul class="lista historico">
+                <li>
+                    <div>
+                        <p>Treino A: Peito e tríceps</p>
+                        <small>55 min</small>
+                    </div>
+                    <span class="data">10/10/2026</span>
+                </li>
+                <li>
+                    <div>
+                        <p>Treino B: Costas e bíceps</p>
+                        <small>60 min</small>
+                    </div>
+                    <span class="data">08/10/2026</span>
+                </li>
+                <li>
+                    <div>
+                        <p>Treino C: Pernas</p>
+                        <small>65 min</small>
+                    </div>
+                    <span class="data">06/10/2026</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="rodape-principal">
+        <p>Desenvolvido por alunos da Unisal - Campus São jose 2026</p>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="#"><b>Fale Conosco</b></a>
+    </footer>
+</body>
+
+</html>
