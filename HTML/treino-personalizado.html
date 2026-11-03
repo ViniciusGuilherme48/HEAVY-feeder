@@ -9,30 +9,21 @@
   <link href="../CSS/style.css" rel="stylesheet"/>
   <link href="../CSS/stylePerso.css" rel="stylesheet"/>
   <link href="../CSS/treinos-responsive.css" rel="stylesheet"/>
- </head>
+     <link rel="stylesheet" href="../CSS/padrao-site.css">
+</head>
  <body class="pagina-treinos pagina-personalizado">
   <header class="cabecalho-principal">
-   <a aria-label="P&aacute;gina inicial da Heavy Feeder" class="logo-link" href="index.html">
-    <img alt="Logo Heavy Feeder" class="logo-principal" src="IMAGEM/logo heavy feeder png.png"/>
-   </a>
-   <nav aria-label="Menu principal" class="menu-principal">
-    <a href="index.html">
-     In&iacute;cio
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
     </a>
-    <a aria-current="page" href="treinos.html">
-     Treinos
-    </a>
-    <a href="Inicio-dieta.html">
-     Dietas
-    </a>
-    <a href="calculadora.html">
-     Calculadoras
-    </a>
-    <a class="botao-login" href="login.html">
-     Login
-    </a>
-   </nav>
-  </header>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="Inicio-dieta.html">Dietas</a>
+        <a href="calculadora.html">Calculadoras</a>
+        <a href="login.html" class="botao-login">Login</a>
+    </nav>
+</header>
   <main>
    <button aria-label="Voltar &agrave; p&aacute;gina anterior" class="botao-voltar" onclick="if (window.history.length &gt; 1) { window.history.back(); } else { window.location.href = 'treinos.html'; }" type="button">
     &larr; Voltar

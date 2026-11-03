@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial Dietas</title>
     <link rel="stylesheet" href="../CSS/style.css">
+
+    <link rel="stylesheet" href="../CSS/treinos-responsive.css">
+    <link rel="stylesheet" href="../CSS/padrao-site.css">
 </head>
 
-<body>
+<body class="pagina-treinos">
     <header class="cabecalho-principal">
-        <figure>
-            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
-        </figure>
-
-        <nav>
-            <a href="index.html"><b>Inicio</b></a>
-            <a href="treinos.html"><b>Treinos</b></a>
-            <a href="Inicio-dieta.html"><b>Dietas</b></a>
-            <a href="calculadora.html"><b>Calculadoras</b></a>
-            <a href="login.html"><button class="botao-login">Login</button></a>
-        </nav>
-    </header>
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="Inicio-dieta.html">Dietas</a>
+        <a href="calculadora.html">Calculadoras</a>
+        <a href="login.html" class="botao-login">Login</a>
+    </nav>
+</header>
 
     <h2>Alimente seus Objetivos</h2>
     <p>Uma alimentação adequada pode fazer toda a diferença na sua evolução. Organize suas refeições, conheça melhor
@@ -32,33 +34,33 @@
 
 
     <main id="conteudo-principal">
-        <a href="superavit.html">
-            <section class="card">
+        <div class="carrossel-treinos" data-carousel>
+            <button class="carrossel-controle carrossel-anterior" type="button" aria-label="Ver cartões anteriores" data-carousel-prev><span aria-hidden="true">&#8592;</span></button>
+            <div class="lista-treinos" data-carousel-track tabindex="0" aria-label="Opções disponíveis">
+                <a class="card-link" href="superavit.html">
+            <article class="card">
                 <h2>Superavit</h2>
                 <p>Consuma mais calorias do que gasta para favorecer o ganho de peso e de massa muscular junto ao treino.</p>
-            </section>
-        </a>
-
-        <a href="deficit.html">
-            <section class="card">
+            </article></a>
+                <a class="card-link" href="deficit.html">
+            <article class="card">
                 <h2>Deficit</h2>
                 <p>Consuma menos calorias do que gasta para utilizar reservas de energia e contribuir para a perda de gordura.</p>
-            </section>
-        </a>
-
-        <a href="manutenção.html">
-            <section class="card">
+            </article></a>
+                <a class="card-link" href="manutenção.html">
+            <article class="card">
                 <h2>Manutenção</h2>
                 <p>Mantenha o equilíbrio entre calorias consumidas e gastas para ajudar a manter o peso corporal estável.</p>
-            </section>
-        </a>
-
-        <a href="personalizar.html">
-            <section class="card">
+            </article></a>
+                <a class="card-link" href="personalizar.html">
+            <article class="card">
                 <h2>Personalizado</h2>
                 <p>Responda algumas perguntas para criar um plano alimentar alinhado ao seu objetivo e à sua rotina.</p>
-            </section>
-        </a>
+            </article></a>
+            </div>
+            <button class="carrossel-controle carrossel-proximo" type="button" aria-label="Ver próximos cartões" data-carousel-next><span aria-hidden="true">&#8594;</span></button>
+        </div>
+        <p class="carrossel-instrucao">Use as setas para explorar as opções.</p>
     </main>
 
     <footer class="rodape-principal">
@@ -66,6 +68,32 @@
         <a href="QuemSomos.html"><b>Quem Somos</b></a>
         <a href="#"><b>Fale Conosco</b></a>
     </footer>
+
+<script>
+(() => {
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const track = carousel.querySelector('[data-carousel-track]');
+        const previous = carousel.querySelector('[data-carousel-prev]');
+        const next = carousel.querySelector('[data-carousel-next]');
+        const scrollByCard = (direction) => {
+            const card = track.querySelector('.card-link');
+            if (!card) return;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        };
+        previous.addEventListener('click', () => scrollByCard(-1));
+        next.addEventListener('click', () => scrollByCard(1));
+        const updateControls = () => {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            previous.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft >= maxScroll - 2;
+        };
+        track.addEventListener('scroll', updateControls, { passive: true });
+        window.addEventListener('resize', updateControls);
+        updateControls();
+    });
+})();
+</script>
 </body>
 
 </html>

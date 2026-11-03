@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadoras</title>
     <link rel="stylesheet" href="../CSS/style.css">
+
+    <link rel="stylesheet" href="../CSS/treinos-responsive.css">
+    <link rel="stylesheet" href="../CSS/padrao-site.css">
 </head>
 
-<body>
+<body class="pagina-treinos">
 
     <header class="cabecalho-principal">
-        <figure>
-            <img src="IMAGEM/logo heavy feeder png.png" alt="LOGO HEAVY FEEDER" width="300">
-        </figure>
-
-        <nav>
-            <a href="index.html"><b>Inicio</b></a>
-            <a href="treinos.html"><b>Treinos</b></a>
-            <a href="Inicio-dieta.html"><b>Dietas</b></a>
-            <a href="calculadora.html"><b>Calculadoras</b></a>
-            <a href="login.html"><button class="botao-login">Login</button></a>
-        </nav>
-    </header>
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="Inicio-dieta.html">Dietas</a>
+        <a href="calculadora.html">Calculadoras</a>
+        <a href="login.html" class="botao-login">Login</a>
+    </nav>
+</header>
     <section class="Bem-vindo">
         <h2>Entenda seus números. Alcance seus objetivos.</h2>
         <p>Nossas calculadoras ajudam você a acompanhar seu desenvolvimento e entender melhor suas necessidades. </p>
@@ -30,25 +32,28 @@
     </section>
 
     <main id="conteudo-principal">
-
-        <a href="7dobras.html">
-            <section class="card">
+        <div class="carrossel-treinos" data-carousel>
+            <button class="carrossel-controle carrossel-anterior" type="button" aria-label="Ver cartões anteriores" data-carousel-prev><span aria-hidden="true">&#8592;</span></button>
+            <div class="lista-treinos" data-carousel-track tabindex="0" aria-label="Opções disponíveis">
+                <a class="card-link" href="7dobras.html">
+            <article class="card">
                 <h2>7 Dobras</h2>
                 <p>Estime o percentual de gordura corporal utilizando o método de 7 dobras cutâneas.</p>
-            </section>
-        </a>
-        <a href="macronutrientes.html">
-            <section class="card">
+            </article></a>
+                <a class="card-link" href="macronutrientes.html">
+            <article class="card">
                 <h2>Macronutrientes</h2>
                 <p>Calcule uma estimativa diária de proteínas, carboidratos e gorduras com base no seu objetivo.</p>
-            </section>
-        </a>
-        <a href="gasto-energetico.html">
-            <section class="card">
+            </article></a>
+                <a class="card-link" href="gasto-energetico.html">
+            <article class="card">
                 <h2>Gasto Energético</h2>
                 <p>Estime seu gasto energético diário (TDEE) com base na fórmula de Harris-Benedict.</p>
-            </section>
-        </a>
+            </article></a>
+            </div>
+            <button class="carrossel-controle carrossel-proximo" type="button" aria-label="Ver próximos cartões" data-carousel-next><span aria-hidden="true">&#8594;</span></button>
+        </div>
+        <p class="carrossel-instrucao">Use as setas para explorar as opções.</p>
     </main>
 
     <footer class="rodape-principal">
@@ -57,6 +62,32 @@
         <a href="#"><b>Fale Conosco</b></a>
     </footer>
 
+
+<script>
+(() => {
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const track = carousel.querySelector('[data-carousel-track]');
+        const previous = carousel.querySelector('[data-carousel-prev]');
+        const next = carousel.querySelector('[data-carousel-next]');
+        const scrollByCard = (direction) => {
+            const card = track.querySelector('.card-link');
+            if (!card) return;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        };
+        previous.addEventListener('click', () => scrollByCard(-1));
+        next.addEventListener('click', () => scrollByCard(1));
+        const updateControls = () => {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            previous.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft >= maxScroll - 2;
+        };
+        track.addEventListener('scroll', updateControls, { passive: true });
+        window.addEventListener('resize', updateControls);
+        updateControls();
+    });
+})();
+</script>
 </body>
 
 </html>
