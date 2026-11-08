@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/style-global.css">
     <link rel="stylesheet" href="../CSS/style-navegacao.css">
     <link rel="stylesheet" href="../CSS/style-tabela.css">
+    <link rel="stylesheet" href="../CSS/style-cards.css">
 </head>
 <body class="pagina-treinos">
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -25,7 +26,7 @@
     </nav>
 </header>
 <main id="conteudo-principal" class="conteudo-artigo">
-    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior">← Voltar</button>
+    
     <article>
         <header class="titulo-artigo">
             <h1>Força e Powerlifting</h1>
@@ -56,18 +57,23 @@
         <section class="plano-semanal" aria-labelledby="plano-forca">
             <h2 id="plano-forca">Exemplo de divisão semanal para força</h2>
             <p>Esta rotina combina Push / Pull / Legs + Upper / Lower com foco nos movimentos básicos do powerlifting: agachamento, supino e levantamento terra. Use cargas que permitam manter a técnica; evite testar cargas máximas sem preparação e supervisão adequada.</p>
-            <div class="treinos-semana">
-                <article class="dia-treino"><h3>Segunda — Push (ênfase no supino)</h3><ul><li>Supino reto com barra — 4 × 4–6</li><li>Supino pausado leve — 3 × 5–6</li><li>Desenvolvimento com halteres — 3 × 6–8</li><li>Supino fechado ou tríceps na polia — 3 × 8–10</li><li>Elevação lateral — 2 × 12–15</li></ul></article>
-                <article class="dia-treino"><h3>Terça — Pull (costas e cadeia posterior)</h3><ul><li>Levantamento terra técnico — 3 × 3–5</li><li>Remada com apoio — 4 × 6–8</li><li>Puxada alta — 3 × 8–10</li><li>Extensão lombar leve ou bird-dog — 2–3 séries controladas</li><li>Rosca bíceps — 2–3 × 8–12</li></ul></article>
-                <article class="dia-treino"><h3>Quarta — Legs (ênfase no agachamento)</h3><ul><li>Agachamento com barra — 4 × 3–6</li><li>Agachamento com pausa leve — 3 × 4–6</li><li>Leg press — 3 × 8–10</li><li>Mesa flexora — 3 × 8–12</li><li>Panturrilhas — 3 × 10–15</li></ul></article>
-                <article class="dia-treino"><h3>Quinta — Upper (técnica e volume moderado)</h3><ul><li>Supino com carga moderada — 3 × 6–8</li><li>Remada baixa — 3 × 6–10</li><li>Desenvolvimento leve — 2–3 × 8–10</li><li>Puxada neutra — 3 × 8–10</li><li>Face pull — 2 × 12–15</li></ul></article>
-                <article class="dia-treino"><h3>Sexta — Lower (terra e assistência)</h3><ul><li>Levantamento terra — 3 × 3–5, com técnica estável</li><li>Agachamento frontal ou goblet — 3 × 6–8</li><li>Hip thrust — 3 × 6–10</li><li>Mesa flexora — 3 × 8–12</li><li>Abdominal com controle — 3 séries</li></ul></article>
-                <article class="dia-treino dia-recuperacao"><h3>Sábado — Recuperação ativa opcional</h3><p>Caminhada leve e mobilidade confortável. Evite transformar o dia em outra sessão pesada.</p></article>
-                <article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Priorize sono e recuperação. Ajuste o plano se o desempenho cair ou o cansaço se acumular.</p></article>
+            <div class="carrossel-semanal" data-carrossel-semanal>
+                <div class="seletor-dias" aria-label="Selecionar dia da semana"><button class="seletor-dia" type="button" data-dia-index="0" aria-pressed="false">Segunda</button><button class="seletor-dia" type="button" data-dia-index="1" aria-pressed="false">Terça</button><button class="seletor-dia" type="button" data-dia-index="2" aria-pressed="false">Quarta</button><button class="seletor-dia" type="button" data-dia-index="3" aria-pressed="false">Quinta</button><button class="seletor-dia" type="button" data-dia-index="4" aria-pressed="false">Sexta</button><button class="seletor-dia" type="button" data-dia-index="5" aria-pressed="false">Sábado</button><button class="seletor-dia" type="button" data-dia-index="6" aria-pressed="false">Domingo</button></div>
+                <div class="janela-carrossel-semanal">
+                    <div class="trilha-semanal">
+                        <article class="dia-treino"><h3>Segunda — Push (ênfase no supino)</h3><ul><li>Supino reto com barra — 4 × 4–6</li><li>Supino pausado leve — 3 × 5–6</li><li>Desenvolvimento com halteres — 3 × 6–8</li><li>Supino fechado ou tríceps na polia — 3 × 8–10</li><li>Elevação lateral — 2 × 12–15</li></ul></article><article class="dia-treino"><h3>Terça — Pull (costas e cadeia posterior)</h3><ul><li>Levantamento terra técnico — 3 × 3–5</li><li>Remada com apoio — 4 × 6–8</li><li>Puxada alta — 3 × 8–10</li><li>Extensão lombar leve ou bird-dog — 2–3 séries controladas</li><li>Rosca bíceps — 2–3 × 8–12</li></ul></article><article class="dia-treino"><h3>Quarta — Legs (ênfase no agachamento)</h3><ul><li>Agachamento com barra — 4 × 3–6</li><li>Agachamento com pausa leve — 3 × 4–6</li><li>Leg press — 3 × 8–10</li><li>Mesa flexora — 3 × 8–12</li><li>Panturrilhas — 3 × 10–15</li></ul></article><article class="dia-treino"><h3>Quinta — Upper (técnica e volume moderado)</h3><ul><li>Supino com carga moderada — 3 × 6–8</li><li>Remada baixa — 3 × 6–10</li><li>Desenvolvimento leve — 2–3 × 8–10</li><li>Puxada neutra — 3 × 8–10</li><li>Face pull — 2 × 12–15</li></ul></article><article class="dia-treino"><h3>Sexta — Lower (terra e assistência)</h3><ul><li>Levantamento terra — 3 × 3–5, com técnica estável</li><li>Agachamento frontal ou goblet — 3 × 6–8</li><li>Hip thrust — 3 × 6–10</li><li>Mesa flexora — 3 × 8–12</li><li>Abdominal com controle — 3 séries</li></ul></article><article class="dia-treino dia-recuperacao"><h3>Sábado — Recuperação ativa opcional</h3><p>Caminhada leve e mobilidade confortável. Evite transformar o dia em outra sessão pesada.</p></article><article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Priorize sono e recuperação. Ajuste o plano se o desempenho cair ou o cansaço se acumular.</p></article>
+                    </div>
+                </div>
+                <div class="navegacao-semanal">
+                    <button class="controle-semanal" type="button" data-anterior aria-label="Treino do dia anterior">← Anterior</button>
+                    <span class="progresso-semanal" aria-live="polite">Segunda-feira</span>
+                    <button class="controle-semanal" type="button" data-proximo aria-label="Treino do próximo dia">Próximo →</button>
+                </div>
             </div>
             <p class="nota-treino">Descanse cerca de 2–4 minutos nas séries principais e 1–3 minutos nos exercícios auxiliares, conforme a necessidade. Mantenha algumas repetições na reserva na maior parte do treino. A seleção, as cargas e a frequência devem ser ajustadas ao nível individual, de preferência com orientação de um profissional de Educação Física.</p>
         </section>
 </article>
+    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior" onclick="if (history.length > 1) history.back(); else location.href = 'treinos.html';">← Voltar</button>
 </main>
 <footer class="rodape-principal">
     <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
@@ -76,6 +82,58 @@
         <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
     </nav>
 </footer>
-<script src="../JS/botao-voltar.js"></script>
+
+<script>
+document.querySelectorAll("[data-carrossel-semanal]").forEach(function (carrossel) {
+    const trilha = carrossel.querySelector(".trilha-semanal");
+    const slides = Array.from(trilha.children);
+    const botoesDias = Array.from(carrossel.querySelectorAll("[data-dia-index]"));
+    const anterior = carrossel.querySelector("[data-anterior]");
+    const proximo = carrossel.querySelector("[data-proximo]");
+    const progresso = carrossel.querySelector(".progresso-semanal");
+    const nomes = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+    const hoje = (new Date().getDay() + 6) % 7;
+    let indice = hoje;
+
+    const indicador = document.createElement("span");
+    indicador.className = "indicador-hoje";
+    indicador.textContent = "HOJE";
+    botoesDias[hoje].appendChild(indicador);
+
+    function atualizar() {
+        trilha.style.transform = "translateX(-" + (indice * 100) + "%)";
+        botoesDias.forEach(function (botao, i) {
+            botao.setAttribute("aria-pressed", i === indice ? "true" : "false");
+        });
+        progresso.textContent = nomes[indice];
+        anterior.disabled = indice === 0;
+        proximo.disabled = indice === slides.length - 1;
+    }
+
+    botoesDias.forEach(function (botao, i) {
+        botao.addEventListener("click", function () {
+            indice = i;
+            atualizar();
+        });
+    });
+
+    anterior.addEventListener("click", function () {
+        if (indice > 0) {
+            indice--;
+            atualizar();
+        }
+    });
+
+    proximo.addEventListener("click", function () {
+        if (indice < slides.length - 1) {
+            indice++;
+            atualizar();
+        }
+    });
+
+    atualizar();
+});
+</script>
 </body>
 </html>
+
