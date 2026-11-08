@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/style-global.css">
     <link rel="stylesheet" href="../CSS/style-navegacao.css">
     <link rel="stylesheet" href="../CSS/style-tabela.css">
+    <link rel="stylesheet" href="../CSS/style-cards.css">
 </head>
 <body class="pagina-treinos">
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -25,7 +26,7 @@
     </nav>
 </header>
 <main id="conteudo-principal" class="conteudo-artigo">
-    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior">← Voltar</button>
+    
     <article>
         <header class="titulo-artigo">
             <h1>Hipertrofia</h1>
@@ -73,18 +74,23 @@
         <section class="plano-semanal" aria-labelledby="plano-hipertrofia">
             <h2 id="plano-hipertrofia">Exemplo de divisão semanal para hipertrofia</h2>
             <p>Esta sugestão usa a divisão Push / Pull / Legs + Upper / Lower (PPL + Upper/Lower). As séries são exemplos iniciais: ajuste o volume à sua experiência, recuperação e orientação profissional. Faça as séries com técnica controlada e termine, em geral, com cerca de 1 a 3 repetições “na reserva”.</p>
-            <div class="treinos-semana">
-                <article class="dia-treino"><h3>Segunda — Push (peito, ombros e tríceps)</h3><ul><li>Supino reto com barra — 3–4 × 6–10</li><li>Supino inclinado com halteres — 3 × 8–12</li><li>Desenvolvimento de ombros — 3 × 8–12</li><li>Elevação lateral — 3 × 12–15</li><li>Tríceps na polia — 3 × 10–15</li></ul></article>
-                <article class="dia-treino"><h3>Terça — Pull (costas e bíceps)</h3><ul><li>Puxada alta — 3–4 × 8–12</li><li>Remada baixa — 3 × 8–12</li><li>Remada com halter — 3 × 8–12</li><li>Crucifixo inverso — 2–3 × 12–15</li><li>Rosca direta — 3 × 8–12</li><li>Rosca martelo — 2 × 10–15</li></ul></article>
-                <article class="dia-treino"><h3>Quarta — Legs (pernas completas)</h3><ul><li>Agachamento ou leg press — 3–4 × 6–10</li><li>Levantamento romeno (stiff) — 3 × 8–10</li><li>Cadeira extensora — 3 × 10–15</li><li>Mesa flexora — 3 × 10–15</li><li>Elevação de panturrilhas — 3 × 12–20</li></ul></article>
-                <article class="dia-treino"><h3>Quinta — Upper (parte superior)</h3><ul><li>Supino inclinado — 3 × 8–12</li><li>Remada com apoio no peito — 3 × 8–12</li><li>Puxada neutra — 3 × 8–12</li><li>Elevação lateral — 3 × 12–15</li><li>Rosca alternada — 2–3 × 10–15</li><li>Extensão de tríceps — 2–3 × 10–15</li></ul></article>
-                <article class="dia-treino"><h3>Sexta — Lower (ênfase em pernas e glúteos)</h3><ul><li>Leg press — 3 × 10–12</li><li>Hip thrust — 3 × 8–12</li><li>Afundo ou passada — 3 × 8–12 por perna</li><li>Cadeira flexora — 3 × 10–15</li><li>Abdução de quadril — 2–3 × 12–20</li><li>Panturrilha sentado — 3 × 12–20</li></ul></article>
-                <article class="dia-treino dia-recuperacao"><h3>Sábado — Recuperação opcional</h3><p>Caminhada leve, mobilidade ou atividade recreativa, sem transformar o dia em mais um treino pesado.</p></article>
-                <article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Priorize sono, alimentação adequada e recuperação para a próxima semana.</p></article>
+            <div class="carrossel-semanal" data-carrossel-semanal>
+                <div class="seletor-dias" aria-label="Selecionar dia da semana"><button class="seletor-dia" type="button" data-dia-index="0" aria-pressed="false">Segunda</button><button class="seletor-dia" type="button" data-dia-index="1" aria-pressed="false">Terça</button><button class="seletor-dia" type="button" data-dia-index="2" aria-pressed="false">Quarta</button><button class="seletor-dia" type="button" data-dia-index="3" aria-pressed="false">Quinta</button><button class="seletor-dia" type="button" data-dia-index="4" aria-pressed="false">Sexta</button><button class="seletor-dia" type="button" data-dia-index="5" aria-pressed="false">Sábado</button><button class="seletor-dia" type="button" data-dia-index="6" aria-pressed="false">Domingo</button></div>
+                <div class="janela-carrossel-semanal">
+                    <div class="trilha-semanal">
+                        <article class="dia-treino"><h3>Segunda — Push (peito, ombros e tríceps)</h3><ul><li>Supino reto com barra — 3–4 × 6–10</li><li>Supino inclinado com halteres — 3 × 8–12</li><li>Desenvolvimento de ombros — 3 × 8–12</li><li>Elevação lateral — 3 × 12–15</li><li>Tríceps na polia — 3 × 10–15</li></ul></article><article class="dia-treino"><h3>Terça — Pull (costas e bíceps)</h3><ul><li>Puxada alta — 3–4 × 8–12</li><li>Remada baixa — 3 × 8–12</li><li>Remada com halter — 3 × 8–12</li><li>Crucifixo inverso — 2–3 × 12–15</li><li>Rosca direta — 3 × 8–12</li><li>Rosca martelo — 2 × 10–15</li></ul></article><article class="dia-treino"><h3>Quarta — Legs (pernas completas)</h3><ul><li>Agachamento ou leg press — 3–4 × 6–10</li><li>Levantamento romeno (stiff) — 3 × 8–10</li><li>Cadeira extensora — 3 × 10–15</li><li>Mesa flexora — 3 × 10–15</li><li>Elevação de panturrilhas — 3 × 12–20</li></ul></article><article class="dia-treino"><h3>Quinta — Upper (parte superior)</h3><ul><li>Supino inclinado — 3 × 8–12</li><li>Remada com apoio no peito — 3 × 8–12</li><li>Puxada neutra — 3 × 8–12</li><li>Elevação lateral — 3 × 12–15</li><li>Rosca alternada — 2–3 × 10–15</li><li>Extensão de tríceps — 2–3 × 10–15</li></ul></article><article class="dia-treino"><h3>Sexta — Lower (ênfase em pernas e glúteos)</h3><ul><li>Leg press — 3 × 10–12</li><li>Hip thrust — 3 × 8–12</li><li>Afundo ou passada — 3 × 8–12 por perna</li><li>Cadeira flexora — 3 × 10–15</li><li>Abdução de quadril — 2–3 × 12–20</li><li>Panturrilha sentado — 3 × 12–20</li></ul></article><article class="dia-treino dia-recuperacao"><h3>Sábado — Recuperação opcional</h3><p>Caminhada leve, mobilidade ou atividade recreativa, sem transformar o dia em mais um treino pesado.</p></article><article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Priorize sono, alimentação adequada e recuperação para a próxima semana.</p></article>
+                    </div>
+                </div>
+                <div class="navegacao-semanal">
+                    <button class="controle-semanal" type="button" data-anterior aria-label="Treino do dia anterior">← Anterior</button>
+                    <span class="progresso-semanal" aria-live="polite">Segunda-feira</span>
+                    <button class="controle-semanal" type="button" data-proximo aria-label="Treino do próximo dia">Próximo →</button>
+                </div>
             </div>
             <p class="nota-treino">Descanso entre séries: em geral, 2–3 minutos nos exercícios multiarticulares e 1–2 minutos nos isoladores, ajustando conforme o esforço. Aumente carga ou repetições gradualmente quando completar as séries com boa técnica.</p>
         </section>
 </article>
+    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior" onclick="if (history.length > 1) history.back(); else location.href = 'treinos.html';">← Voltar</button>
 </main>
 <footer class="rodape-principal">
     <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
@@ -93,6 +99,57 @@
         <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
     </nav>
 </footer>
-<script src="../JS/botao-voltar.js"></script>
+
+<script>
+document.querySelectorAll("[data-carrossel-semanal]").forEach(function (carrossel) {
+    const trilha = carrossel.querySelector(".trilha-semanal");
+    const slides = Array.from(trilha.children);
+    const botoesDias = Array.from(carrossel.querySelectorAll("[data-dia-index]"));
+    const anterior = carrossel.querySelector("[data-anterior]");
+    const proximo = carrossel.querySelector("[data-proximo]");
+    const progresso = carrossel.querySelector(".progresso-semanal");
+    const nomes = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+    const hoje = (new Date().getDay() + 6) % 7;
+    let indice = hoje;
+
+    const indicador = document.createElement("span");
+    indicador.className = "indicador-hoje";
+    indicador.textContent = "HOJE";
+    botoesDias[hoje].appendChild(indicador);
+
+    function atualizar() {
+        trilha.style.transform = "translateX(-" + (indice * 100) + "%)";
+        botoesDias.forEach(function (botao, i) {
+            botao.setAttribute("aria-pressed", i === indice ? "true" : "false");
+        });
+        progresso.textContent = nomes[indice];
+        anterior.disabled = indice === 0;
+        proximo.disabled = indice === slides.length - 1;
+    }
+
+    botoesDias.forEach(function (botao, i) {
+        botao.addEventListener("click", function () {
+            indice = i;
+            atualizar();
+        });
+    });
+
+    anterior.addEventListener("click", function () {
+        if (indice > 0) {
+            indice--;
+            atualizar();
+        }
+    });
+
+    proximo.addEventListener("click", function () {
+        if (indice < slides.length - 1) {
+            indice++;
+            atualizar();
+        }
+    });
+
+    atualizar();
+});
+</script>
 </body>
 </html>
