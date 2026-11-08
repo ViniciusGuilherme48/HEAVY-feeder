@@ -87,6 +87,31 @@
         <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
     </nav>
 </footer>
-<script src="../JS/carrossel.js"></script>
+<script>
+document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const anterior = carousel.querySelector("[data-carousel-prev]");
+    const proximo = carousel.querySelector("[data-carousel-next]");
+
+    function mover(direcao) {
+        const card = track.querySelector(".card-link");
+        if (!card) return;
+        const espacamento = parseFloat(getComputedStyle(track).columnGap) || 0;
+        track.scrollBy({ left: direcao * (card.getBoundingClientRect().width + espacamento), behavior: "smooth" });
+    }
+
+    function atualizarBotoes() {
+        const limite = track.scrollWidth - track.clientWidth;
+        anterior.disabled = track.scrollLeft <= 2;
+        proximo.disabled = track.scrollLeft >= limite - 2;
+    }
+
+    anterior.addEventListener("click", function () { mover(-1); });
+    proximo.addEventListener("click", function () { mover(1); });
+    track.addEventListener("scroll", atualizarBotoes, { passive: true });
+    window.addEventListener("resize", atualizarBotoes);
+    atualizarBotoes();
+});
+</script>
 </body>
 </html>
