@@ -48,8 +48,31 @@
                 importantes para o planejamento.
     </p>
    </section>
-   <form aria-label="Question&aacute;rio para personaliza&ccedil;&atilde;o do treino" class="formulario-personalizado">
-    <fieldset>
+   <form aria-label="Questionário para personalização do treino" class="formulario-personalizado" novalidate>
+    <div class="progresso-formulario" aria-label="Progresso do formulário">
+        <div class="progresso-formulario-texto">
+            <span id="etapa-atual-texto">Etapa 1 de 6</span>
+            <span id="etapa-percentual">17% concluído</span>
+        </div>
+        <div class="barra-progresso-formulario" role="progressbar" aria-label="Progresso do preenchimento" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+            <span class="barra-progresso-preenchida"></span>
+        </div>
+        <div class="marcadores-etapas" aria-label="Etapas do formulário">
+            <span class="marcador-etapa ativo" data-marcador="0">1</span>
+            <span class="marcador-etapa" data-marcador="1">2</span>
+            <span class="marcador-etapa" data-marcador="2">3</span>
+            <span class="marcador-etapa" data-marcador="3">4</span>
+            <span class="marcador-etapa" data-marcador="4">5</span>
+            <span class="marcador-etapa" data-marcador="5">6</span>
+        </div>
+    </div>
+    <div class="carrossel-formulario">
+        <section class="etapa-formulario etapa-ativa" data-etapa="0" aria-label="1. Objetivo e informações pessoais" aria-hidden="false">
+        <div class="cabecalho-etapa">
+            <span class="numero-etapa">ETAPA 1 DE 6</span>
+            <h2>1. Objetivo e informações pessoais</h2>
+        </div>
+        <fieldset>
      <legend>
       1. Objetivo
      </legend>
@@ -87,8 +110,7 @@
      <br/>
      <textarea cols="50" id="objetivo-anterior" name="objetivo-anterior" placeholder="Sua resposta..." required="" rows="4"></textarea>
     </fieldset>
-    <br/>
-    <fieldset>
+<fieldset>
      <legend>
       2. Informa&ccedil;&otilde;es pessoais
      </legend>
@@ -129,8 +151,12 @@
      <br/>
      <input id="peso" name="peso" placeholder="Ex: 75.5" required="" step="0.1" type="number"/>
     </fieldset>
-    <br/>
-    <fieldset>
+    </section><section class="etapa-formulario" data-etapa="1" aria-label="2. Atividade física e experiência" aria-hidden="true" hidden>
+        <div class="cabecalho-etapa">
+            <span class="numero-etapa">ETAPA 2 DE 6</span>
+            <h2>2. Atividade física e experiência</h2>
+        </div>
+        <fieldset>
      <legend>
       3. Atividade f&iacute;sica
      </legend>
@@ -238,8 +264,7 @@
       </option>
      </select>
     </fieldset>
-    <br/>
-    <fieldset>
+<fieldset>
      <legend>
       4. Experi&ecirc;ncia e prefer&ecirc;ncias
      </legend>
@@ -257,8 +282,12 @@
      <br/>
      <textarea cols="50" id="exercicios-evitados" name="exercicios-evitados" placeholder="Sua resposta..." required="" rows="4"></textarea>
     </fieldset>
-    <br/>
-    <fieldset>
+    </section><section class="etapa-formulario" data-etapa="2" aria-label="3. Dificuldades no treino" aria-hidden="true" hidden>
+        <div class="cabecalho-etapa">
+            <span class="numero-etapa">ETAPA 3 DE 6</span>
+            <h2>3. Dificuldades no treino</h2>
+        </div>
+        <fieldset>
      <legend>
       5. Dificuldades no treino
      </legend>
@@ -305,8 +334,12 @@
      <br/>
      <textarea cols="50" id="explicacao-carga" name="explicacao-carga" placeholder="Explique sua resposta..." required="" rows="3"></textarea>
     </fieldset>
-    <br/>
-    <fieldset>
+    </section><section class="etapa-formulario" data-etapa="3" aria-label="4. Saúde e limitações" aria-hidden="true" hidden>
+        <div class="cabecalho-etapa">
+            <span class="numero-etapa">ETAPA 4 DE 6</span>
+            <h2>4. Saúde e limitações</h2>
+        </div>
+        <fieldset>
      <legend>
       6. Sa&uacute;de e limita&ccedil;&otilde;es
      </legend>
@@ -365,8 +398,12 @@
      <br/>
      <textarea cols="50" id="mal-estar" name="mal-estar" placeholder="Sua resposta..." required="" rows="3"></textarea>
     </fieldset>
-    <br/>
-    <fieldset>
+    </section><section class="etapa-formulario" data-etapa="4" aria-label="5. Perguntas de segurança" aria-hidden="true" hidden>
+        <div class="cabecalho-etapa">
+            <span class="numero-etapa">ETAPA 5 DE 6</span>
+            <h2>5. Perguntas de segurança</h2>
+        </div>
+        <fieldset>
      <legend>
       7. Perguntas de seguran&ccedil;a
      </legend>
@@ -516,7 +553,12 @@
       </span>
      </div>
     </fieldset>
-    <fieldset>
+    </section><section class="etapa-formulario" data-etapa="5" aria-label="6. Rotina e hábitos" aria-hidden="true" hidden>
+        <div class="cabecalho-etapa">
+            <span class="numero-etapa">ETAPA 6 DE 6</span>
+            <h2>6. Rotina e hábitos</h2>
+        </div>
+        <fieldset>
      <legend>
       8. Rotina e sono
      </legend>
@@ -582,7 +624,7 @@
      <br/>
      <textarea cols="50" id="horarios-treino" name="horarios-treino" placeholder="Ex: Segunda, quarta e sexta das 18h &agrave;s 20h..." required="" rows="3"></textarea>
     </fieldset>
-    <fieldset>
+<fieldset>
      <legend>
       9. H&aacute;bitos
      </legend>
@@ -627,15 +669,105 @@
      </div>
      <br/>
     </fieldset>
-    <br/>
+    </section>
+    </div>
+    <div class="controles-carrossel-formulario">
+        <button class="controle-etapa controle-anterior" type="button" disabled>← Voltar etapa</button>
+        <button class="controle-etapa controle-proximo" type="button">Próxima etapa →</button>
+        <button class="controle-etapa controle-enviar" type="submit" hidden>Personalizar meu treino</button>
+    </div>
     <p class="aviso-formulario">
-     As respostas deste formul&aacute;rio s&atilde;o usadas para organizar suas informa&ccedil;&otilde;es nesta atividade. O site ainda precisa de integra&ccedil;&atilde;o com um sistema para armazenar ou enviar os dados.
+        As respostas deste formulário são usadas para organizar suas informações nesta atividade. O site ainda precisa de integração com um sistema para armazenar ou enviar os dados.
     </p>
-    <button type="submit">
-     Personalizar meu treino
-    </button>
-   </form>
+</form>
    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior" onclick="if (history.length > 1) history.back(); else location.href = 'treinos.html';">← Voltar</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.querySelector(".formulario-personalizado");
+    if (!formulario) return;
+
+    const etapas = Array.from(formulario.querySelectorAll(".etapa-formulario"));
+    const marcadores = Array.from(formulario.querySelectorAll(".marcador-etapa"));
+    const botaoAnterior = formulario.querySelector(".controle-anterior");
+    const botaoProximo = formulario.querySelector(".controle-proximo");
+    const botaoEnviar = formulario.querySelector(".controle-enviar");
+    const textoEtapa = formulario.querySelector("#etapa-atual-texto");
+    const textoPercentual = formulario.querySelector("#etapa-percentual");
+    const barra = formulario.querySelector(".barra-progresso-formulario");
+    const barraPreenchida = formulario.querySelector(".barra-progresso-preenchida");
+    let etapaAtual = 0;
+
+    function atualizarEtapa(indice) {
+        etapaAtual = indice;
+
+        etapas.forEach(function (etapa, posicao) {
+            const ativa = posicao === etapaAtual;
+            etapa.hidden = !ativa;
+            etapa.setAttribute("aria-hidden", String(!ativa));
+            etapa.classList.toggle("etapa-ativa", ativa);
+        });
+
+        marcadores.forEach(function (marcador, posicao) {
+            marcador.classList.toggle("ativo", posicao === etapaAtual);
+            marcador.classList.toggle("concluido", posicao < etapaAtual);
+        });
+
+        const numero = etapaAtual + 1;
+        const percentual = Math.round((numero / etapas.length) * 100);
+
+        textoEtapa.textContent = "Etapa " + numero + " de " + etapas.length;
+        textoPercentual.textContent = percentual + "% concluído";
+        barra.setAttribute("aria-valuenow", numero);
+        barraPreenchida.style.width = percentual + "%";
+
+        botaoAnterior.disabled = etapaAtual === 0;
+        botaoProximo.hidden = etapaAtual === etapas.length - 1;
+        botaoEnviar.hidden = etapaAtual !== etapas.length - 1;
+
+        formulario.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function validarEtapa(indice) {
+        const campos = etapas[indice].querySelectorAll("input, select, textarea");
+
+        for (const campo of campos) {
+            if (!campo.checkValidity()) {
+                campo.reportValidity();
+                campo.focus();
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    botaoAnterior.addEventListener("click", function () {
+        if (etapaAtual > 0) atualizarEtapa(etapaAtual - 1);
+    });
+
+    botaoProximo.addEventListener("click", function () {
+        if (validarEtapa(etapaAtual) && etapaAtual < etapas.length - 1) {
+            atualizarEtapa(etapaAtual + 1);
+        }
+    });
+
+    formulario.addEventListener("submit", function (evento) {
+        for (let indice = 0; indice < etapas.length; indice++) {
+            if (!validarEtapa(indice)) {
+                evento.preventDefault();
+                atualizarEtapa(indice);
+                const campoInvalido = etapas[indice].querySelector(":invalid");
+                if (campoInvalido) campoInvalido.reportValidity();
+                return;
+            }
+        }
+    });
+
+    atualizarEtapa(0);
+});
+</script>
+
   </main>
   <footer class="rodape-principal">
    <p>
