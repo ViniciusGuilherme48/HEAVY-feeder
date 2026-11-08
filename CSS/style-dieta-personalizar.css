@@ -2,301 +2,322 @@
    Página Personalizar dieta (formulário completo: campos, fieldsets, botão de envio e variáveis próprias). */
 
 
-:root {
-    --bg: #010a12;
-    --bg-card: #070d16;
-    --bg-header: #0a111b;
-    --bg-campo: #0c1520;
-    --titulo: #a9b4c4;
-    --texto: #ffffff;
-    --texto-suave: #c3ccd9;
-    --verde: #22d68a;
-    --verde-fundo: rgba(34, 214, 138, 0.07);
+.pagina-personalizado main > section {
+    max-width: 850px;
+    margin: 0 auto 28px;
 }
 
-* {
-    box-sizing: border-box;
+.pagina-personalizado main > section h1 {
+    padding: 0;
+    margin: 0 0 18px;
+    text-align: center;
 }
 
-body {
-    margin: 0;
-    padding: 0 6px 6px;
-    min-height: 100vh;
-    background: var(--bg);
-    color: var(--texto);
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-    color-scheme: dark;
+.pagina-personalizado main > section h2 {
+    margin-top: 26px;
 }
 
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    z-index: -1;
-    width: 70px;
-    background: var(--verde-fundo);
-    border-radius: 14px;
-    pointer-events: none;
+.pagina-personalizado main > section hr {
+    margin: 26px 0 0;
 }
 
-body::before {
-    height: 620px;
-    right: 12%;
-    top: 12%;
-    transform: rotate(28deg);
+.pagina-personalizado main {
+    padding: 0 20px;
 }
 
-body::after {
-    height: 360px;
-    right: 24%;
-    top: 8%;
-    transform: rotate(-48deg);
-}
-
-h1 {
-    margin: 0 0 12px;
-    color: var(--titulo);
-    font-size: 2rem;
-}
-
-p {
-    max-width: 75ch;
-    margin: 0 0 14px;
-}
-
-a {
-    color: var(--verde);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-header,
-footer {
-    background: var(--bg-header);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
-}
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 18px 40px;
-}
-
-header figure {
-    margin: 0;
-}
-
-header img {
-    display: block;
-    width: 150px;
-    max-width: 100%;
-    height: auto;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 56px;
-}
-
-nav a {
-    color: var(--titulo);
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: color 0.2s;
-}
-
-nav a:hover,
-nav a:focus-visible {
-    color: var(--verde);
-}
-
-nav a.botao-login {
-    padding: 8px 32px;
-    background: var(--verde);
-    border-radius: 999px;
-    color: #05221a;
-    transition: filter 0.2s;
-}
-
-nav a.botao-login:hover,
-nav a.botao-login:focus-visible {
-    color: #05221a;
-    filter: brightness(1.1);
-}
-
-main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 32px 20px 40px;
-}
-
-form {
-    display: grid;
-    gap: 24px;
-    margin-top: 28px;
-}
-
-fieldset {
-    display: grid;
-    gap: 18px;
-    min-width: 0;
-    margin: 0;
-    padding: 24px;
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
-}
-
-fieldset.duas-colunas {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-legend {
-    padding: 0 10px;
-    color: var(--verde);
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.campo {
-    display: grid;
-    gap: 6px;
-}
-
-label {
-    color: var(--texto-suave);
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-select,
-input,
-textarea {
+.pagina-personalizado .formulario-personalizado {
     width: 100%;
-    padding: 11px 14px;
-    background: var(--bg-campo);
-    border: 1px solid var(--borda);
-    border-radius: 10px;
-    color: var(--texto);
+    max-width: 850px;
+    margin: 0 auto 40px;
+    padding: 0;
+}
+
+.pagina-personalizado fieldset {
+    min-width: 0;
+    margin: 0 0 22px;
+    padding: clamp(16px, 3vw, 26px);
+    border: 1px solid var(--borda, #2DD98A);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .96);
+}
+
+.pagina-personalizado fieldset.duas-colunas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+}
+
+.pagina-personalizado fieldset.duas-colunas > legend {
+    grid-column: 1 / -1;
+}
+
+.pagina-personalizado legend {
+    max-width: 100%;
+    padding: 7px 13px;
+    border-radius: 6px;
+    background: var(--verde-escuro, #123F35);
+    color: var(--texto-principal, #F5F7FA);
+    font-weight: 700;
+    white-space: normal;
+}
+
+.pagina-personalizado .campo {
+    min-width: 0;
+}
+
+.pagina-personalizado label {
+    display: block;
+    margin: 12px 0 6px;
+    color: var(--texto-principal, #F5F7FA);
+    font-weight: 600;
+}
+
+.pagina-personalizado input:not([type="radio"]):not([type="checkbox"]),
+.pagina-personalizado select,
+.pagina-personalizado textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 6px 0 14px;
+    padding: 11px 12px;
+    border: 1px solid #536274;
+    border-radius: 7px;
+    background: #0B121B;
+    color: #F5F7FA;
     font: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-select {
-    appearance: none;
-    padding-right: 40px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2322d68a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
+.pagina-personalizado select option {
+    background: #0B121B;
+    color: #F5F7FA;
 }
 
-select option {
-    background: var(--bg-card);
-    color: var(--texto);
-}
-
-textarea {
-    min-height: 110px;
+.pagina-personalizado textarea {
+    min-height: 100px;
     resize: vertical;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #6c7a8c;
+.pagina-personalizado input::placeholder,
+.pagina-personalizado textarea::placeholder {
+    color: #718096;
 }
 
-select:hover,
-input:hover,
-textarea:hover {
-    border-color: #2c4157;
-}
-
-select:focus,
-input:focus,
-textarea:focus {
-    outline: 0;
-    border-color: var(--verde);
-    box-shadow: 0 0 0 3px rgba(34, 214, 138, 0.18);
-}
-
-button[type="submit"] {
-    justify-self: start;
-    padding: 12px 36px;
-    background: var(--verde);
-    border: 0;
-    border-radius: 999px;
-    color: #05221a;
-    cursor: pointer;
-    font: inherit;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button[type="submit"]:hover,
-button[type="submit"]:focus-visible {
-    filter: brightness(1.1);
-}
-
-button[type="submit"]:focus-visible {
-    outline: 2px solid var(--titulo);
+.pagina-personalizado input:focus-visible,
+.pagina-personalizado select:focus-visible,
+.pagina-personalizado textarea:focus-visible,
+.pagina-personalizado button:focus-visible,
+.pagina-treinos a:focus-visible {
+    outline: 3px solid var(--verde-principal, #42E89A);
     outline-offset: 3px;
 }
 
-footer {
+.pagina-personalizado .progresso-formulario {
+    margin: 0 0 24px;
+    padding: 20px;
+    border: 1px solid rgba(66, 232, 154, .3);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .96);
+}
+
+.pagina-personalizado .progresso-formulario-texto {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--texto-principal, #F5F7FA);
+    font-weight: 700;
+}
+
+.pagina-personalizado .barra-progresso-formulario {
+    height: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #273443;
+}
+
+.pagina-personalizado .barra-progresso-preenchida {
+    display: block;
+    width: 25%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--verde-principal, #42E89A);
+    transition: width .3s ease;
+}
+
+.pagina-personalizado .marcadores-etapas {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.pagina-personalizado .marcador-etapa {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid #536274;
+    border-radius: 50%;
+    background: #0B121B;
+    color: #D8E0E8;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.pagina-personalizado .marcador-etapa.ativo,
+.pagina-personalizado .marcador-etapa.concluido {
+    border-color: var(--verde-principal, #42E89A);
+    background: var(--verde-principal, #42E89A);
+    color: #0B121B;
+}
+
+.pagina-personalizado .etapa-formulario[hidden] {
+    display: none !important;
+}
+
+.pagina-personalizado .etapa-formulario {
+    animation: entrada-etapa .25s ease;
+}
+
+.pagina-personalizado .cabecalho-etapa {
+    margin: 0 0 18px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--verde-principal, #42E89A);
+    border-radius: 8px;
+    background: rgba(19, 28, 41, .8);
+}
+
+.pagina-personalizado .numero-etapa {
+    color: var(--verde-principal, #42E89A);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.pagina-personalizado .cabecalho-etapa h2 {
+    margin: 6px 0 0;
+    color: var(--texto-principal, #F5F7FA);
+    font-size: clamp(1.2rem, 3vw, 1.55rem);
+}
+
+.pagina-personalizado .etapa-formulario fieldset {
+    margin-bottom: 18px;
+}
+
+.pagina-personalizado .controles-carrossel-formulario {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 22px 0 16px;
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 18px 40px;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-footer p {
+    justify-content: center;
+    width: auto;
+    min-width: 150px;
+    min-height: 48px;
     margin: 0;
+    padding: 12px 20px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 8px;
+    background: var(--verde-secundario, #2DD98A);
+    color: var(--verde-escuro, #123F35);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
 }
 
-footer a {
-    color: var(--titulo);
+.pagina-personalizado .controles-carrossel-formulario .controle-anterior {
+    background: transparent;
+    color: var(--texto-principal, #F5F7FA);
 }
 
-footer a:hover {
-    color: var(--verde);
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa:disabled {
+    opacity: .45;
+    cursor: not-allowed;
 }
 
-@media (max-width: 700px) {
-    header,
-    footer {
-        padding: 16px 20px;
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa[hidden] {
+    display: none !important;
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+.pagina-personalizado .aviso-formulario {
+    max-width: none;
+    margin-top: 20px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--verde-principal, #42E89A);
+    background: rgba(19, 28, 41, .9);
+    color: var(--texto-principal, #F5F7FA);
+    font-size: .92rem;
+}
+
+.pagina-treinos.pagina-personalizado .botao-voltar {
+    display: flex;
+    width: fit-content;
+    margin: 36px auto 10px;
+}
+
+@keyframes entrada-etapa {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
     }
 
-    header {
-        justify-content: center;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 560px) {
+    .pagina-personalizado main {
+        padding: 0 14px;
     }
 
-    nav {
-        justify-content: center;
-        gap: 22px;
+    .pagina-personalizado fieldset.duas-colunas {
+        grid-template-columns: 1fr;
     }
 
-    h1 {
-        font-size: 1.6rem;
+    .pagina-personalizado fieldset {
+        padding: 15px;
     }
 
-    fieldset {
-        padding: 18px;
+    .pagina-personalizado .progresso-formulario {
+        padding: 15px;
     }
 
-    button[type="submit"] {
-        justify-self: stretch;
+    .pagina-personalizado .marcadores-etapas {
+        gap: 5px;
+    }
+
+    .pagina-personalizado .marcador-etapa {
+        width: 26px;
+        height: 26px;
+        font-size: .75rem;
+    }
+
+    .pagina-personalizado .controles-carrossel-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .pagina-personalizado .controles-carrossel-formulario .controle-etapa {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pagina-personalizado .etapa-formulario {
+        animation: none;
+    }
+
+    .pagina-personalizado .barra-progresso-preenchida {
+        transition: none;
     }
 }
