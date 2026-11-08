@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../CSS/style-treino-personalizado.css">
     <link rel="stylesheet" href="../CSS/style-global.css">
     <link rel="stylesheet" href="../CSS/style-navegacao.css">
+    <link rel="stylesheet" href="../CSS/style-cards.css">
 </head>
  <body class="pagina-treinos pagina-personalizado">
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -27,10 +28,7 @@
     </nav>
 </header>
   <main>
-   <button aria-label="Voltar &agrave; p&aacute;gina anterior" class="botao-voltar" type="button">
-    &larr; Voltar
-   </button>
-   <section>
+<section>
     <h1>
      Monte seu Treino Personalizado!
     </h1>
@@ -637,6 +635,7 @@
      Personalizar meu treino
     </button>
    </form>
+   <button class="botao-voltar" type="button" aria-label="Voltar à página anterior" onclick="if (history.length > 1) history.back(); else location.href = 'treinos.html';">← Voltar</button>
   </main>
   <footer class="rodape-principal">
    <p>
@@ -651,6 +650,6 @@
     Fale Conosco
    </a>
   </footer>
- <script src="../JS/botao-voltar.js"></script>
+ 
 </body>
 </html>
