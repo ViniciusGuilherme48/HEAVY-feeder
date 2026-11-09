@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macronutrientes</title>
+    <link rel="stylesheet" href="../CSS/style-calculadoras.css">
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-navegacao.css">
+    <link rel="stylesheet" href="../CSS/style-icones.css">
+</head>
+
+<body class="pagina-treinos">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <header class="cabecalho-principal">
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="Inicio-dieta.html">Dietas</a>
+        <a href="calculadora.html">Calculadoras</a>
+        <a href="login.html" class="botao-login">Login</a>
+    </nav>
+</header>
+    <main class="pagina-calculadora">
+
+    <h1>Calculadora de Macronutrientes</h1>
+
+    <section class="card-calculadora">
+        <svg class="icone-card icone-calculadora" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg>
+        <form id="formMacro">
+
+            <div class="campo">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso">
+            </div>
+
+            <div class="campo">
+                <label for="objetivo">Objetivo</label>
+                <select id="objetivo">
+                    <option value="emagrecimento">Emagrecimento</option>
+                    <option value="manutencao">Manutenção</option>
+                    <option value="ganho">Ganho de massa</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="calorias">Calorias diárias (kcal)</label>
+                <input type="number" id="calorias">
+            </div>
+
+            <button type="button" class="botao-entrar" onclick="calcularMacro()">Calcular</button>
+        </form>
+    </section>
+
+    <section id="resultadoMacro" class="resultado" style="display: none;">
+        <h3>Resultado</h3>
+        <p>Proteínas: <strong id="resProteina">-- g</strong></p>
+        <p>Carboidratos: <strong id="resCarboidrato">-- g</strong></p>
+        <p>Gorduras: <strong id="resGordura">-- g</strong></p>
+    </section>
+
+    <a href="calculadora.html" class="botao-voltar">← Voltar</a>
+
+    </main>
+    <footer class="rodape-principal">
+        <p>Desenvolvido por alunos da Unisal - Campus São jose 2026</p>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+        <a href="#"><b>Fale Conosco</b></a>
+    </footer>
+</body>
+
+</html>

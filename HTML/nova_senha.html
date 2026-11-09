@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova senha - HEAVY Feeder</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style-autenticacao.css">
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-navegacao.css">
+</head>
+
+<body class="pagina-treinos">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <header class="cabecalho-principal">
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="Inicio-dieta.html">Dietas</a>
+        <a href="calculadora.html">Calculadoras</a>
+        <a href="login.html" class="botao-login">Login</a>
+    </nav>
+</header>
+
+    <main class="container">
+
+        <section class="card-nova-senha">
+
+            <img
+                src="IMAGEM/logo heavy feeder png.png"
+                alt="Logo HEAVY Feeder"
+                class="logo"
+            >
+
+            <h1>Nova senha</h1>
+
+            <p class="texto">
+                Crie uma nova senha para acessar sua conta.
+            </p>
+
+            <form action="login.html">
+
+                <div class="campo">
+
+                    <label for="senha">
+                        Nova senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua nova senha"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="confirmar">
+                        Confirmar nova senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmar"
+                        placeholder="Digite a senha novamente"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+                <button class="botao-alterar-senha" type="submit">
+                    Alterar senha
+                </button>
+
+            </form>
+
+            <a href="login.html" class="voltar">
+                ← Voltar para o login
+            </a>
+
+        </section>
+
+    </main>
+
+<footer class="rodape-principal">
+    <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
+    <nav aria-label="Links do rodapé"><a href="QuemSomos.html">Quem Somos</a><a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a></nav>
+</footer>
+</body>
+
+</html>
