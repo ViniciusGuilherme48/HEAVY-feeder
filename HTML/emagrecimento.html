@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/style-global.css">
     <link rel="stylesheet" href="../CSS/style-navegacao.css">
     <link rel="stylesheet" href="../CSS/style-tabela.css">
+    <link rel="stylesheet" href="../CSS/style-cards.css">
 </head>
 <body class="pagina-treinos">
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -25,7 +26,7 @@
     </nav>
 </header>
 <main id="conteudo-principal" class="conteudo-artigo">
-    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior">← Voltar</button>
+    
     <article>
         <header class="titulo-artigo">
             <h1>Emagrecimento</h1>
@@ -72,18 +73,23 @@
         <section class="plano-semanal" aria-labelledby="plano-emagrecimento">
             <h2 id="plano-emagrecimento">Exemplo de rotina semanal para emagrecimento</h2>
             <p>A musculação ajuda a manter força e massa muscular; atividades aeróbicas complementam a rotina e favorecem o condicionamento. O emagrecimento depende do conjunto de hábitos e não de um exercício isolado. Ajuste duração e intensidade ao seu nível atual.</p>
-            <div class="treinos-semana">
-                <article class="dia-treino"><h3>Segunda — Push + aeróbico leve</h3><ul><li>Supino máquina ou com halteres — 3 × 8–12</li><li>Supino inclinado — 2–3 × 10–12</li><li>Desenvolvimento de ombros — 3 × 8–12</li><li>Elevação lateral — 2 × 12–15</li><li>Tríceps na polia — 2–3 × 10–15</li></ul><p><strong>Aeróbico:</strong> 15–20 minutos de caminhada, bicicleta ou elíptico em ritmo confortável.</p></article>
-                <article class="dia-treino"><h3>Terça — Pull + aeróbico</h3><ul><li>Puxada alta — 3 × 8–12</li><li>Remada baixa — 3 × 8–12</li><li>Remada com halteres — 2 × 10–12</li><li>Crucifixo inverso — 2 × 12–15</li><li>Rosca direta — 2–3 × 10–12</li></ul><p><strong>Aeróbico:</strong> 20–25 minutos em intensidade moderada, se estiver confortável.</p></article>
-                <article class="dia-treino"><h3>Quarta — Legs</h3><ul><li>Leg press ou agachamento guiado — 3 × 8–12</li><li>Levantamento romeno com halteres — 3 × 8–12</li><li>Cadeira extensora — 2–3 × 10–15</li><li>Mesa flexora — 2–3 × 10–15</li><li>Panturrilhas — 3 × 12–20</li></ul><p>Faça o treino de força com pausas suficientes para manter a execução segura.</p></article>
-                <article class="dia-treino"><h3>Quinta — Upper + aeróbico leve</h3><ul><li>Supino máquina — 3 × 8–12</li><li>Remada com apoio — 3 × 8–12</li><li>Puxada neutra — 2–3 × 10–12</li><li>Elevação lateral — 2 × 12–15</li><li>Rosca e tríceps na polia — 2 × 10–15 cada</li></ul><p><strong>Aeróbico:</strong> 20–30 minutos de caminhada acelerada ou bicicleta, conforme o condicionamento.</p></article>
-                <article class="dia-treino"><h3>Sexta — Lower + core</h3><ul><li>Agachamento no banco ou leg press — 3 × 10–12</li><li>Hip thrust — 3 × 8–12</li><li>Afundo assistido — 2 × 8–10 por perna</li><li>Mesa flexora — 3 × 10–15</li><li>Prancha — 3 séries de 20–40 segundos, conforme tolerância</li></ul><p>Priorize controle e boa técnica, não a velocidade para terminar o treino.</p></article>
-                <article class="dia-treino"><h3>Sábado — Atividade aeróbica opcional</h3><p>Escolha uma atividade que goste: caminhada, bicicleta, natação ou dança. Comece com uma duração confortável e aumente aos poucos, se estiver recuperado.</p></article>
-                <article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Recuperação também faz parte do plano. Mantenha sono regular e alimentação compatível com suas necessidades.</p></article>
+            <div class="carrossel-semanal" data-carrossel-semanal>
+                <div class="seletor-dias" aria-label="Selecionar dia da semana"><button class="seletor-dia" type="button" data-dia-index="0" aria-pressed="false">Segunda</button><button class="seletor-dia" type="button" data-dia-index="1" aria-pressed="false">Terça</button><button class="seletor-dia" type="button" data-dia-index="2" aria-pressed="false">Quarta</button><button class="seletor-dia" type="button" data-dia-index="3" aria-pressed="false">Quinta</button><button class="seletor-dia" type="button" data-dia-index="4" aria-pressed="false">Sexta</button><button class="seletor-dia" type="button" data-dia-index="5" aria-pressed="false">Sábado</button><button class="seletor-dia" type="button" data-dia-index="6" aria-pressed="false">Domingo</button></div>
+                <div class="janela-carrossel-semanal">
+                    <div class="trilha-semanal">
+                        <article class="dia-treino"><h3>Segunda — Push + aeróbico leve</h3><ul><li>Supino máquina ou com halteres — 3 × 8–12</li><li>Supino inclinado — 2–3 × 10–12</li><li>Desenvolvimento de ombros — 3 × 8–12</li><li>Elevação lateral — 2 × 12–15</li><li>Tríceps na polia — 2–3 × 10–15</li></ul><p><strong>Aeróbico:</strong> 15–20 minutos de caminhada, bicicleta ou elíptico em ritmo confortável.</p></article><article class="dia-treino"><h3>Terça — Pull + aeróbico</h3><ul><li>Puxada alta — 3 × 8–12</li><li>Remada baixa — 3 × 8–12</li><li>Remada com halteres — 2 × 10–12</li><li>Crucifixo inverso — 2 × 12–15</li><li>Rosca direta — 2–3 × 10–12</li></ul><p><strong>Aeróbico:</strong> 20–25 minutos em intensidade moderada, se estiver confortável.</p></article><article class="dia-treino"><h3>Quarta — Legs</h3><ul><li>Leg press ou agachamento guiado — 3 × 8–12</li><li>Levantamento romeno com halteres — 3 × 8–12</li><li>Cadeira extensora — 2–3 × 10–15</li><li>Mesa flexora — 2–3 × 10–15</li><li>Panturrilhas — 3 × 12–20</li></ul><p>Faça o treino de força com pausas suficientes para manter a execução segura.</p></article><article class="dia-treino"><h3>Quinta — Upper + aeróbico leve</h3><ul><li>Supino máquina — 3 × 8–12</li><li>Remada com apoio — 3 × 8–12</li><li>Puxada neutra — 2–3 × 10–12</li><li>Elevação lateral — 2 × 12–15</li><li>Rosca e tríceps na polia — 2 × 10–15 cada</li></ul><p><strong>Aeróbico:</strong> 20–30 minutos de caminhada acelerada ou bicicleta, conforme o condicionamento.</p></article><article class="dia-treino"><h3>Sexta — Lower + core</h3><ul><li>Agachamento no banco ou leg press — 3 × 10–12</li><li>Hip thrust — 3 × 8–12</li><li>Afundo assistido — 2 × 8–10 por perna</li><li>Mesa flexora — 3 × 10–15</li><li>Prancha — 3 séries de 20–40 segundos, conforme tolerância</li></ul><p>Priorize controle e boa técnica, não a velocidade para terminar o treino.</p></article><article class="dia-treino"><h3>Sábado — Atividade aeróbica opcional</h3><p>Escolha uma atividade que goste: caminhada, bicicleta, natação ou dança. Comece com uma duração confortável e aumente aos poucos, se estiver recuperado.</p></article><article class="dia-treino dia-recuperacao"><h3>Domingo — Descanso</h3><p>Recuperação também faz parte do plano. Mantenha sono regular e alimentação compatível com suas necessidades.</p></article>
+                    </div>
+                </div>
+                <div class="navegacao-semanal">
+                    <button class="controle-semanal" type="button" data-anterior aria-label="Treino do dia anterior">← Anterior</button>
+                    <span class="progresso-semanal" aria-live="polite">Segunda-feira</span>
+                    <button class="controle-semanal" type="button" data-proximo aria-label="Treino do próximo dia">Próximo →</button>
+                </div>
             </div>
             <p class="nota-treino">Não é necessário fazer cardio exaustivo nem treinar todos os dias. Se estiver começando, reduza o número de séries e a duração do aeróbico e progrida aos poucos. Dor incomum, tontura ou mal-estar são sinais para interromper a atividade e buscar orientação adequada.</p>
         </section>
 </article>
+    <button class="botao-voltar" type="button" aria-label="Voltar à página anterior" onclick="if (history.length > 1) history.back(); else location.href = 'treinos.html';">← Voltar</button>
 </main>
 <footer class="rodape-principal">
     <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
@@ -92,6 +98,57 @@
         <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
     </nav>
 </footer>
-<script src="../JS/botao-voltar.js"></script>
+
+<script>
+document.querySelectorAll("[data-carrossel-semanal]").forEach(function (carrossel) {
+    const trilha = carrossel.querySelector(".trilha-semanal");
+    const slides = Array.from(trilha.children);
+    const botoesDias = Array.from(carrossel.querySelectorAll("[data-dia-index]"));
+    const anterior = carrossel.querySelector("[data-anterior]");
+    const proximo = carrossel.querySelector("[data-proximo]");
+    const progresso = carrossel.querySelector(".progresso-semanal");
+    const nomes = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+    const hoje = (new Date().getDay() + 6) % 7;
+    let indice = hoje;
+
+    const indicador = document.createElement("span");
+    indicador.className = "indicador-hoje";
+    indicador.textContent = "HOJE";
+    botoesDias[hoje].appendChild(indicador);
+
+    function atualizar() {
+        trilha.style.transform = "translateX(-" + (indice * 100) + "%)";
+        botoesDias.forEach(function (botao, i) {
+            botao.setAttribute("aria-pressed", i === indice ? "true" : "false");
+        });
+        progresso.textContent = nomes[indice];
+        anterior.disabled = indice === 0;
+        proximo.disabled = indice === slides.length - 1;
+    }
+
+    botoesDias.forEach(function (botao, i) {
+        botao.addEventListener("click", function () {
+            indice = i;
+            atualizar();
+        });
+    });
+
+    anterior.addEventListener("click", function () {
+        if (indice > 0) {
+            indice--;
+            atualizar();
+        }
+    });
+
+    proximo.addEventListener("click", function () {
+        if (indice < slides.length - 1) {
+            indice++;
+            atualizar();
+        }
+    });
+
+    atualizar();
+});
+</script>
 </body>
 </html>

@@ -390,3 +390,27 @@ a {
         padding: 24px 16px 0;
     }
 }
+
+
+.pagina-treinos .botao-voltar {
+    display: flex;
+    width: fit-content;
+    min-width: 150px;
+    justify-content: center;
+    align-items: center;
+    margin: 38px auto 12px;
+    padding: 11px 22px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: rgba(19, 28, 41, .95);
+    color: var(--verde-principal, #42E89A);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.pagina-treinos .botao-voltar:hover {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+}

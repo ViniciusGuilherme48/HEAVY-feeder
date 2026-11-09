@@ -2,314 +2,449 @@
    Páginas de dieta (Déficit, Manutenção, Superávit): variáveis próprias, layout, tabelas de refeições, dicas e exemplos. */
 
 
-:root {
-    --bg: #010a12;
-    --bg-card: #070d16;
-    --bg-header: #0a111b;
-    --titulo: #a9b4c4;
-    --texto: #ffffff;
-    --texto-suave: #c3ccd9;
-    --verde: #22d68a;
-    --verde-fundo: rgba(34, 214, 138, 0.07);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0 6px 6px;
-    min-height: 100vh;
-    background: var(--bg);
-    color: var(--texto);
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-body::before,
-body::after {
+body.pagina-treinos::before {
     content: "";
     position: fixed;
+    inset: 0;
     z-index: -1;
-    width: 70px;
-    background: var(--verde-fundo);
-    border-radius: 14px;
     pointer-events: none;
 }
 
-body::before {
-    height: 620px;
-    right: 12%;
-    top: 12%;
-    transform: rotate(28deg);
+.pagina-treinos main {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 56px) 0 24px;
 }
 
-body::after {
-    height: 360px;
-    right: 24%;
-    top: 8%;
-    transform: rotate(-48deg);
+.pagina-treinos main > section {
+    margin: 0 0 40px;
+    padding: 0;
+    border: 0;
 }
 
-h1,
-h2 {
-    margin: 0 0 12px;
-    color: var(--titulo);
+.pagina-treinos main > section:last-child {
+    margin-bottom: 0;
 }
 
-h1 {
-    font-size: 2rem;
+.pagina-treinos main p {
+    max-width: none;
+    margin: 0 0 16px;
 }
 
-h2 {
-    font-size: 1.4rem;
-}
-
-h3 {
-    margin: 0 0 12px;
-    color: var(--verde);
-    font-size: 1.1rem;
-}
-
-p {
-    max-width: 75ch;
-    margin: 0 0 14px;
-}
-
-a {
-    color: var(--verde);
+.pagina-treinos main a {
+    color: var(--verde-principal, #42E89A);
     font-weight: 600;
     text-decoration: none;
 }
 
-a:hover {
+.pagina-treinos main a:hover {
     text-decoration: underline;
 }
 
-header,
-footer {
-    background: var(--bg-header);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
+.pagina-treinos main > section > h2 {
+    margin: 0 0 18px;
+    padding: 4px 0 4px 14px;
+    border-left: 4px solid var(--verde-principal, #42E89A);
 }
 
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 18px 40px;
+.pagina-treinos main > section:first-child {
+    text-align: center;
 }
 
-header figure {
-    margin: 0;
+.pagina-treinos main > section:first-child h1 {
+    margin: 0 0 22px;
+    letter-spacing: .02em;
 }
 
-header img {
+.pagina-treinos main > section:first-child h1::after {
+    content: "";
     display: block;
-    width: 150px;
-    max-width: 100%;
-    height: auto;
+    width: 64px;
+    height: 4px;
+    margin: 14px auto 0;
+    border-radius: 4px;
+    background: var(--verde-principal, #42E89A);
 }
 
-header figcaption {
-    display: none;
+.pagina-treinos main > section:first-child a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: rgba(19, 28, 41, .95);
+    transition: background .2s ease, color .2s ease;
 }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 56px;
-}
-
-nav a {
-    color: var(--titulo);
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: color 0.2s;
-}
-
-nav a:hover,
-nav a:focus-visible {
-    color: var(--verde);
+.pagina-treinos main > section:first-child a:hover {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
     text-decoration: none;
 }
 
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 32px 20px 40px;
-}
-
-main > section {
-    padding: 28px 0;
-    border-top: 1px solid var(--borda);
-}
-
-main > section:first-child {
-    padding-top: 0;
-    border-top: 0;
-}
-
-main > section:last-child {
-    padding-bottom: 0;
-}
-
-.exemplo {
-    display: inline-grid;
-    gap: 6px;
+.pagina-treinos main > section:nth-of-type(2) > p {
     margin: 0;
-    padding: 20px 24px;
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
+    padding: 18px 22px;
+    border-left: 4px solid var(--verde-principal, #42E89A);
+    border-radius: 0 12px 12px 0;
+    background: rgba(19, 28, 41, .92);
+    font-size: 1.05rem;
 }
 
-.exemplo div {
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-}
-
-.exemplo dt {
-    color: var(--texto-suave);
-}
-
-.exemplo dd {
-    margin: 0;
-    font-weight: 600;
-}
-
-.exemplo .resultado {
-    margin-top: 6px;
-    padding-top: 10px;
-    border-top: 1px solid var(--borda);
-    color: var(--verde);
-    font-weight: 700;
-}
-
-.exemplo .resultado dt {
-    color: var(--verde);
-}
-
-.opcao + .opcao {
-    margin-top: 32px;
-}
-
-.tabela {
-    overflow-x: auto;
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
-}
-
-table {
+.pagina-treinos .exemplo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
     width: 100%;
-    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
 }
 
-th,
-td {
-    padding: 12px 16px;
+.pagina-treinos .exemplo div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid rgba(66, 232, 154, .4);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .92);
+    text-align: center;
+}
+
+.pagina-treinos .exemplo dt {
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.pagina-treinos .exemplo dd {
+    margin: 0;
+    color: var(--texto-principal, #F5F7FA);
+    font-size: clamp(1.4rem, 3.4vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.pagina-treinos .exemplo .resultado {
+    margin: 0;
+    padding: 20px;
+    border-color: var(--verde-principal, #42E89A);
+    background: var(--verde-escuro, #123F35);
+}
+
+.pagina-treinos .exemplo .resultado dt,
+.pagina-treinos .exemplo .resultado dd {
+    color: var(--verde-principal, #42E89A);
+}
+
+.pagina-treinos .opcao {
+    overflow: hidden;
+    border: 1px solid var(--borda, #2DD98A);
+    border-radius: 14px;
+    background: rgba(19, 28, 41, .96);
+}
+
+.pagina-treinos .opcao + .opcao {
+    margin-top: 22px;
+}
+
+.pagina-treinos .opcao h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 14px 22px;
+    background: var(--verde-escuro, #123F35);
+    color: var(--texto-principal, #F5F7FA) !important;
+    font-size: 1.1rem;
+}
+
+.pagina-treinos .opcao .tabela {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.pagina-treinos .tabela {
+    overflow-x: auto;
+    border: 1px solid var(--borda, #2DD98A);
+    border-radius: 14px;
+    background: rgba(19, 28, 41, .96);
+    -webkit-overflow-scrolling: touch;
+}
+
+.pagina-treinos .tabela table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+.pagina-treinos .tabela th,
+.pagina-treinos .tabela td {
+    padding: 14px 20px;
+    border: 0;
+    border-bottom: 1px solid rgba(66, 232, 154, .15);
     text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid var(--borda);
 }
 
-thead th,
-tfoot th {
-    background: var(--verde-escuro);
-    color: var(--verde);
+.pagina-treinos .tabela thead th {
+    background: rgba(18, 63, 53, .55);
+    color: var(--verde-principal, #42E89A);
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
-tfoot th {
+.pagina-treinos .tabela tbody tr:nth-child(even) td {
+    background: rgba(255, 255, 255, .025);
+}
+
+.pagina-treinos .tabela tbody tr:hover td {
+    background: rgba(66, 232, 154, .07);
+}
+
+.pagina-treinos .tabela tbody tr:last-child td {
     border-bottom: 0;
 }
 
-tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-tbody tr:hover td {
-    background: rgba(34, 214, 138, 0.04);
-}
-
-tbody td:first-child {
-    color: var(--titulo);
-    font-weight: 600;
+.pagina-treinos .tabela tbody td:first-child {
+    color: var(--texto-principal, #F5F7FA);
+    font-weight: 700;
     white-space: nowrap;
 }
 
-.dicas {
+.pagina-treinos .tabela tfoot th {
+    border-top: 1px solid var(--borda, #2DD98A);
+    border-bottom: 0;
+    background: var(--verde-escuro, #123F35);
+    color: var(--verde-principal, #42E89A);
+    font-size: 1.05rem;
+}
+
+.pagina-treinos .opcao .tabela th:last-child,
+.pagina-treinos .opcao .tabela td:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.pagina-treinos .opcao .tabela td:last-child {
+    color: var(--verde-principal, #42E89A);
+    font-weight: 700;
+}
+
+.pagina-treinos .dicas {
     display: grid;
-    gap: 10px;
+    gap: 12px;
     margin: 0 0 20px;
     padding: 0;
     list-style: none;
 }
 
-.dicas li {
-    padding: 12px 18px;
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-left: 3px solid var(--verde);
-    border-radius: 10px;
-}
-
-small {
-    color: var(--texto-suave);
-}
-
-.links-pagina {
+.pagina-treinos .dicas li {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 16px;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid rgba(66, 232, 154, .4);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .92);
 }
 
-footer {
+.pagina-treinos .dicas li::before {
+    content: "\2713";
+    display: grid;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--verde-escuro, #123F35);
+    color: var(--verde-principal, #42E89A);
+    font-size: .85rem;
+    font-weight: 800;
+}
+
+.pagina-treinos main small {
+    display: block;
+    padding: 14px 16px;
+    border-left: 3px solid var(--verde-principal, #42E89A);
+    border-radius: 0 8px 8px 0;
+    background: rgba(19, 28, 41, .72);
+    color: var(--texto-principal, #F5F7FA);
+    font-size: .94rem;
+}
+
+.pagina-treinos .links-pagina {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 18px 40px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(66, 232, 154, .3);
 }
 
-footer a {
-    color: var(--titulo);
+.pagina-treinos .links-pagina a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 11px 22px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: rgba(19, 28, 41, .95);
+    transition: background .2s ease, color .2s ease;
 }
 
-footer a:hover {
-    color: var(--verde);
+.pagina-treinos .links-pagina a:hover {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
     text-decoration: none;
 }
 
+.pagina-treinos .links-pagina a:last-child {
+    background: var(--verde-secundario, #2DD98A);
+    color: var(--verde-escuro, #123F35);
+}
+
+.pagina-treinos .links-pagina a:last-child:hover {
+    filter: brightness(1.1);
+}
+
+.pagina-treinos footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 24px;
+    margin-top: 20px;
+    padding: 18px 20px;
+    border-top: 2px solid var(--borda, #2DD98A);
+    background: var(--fundo-secundario, #0B121B);
+    text-align: center;
+}
+
+.pagina-treinos footer span {
+    color: var(--texto-secundario, #A8B5C7);
+}
+
+.pagina-treinos footer a {
+    display: inline-flex;
+    padding: 5px;
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pagina-treinos footer a:hover {
+    color: var(--verde-principal, #42E89A);
+}
+
 @media (max-width: 700px) {
-    header,
-    footer {
-        padding: 16px 20px;
+    .pagina-treinos main {
+        width: calc(100% - 28px);
     }
 
-    header {
-        justify-content: center;
+    .pagina-treinos .links-pagina {
+        flex-direction: column-reverse;
+        align-items: stretch;
     }
 
-    nav {
-        justify-content: center;
-        gap: 22px;
+    .pagina-treinos .links-pagina a {
+        width: 100%;
     }
 
-    h1 {
-        font-size: 1.6rem;
+    .pagina-treinos footer {
+        flex-direction: column;
+        padding: 20px 14px;
     }
 
-    tbody td:first-child {
+    
+    .pagina-treinos .tabela th,
+    .pagina-treinos .tabela td {
+        padding: 12px 14px;
+    }
+
+    .pagina-treinos .tabela tbody td:first-child {
         white-space: normal;
+    }
+
+    
+    .pagina-treinos .opcao .tabela table,
+    .pagina-treinos .opcao .tabela tbody,
+    .pagina-treinos .opcao .tabela tfoot {
+        display: block;
+    }
+
+    .pagina-treinos .opcao .tabela thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .pagina-treinos .opcao .tabela tbody tr {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2px 12px;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(66, 232, 154, .15);
+    }
+
+    .pagina-treinos .opcao .tabela tbody tr:last-child {
+        border-bottom: 0;
+    }
+
+    .pagina-treinos .opcao .tabela tbody td {
+        padding: 0;
+        border: 0;
+        background: transparent !important;
+    }
+
+    .pagina-treinos .opcao .tabela tbody td:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        color: var(--verde-principal, #42E89A);
+    }
+
+    .pagina-treinos .opcao .tabela tbody td:last-child {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .pagina-treinos .opcao .tabela tbody td:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .pagina-treinos .opcao .tabela tfoot tr {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid var(--borda, #2DD98A);
+        background: var(--verde-escuro, #123F35);
+    }
+
+    .pagina-treinos .opcao .tabela tfoot th {
+        border-top: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .pagina-treinos .opcao h3 {
+        padding: 12px 16px;
+        font-size: 1rem;
     }
 }

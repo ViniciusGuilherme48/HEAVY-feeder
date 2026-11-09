@@ -250,3 +250,188 @@ button:hover {
     margin: 0;
     cursor: pointer;
 }
+
+
+.pagina-personalizado .progresso-formulario {
+    margin: 0 0 24px;
+    padding: 20px;
+    border: 1px solid rgba(66, 232, 154, .3);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .96);
+}
+
+.pagina-personalizado .progresso-formulario-texto {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--texto-principal, #F5F7FA);
+    font-weight: 700;
+}
+
+.pagina-personalizado .barra-progresso-formulario {
+    height: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #273443;
+}
+
+.pagina-personalizado .barra-progresso-preenchida {
+    display: block;
+    width: 17%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--verde-principal, #42E89A);
+    transition: width .3s ease;
+}
+
+.pagina-personalizado .marcadores-etapas {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.pagina-personalizado .marcador-etapa {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid #536274;
+    border-radius: 50%;
+    background: #0B121B;
+    color: #D8E0E8;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.pagina-personalizado .marcador-etapa.ativo,
+.pagina-personalizado .marcador-etapa.concluido {
+    border-color: var(--verde-principal, #42E89A);
+    background: var(--verde-principal, #42E89A);
+    color: #0B121B;
+}
+
+.pagina-personalizado .etapa-formulario[hidden] {
+    display: none !important;
+}
+
+.pagina-personalizado .etapa-formulario {
+    animation: entrada-etapa .25s ease;
+}
+
+.pagina-personalizado .cabecalho-etapa {
+    margin: 0 0 18px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--verde-principal, #42E89A);
+    border-radius: 8px;
+    background: rgba(19, 28, 41, .8);
+}
+
+.pagina-personalizado .numero-etapa {
+    color: var(--verde-principal, #42E89A);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.pagina-personalizado .cabecalho-etapa h2 {
+    margin: 6px 0 0;
+    color: var(--texto-principal, #F5F7FA);
+    font-size: clamp(1.2rem, 3vw, 1.55rem);
+}
+
+.pagina-personalizado .etapa-formulario fieldset {
+    margin-bottom: 18px;
+}
+
+.pagina-personalizado .controles-carrossel-formulario {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 22px 0 16px;
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa {
+    width: auto;
+    min-width: 150px;
+    min-height: 48px;
+    margin: 0;
+    padding: 12px 20px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 8px;
+    background: var(--verde-secundario, #2DD98A);
+    color: var(--verde-escuro, #123F35);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-anterior {
+    background: transparent;
+    color: var(--texto-principal, #F5F7FA);
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa[hidden] {
+    display: none !important;
+}
+
+.pagina-personalizado .controles-carrossel-formulario .controle-etapa:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+.pagina-personalizado .aviso-formulario {
+    margin-top: 20px;
+    color: var(--texto-principal, #F5F7FA);
+}
+
+@keyframes entrada-etapa {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 560px) {
+    .pagina-personalizado .progresso-formulario {
+        padding: 15px;
+    }
+
+    .pagina-personalizado .marcadores-etapas {
+        gap: 5px;
+    }
+
+    .pagina-personalizado .marcador-etapa {
+        width: 26px;
+        height: 26px;
+        font-size: .75rem;
+    }
+
+    .pagina-personalizado .controles-carrossel-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .pagina-personalizado .controles-carrossel-formulario .controle-etapa {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pagina-personalizado .etapa-formulario {
+        animation: none;
+    }
+
+    .pagina-personalizado .barra-progresso-preenchida {
+        transition: none;
+    }
+}

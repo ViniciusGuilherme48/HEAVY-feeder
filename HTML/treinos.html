@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../CSS/style-global.css">
     <link rel="stylesheet" href="../CSS/style-navegacao.css">
     <link rel="stylesheet" href="../CSS/style-cards.css">
-    <link rel="stylesheet" href="../CSS/style-icones.css">
 </head>
 <body class="pagina-treinos">
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -42,7 +41,6 @@
             <div class="lista-treinos" id="lista-treinos" data-carousel-track tabindex="0" aria-label="Opções de treino">
                 <a href="hipertrofia.html" class="card-link">
                     <article class="card">
-                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3 9.5v5"/><path d="M21 9.5v5"/><path d="M6.5 12h11"/></svg>
                         <span class="card-numero" aria-hidden="true">01</span>
                         <h3>Hipertrofia</h3>
                         <p>Treinamento de força para favorecer o desenvolvimento muscular, com progressão, alimentação adequada e recuperação.</p>
@@ -51,7 +49,6 @@
                 </a>
                 <a href="emagrecimento.html" class="card-link">
                     <article class="card">
-                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
                         <span class="card-numero" aria-hidden="true">02</span>
                         <h3>Emagrecimento</h3>
                         <p>Combine musculação e atividades aeróbicas para apoiar a redução de gordura e preservar a massa muscular.</p>
@@ -60,7 +57,6 @@
                 </a>
                 <a href="força.html" class="card-link">
                     <article class="card">
-                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.906 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/></svg>
                         <span class="card-numero" aria-hidden="true">03</span>
                         <h3>Força</h3>
                         <p>Desenvolva a capacidade de produzir força com técnica, planejamento e progressão gradual de cargas.</p>
@@ -69,7 +65,6 @@
                 </a>
                 <a href="treino-personalizado.html" class="card-link">
                     <article class="card">
-                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4h-7"/><path d="M10 4H3"/><path d="M21 12h-9"/><path d="M8 12H3"/><path d="M21 20h-5"/><path d="M12 20H3"/><path d="M14 2v4"/><path d="M8 10v4"/><path d="M16 18v4"/></svg>
                         <span class="card-numero" aria-hidden="true">04</span>
                         <h3>Personalizado</h3>
                         <p>Organize o treinamento de acordo com seus objetivos, experiência, rotina, disponibilidade e preferências.</p>
@@ -92,6 +87,31 @@
         <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
     </nav>
 </footer>
-<script src="../JS/carrossel.js"></script>
+<script>
+document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const anterior = carousel.querySelector("[data-carousel-prev]");
+    const proximo = carousel.querySelector("[data-carousel-next]");
+
+    function mover(direcao) {
+        const card = track.querySelector(".card-link");
+        if (!card) return;
+        const espacamento = parseFloat(getComputedStyle(track).columnGap) || 0;
+        track.scrollBy({ left: direcao * (card.getBoundingClientRect().width + espacamento), behavior: "smooth" });
+    }
+
+    function atualizarBotoes() {
+        const limite = track.scrollWidth - track.clientWidth;
+        anterior.disabled = track.scrollLeft <= 2;
+        proximo.disabled = track.scrollLeft >= limite - 2;
+    }
+
+    anterior.addEventListener("click", function () { mover(-1); });
+    proximo.addEventListener("click", function () { mover(1); });
+    track.addEventListener("scroll", atualizarBotoes, { passive: true });
+    window.addEventListener("resize", atualizarBotoes);
+    atualizarBotoes();
+});
+</script>
 </body>
 </html>

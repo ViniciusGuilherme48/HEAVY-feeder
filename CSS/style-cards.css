@@ -357,3 +357,191 @@
         padding: 20px;
     }
 }
+
+
+.pagina-treinos .carrossel-semanal {
+    width: 100%;
+    max-width: 920px;
+    margin: 28px auto;
+    padding: clamp(18px, 3vw, 30px);
+    border: 1px solid rgba(66, 232, 154, .45);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(19, 28, 41, .98), rgba(10, 17, 25, .98));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .24);
+}
+
+.pagina-treinos .seletor-dias {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 9px;
+    margin: 0 auto 22px;
+}
+
+.pagina-treinos .seletor-dia {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 5px;
+    border: 1px solid rgba(168, 181, 199, .25);
+    border-radius: 10px;
+    background: #101a26;
+    color: #dce5ed;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.pagina-treinos .seletor-dia:hover {
+    border-color: var(--verde-principal, #42E89A);
+    color: var(--verde-principal, #42E89A);
+    transform: translateY(-2px);
+}
+
+.pagina-treinos .seletor-dia[aria-pressed="true"] {
+    border-color: var(--verde-principal, #42E89A);
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+    box-shadow: 0 0 0 3px rgba(66, 232, 154, .16);
+}
+
+.pagina-treinos .seletor-dia .indicador-hoje {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    padding: 3px 8px;
+    border: 1px solid #092319;
+    border-radius: 20px;
+    background: #42E89A;
+    color: #092319;
+    font-size: .62rem;
+    font-weight: 900;
+    letter-spacing: .06em;
+    line-height: 1.2;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.pagina-treinos .janela-carrossel-semanal {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.pagina-treinos .trilha-semanal {
+    display: flex;
+    width: 100%;
+    transition: transform .35s ease;
+}
+
+.pagina-treinos .trilha-semanal .dia-treino {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 300px;
+    padding: clamp(20px, 3vw, 30px);
+    border: 1px solid rgba(66, 232, 154, .42);
+    border-radius: 14px;
+    background: rgba(7, 14, 22, .78);
+    box-sizing: border-box;
+}
+
+.pagina-treinos .trilha-semanal .dia-treino h3 {
+    margin-bottom: 18px;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.4;
+}
+
+.pagina-treinos .trilha-semanal .dia-treino li {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+.pagina-treinos .navegacao-semanal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.pagina-treinos .controle-semanal {
+    display: inline-flex;
+    min-width: 116px;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--verde-principal, #42E89A);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.pagina-treinos .controle-semanal:hover:not(:disabled) {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+}
+
+.pagina-treinos .controle-semanal:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.pagina-treinos .progresso-semanal {
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: .9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pagina-treinos .botao-voltar {
+    display: flex;
+    width: fit-content;
+    margin: 36px auto 10px;
+}
+
+@media (max-width: 700px) {
+    .pagina-treinos .seletor-dias {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 15px;
+    }
+
+    .pagina-treinos .trilha-semanal .dia-treino {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .pagina-treinos .carrossel-semanal {
+        padding: 14px;
+    }
+
+    .pagina-treinos .seletor-dia {
+        min-height: 46px;
+        font-size: .8rem;
+    }
+
+    .pagina-treinos .navegacao-semanal {
+        flex-wrap: wrap;
+    }
+
+    .pagina-treinos .controle-semanal {
+        min-width: 0;
+        flex: 1 1 40%;
+    }
+
+    .pagina-treinos .progresso-semanal {
+        order: -1;
+        width: 100%;
+    }
+}
+
