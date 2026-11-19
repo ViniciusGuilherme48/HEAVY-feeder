@@ -1,0 +1,547 @@
+/* style-cards.css
+   Cartões (.card) e o carrossel de cartões (usado em Início, Dietas, Calculadoras e Treinos; script em JS/carrossel.js). */
+
+
+.pagina-treinos .lista-treinos {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 20px;
+    padding: 8px 3px 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--verde-principal, #42E89A) rgba(19, 28, 41, .9);
+    overscroll-behavior-x: contain;
+}
+
+.pagina-treinos .lista-treinos::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: rgba(19, 28, 41, .9);
+}
+
+.pagina-treinos .lista-treinos::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: var(--verde-principal, #42E89A);
+}
+
+.pagina-treinos .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 290px;
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--borda, #2DD98A);
+    border-radius: 14px;
+    background: rgba(19, 28, 41, 0.94);
+    text-align: left;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.pagina-treinos .card-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 50%;
+    color: var(--verde-principal, #42E89A);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+.pagina-treinos .card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.pagina-treinos .card p {
+    flex: 1;
+    margin: 0;
+}
+
+.pagina-treinos .card-acao {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--verde-principal, #42E89A);
+    font-weight: 700;
+}
+
+.pagina-treinos .card-link:hover .card {
+    transform: translateY(-4px);
+    border-color: var(--verde-principal, #42E89A);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
+}
+
+.pagina-treinos .carrossel-controle {
+    display: inline-flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 50%;
+    background: var(--card, #131C29);
+    color: var(--verde-principal, #42E89A);
+    font-size: 22px;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, opacity .2s ease;
+}
+
+.pagina-treinos .carrossel-controle:hover:not(:disabled) {
+    background: var(--verde-principal, #42E89A);
+    color: var(--verde-escuro, #123F35);
+}
+
+.pagina-treinos .carrossel-instrucao {
+    margin: 4px 0 0;
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: .9rem;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .pagina-treinos .carrossel-treinos {
+        gap: 10px;
+    }
+
+    .pagina-treinos .lista-treinos {
+        gap: 16px;
+    }
+
+    .pagina-treinos .card-link {
+        flex-basis: calc((100% - 16px) / 2);
+    }
+
+    .pagina-treinos .card {
+        min-height: 280px;
+        padding: 18px;
+    }
+
+    .pagina-treinos .carrossel-controle {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 560px) {
+    .pagina-treinos .carrossel-treinos {
+        gap: 6px;
+    }
+
+    .pagina-treinos .lista-treinos {
+        gap: 12px;
+    }
+
+    .pagina-treinos .card-link {
+        flex-basis: 100%;
+    }
+
+    .pagina-treinos .card {
+        min-height: 260px;
+    }
+
+    .pagina-treinos .carrossel-controle {
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+.pagina-treinos #conteudo-principal > a {
+    display: flex;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+    flex: 1 1 280px;
+    max-width: calc(33.333% - 18px);
+}
+
+.pagina-treinos #conteudo-principal:has(> a) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.pagina-treinos #conteudo-principal > a .card {
+    width: 100%;
+    min-width: 0;
+    min-height: 240px;
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: rgba(19,28,41,.94);
+    text-align: left;
+    font-size: 16px;
+    transition: transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+
+.pagina-treinos #conteudo-principal > a:hover .card {
+    transform: translateY(-4px);
+    border-color: var(--verde-principal);
+    box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+
+@media (max-width:800px) {
+    .pagina-treinos #conteudo-principal > a {
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width:560px) {
+    .pagina-treinos #conteudo-principal:has(> a) {
+        gap: 14px;
+    }
+
+    .pagina-treinos #conteudo-principal > a {
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+}
+
+.pagina-treinos .carrossel-treinos {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.pagina-treinos .lista-treinos {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 20px;
+    padding: 8px 3px 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--verde-principal,#42E89A) rgba(19,28,41,.9);
+    overscroll-behavior-x: contain;
+}
+
+.pagina-treinos .lista-treinos::-webkit-scrollbar {
+    height: 8px;
+}
+
+.pagina-treinos .lista-treinos::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: rgba(19,28,41,.9);
+}
+
+.pagina-treinos .lista-treinos::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: var(--verde-principal,#42E89A);
+}
+
+.pagina-treinos .card-link {
+    display: flex;
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 14px;
+    scroll-snap-align: start;
+}
+
+.pagina-treinos .lista-treinos .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 230px;
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--borda,#2DD98A);
+    border-radius: 14px;
+    background: rgba(19,28,41,.94);
+    text-align: left;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+    transition: transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+
+.pagina-treinos .lista-treinos .card h2 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.pagina-treinos .lista-treinos .card p {
+    flex: 1;
+    margin: 0;
+}
+
+.pagina-treinos .card-link:hover .card {
+    transform: translateY(-4px);
+    border-color: var(--verde-principal,#42E89A);
+    box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+
+.pagina-treinos .carrossel-controle {
+    display: inline-flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--verde-principal,#42E89A);
+    border-radius: 50%;
+    background: var(--card,#131C29);
+    color: var(--verde-principal,#42E89A);
+    font-size: 22px;
+    cursor: pointer;
+    transition: background .2s ease,color .2s ease,opacity .2s ease;
+}
+
+.pagina-treinos .carrossel-controle:hover:not(:disabled) {
+    background: var(--verde-principal,#42E89A);
+    color: var(--verde-escuro,#123F35);
+}
+
+.pagina-treinos .carrossel-controle:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+.pagina-treinos .carrossel-instrucao {
+    margin: 4px 0 0;
+    color: var(--texto-secundario,#A8B5C7);
+    font-size: .9rem;
+    text-align: center;
+}
+
+@media (max-width:800px) {
+    .pagina-treinos .card-link {
+        flex-basis: calc((100% - 20px)/2);
+    }
+}
+
+@media (max-width:560px) {
+    .pagina-treinos .carrossel-treinos {
+        gap: 7px;
+    }
+
+    .pagina-treinos .lista-treinos {
+        gap: 14px;
+    }
+
+    .pagina-treinos .card-link {
+        flex-basis: 100%;
+    }
+
+    .pagina-treinos .carrossel-controle {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 19px;
+    }
+
+    .pagina-treinos .lista-treinos .card {
+        min-height: 200px;
+        padding: 20px;
+    }
+}
+
+
+.pagina-treinos .carrossel-semanal {
+    width: 100%;
+    max-width: 920px;
+    margin: 28px auto;
+    padding: clamp(18px, 3vw, 30px);
+    border: 1px solid rgba(66, 232, 154, .45);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(19, 28, 41, .98), rgba(10, 17, 25, .98));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .24);
+}
+
+.pagina-treinos .seletor-dias {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 9px;
+    margin: 0 auto 22px;
+}
+
+.pagina-treinos .seletor-dia {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 5px;
+    border: 1px solid rgba(168, 181, 199, .25);
+    border-radius: 10px;
+    background: #101a26;
+    color: #dce5ed;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.pagina-treinos .seletor-dia:hover {
+    border-color: var(--verde-principal, #42E89A);
+    color: var(--verde-principal, #42E89A);
+    transform: translateY(-2px);
+}
+
+.pagina-treinos .seletor-dia[aria-pressed="true"] {
+    border-color: var(--verde-principal, #42E89A);
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+    box-shadow: 0 0 0 3px rgba(66, 232, 154, .16);
+}
+
+.pagina-treinos .seletor-dia .indicador-hoje {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    padding: 3px 8px;
+    border: 1px solid #092319;
+    border-radius: 20px;
+    background: #42E89A;
+    color: #092319;
+    font-size: .62rem;
+    font-weight: 900;
+    letter-spacing: .06em;
+    line-height: 1.2;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.pagina-treinos .janela-carrossel-semanal {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.pagina-treinos .trilha-semanal {
+    display: flex;
+    width: 100%;
+    transition: transform .35s ease;
+}
+
+.pagina-treinos .trilha-semanal .dia-treino {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 300px;
+    padding: clamp(20px, 3vw, 30px);
+    border: 1px solid rgba(66, 232, 154, .42);
+    border-radius: 14px;
+    background: rgba(7, 14, 22, .78);
+    box-sizing: border-box;
+}
+
+.pagina-treinos .trilha-semanal .dia-treino h3 {
+    margin-bottom: 18px;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.4;
+}
+
+.pagina-treinos .trilha-semanal .dia-treino li {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+.pagina-treinos .navegacao-semanal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.pagina-treinos .controle-semanal {
+    display: inline-flex;
+    min-width: 116px;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--verde-principal, #42E89A);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.pagina-treinos .controle-semanal:hover:not(:disabled) {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+}
+
+.pagina-treinos .controle-semanal:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.pagina-treinos .progresso-semanal {
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: .9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pagina-treinos .botao-voltar {
+    display: flex;
+    width: fit-content;
+    margin: 36px auto 10px;
+}
+
+@media (max-width: 700px) {
+    .pagina-treinos .seletor-dias {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 15px;
+    }
+
+    .pagina-treinos .trilha-semanal .dia-treino {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .pagina-treinos .carrossel-semanal {
+        padding: 14px;
+    }
+
+    .pagina-treinos .seletor-dia {
+        min-height: 46px;
+        font-size: .8rem;
+    }
+
+    .pagina-treinos .navegacao-semanal {
+        flex-wrap: wrap;
+    }
+
+    .pagina-treinos .controle-semanal {
+        min-width: 0;
+        flex: 1 1 40%;
+    }
+
+    .pagina-treinos .progresso-semanal {
+        order: -1;
+        width: 100%;
+    }
+}
+
