@@ -1,0 +1,218 @@
+/* style-global.css
+   Estilos globais do site: variáveis de cor (:root), reset, body, tipografia, imagens, foco, botão voltar e padrões compartilhados por todas as páginas. */
+
+
+.pagina-treinos {
+    margin: 0;
+    min-width: 320px;
+    color: var(--texto-principal, #F5F7FA);
+    background: var(--fundo, #070D14);
+    line-height: 1.6;
+}
+
+.pagina-treinos *,
+.pagina-treinos *::before,
+.pagina-treinos *::after {
+    box-sizing: border-box;
+}
+
+.pagina-treinos h1 {
+    color: var(--texto-principal, #F5F7FA);
+    font-size: clamp(28px, 4vw, 42px);
+}
+
+.pagina-treinos h2 {
+    margin-top: 28px;
+    color: var(--verde-principal, #42E89A);
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.pagina-treinos h3 {
+    color: var(--texto-principal, #F5F7FA);
+}
+
+.pagina-treinos p,
+.pagina-treinos li {
+    color: var(--texto-principal, #F5F7FA);
+}
+
+.pagina-treinos .imagem-secundaria img {
+    max-height: 420px;
+}
+
+.pagina-treinos a:focus-visible {
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pagina-treinos *,
+    .pagina-treinos *::before,
+    .pagina-treinos *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+.pagina-treinos .botao-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 24px;
+    padding: 10px 18px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--verde-principal, #42E89A);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.pagina-treinos .botao-voltar:hover {
+    background: var(--verde-principal, #42E89A);
+    color: var(--verde-escuro, #123F35);
+    transform: translateX(-2px);
+}
+
+@media (max-width: 680px) {
+    .pagina-treinos .botao-voltar {
+        margin-bottom: 18px;
+    }
+}
+
+:root {
+    --verde-principal: #42E89A;
+    --verde-secundario: #2DD98A;
+    --verde-escuro: #123F35;
+    --fundo: #070D14;
+    --fundo-secundario: #0B121B;
+    --card: #131C29;
+    --borda: #2DD98A;
+    --texto-principal: #F5F7FA;
+    --texto-secundario: #A8B5C7;
+    --texto-discreto: #718096;
+}
+
+html {
+    min-height: 100%;
+    background: var(--fundo);
+    scroll-behavior: smooth;
+}
+
+body.pagina-treinos {
+    margin: 0 !important;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--fundo) !important;
+    color: var(--texto-principal) !important;
+    font-family: 'Poppins', Arial, sans-serif !important;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.pagina-treinos::before {
+    background-image: url("../HTML/IMAGEM/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: .22;
+}
+
+.pagina-treinos h1,
+.pagina-treinos h2,
+.pagina-treinos h3 {
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.pagina-treinos h1 {
+    color: var(--texto-principal) !important;
+    font-size: clamp(28px,4vw,42px);
+}
+
+.pagina-treinos h2 {
+    color: var(--verde-principal) !important;
+    font-size: clamp(22px,3vw,30px);
+}
+
+.pagina-treinos h3 {
+    color: var(--texto-principal) !important;
+}
+
+.pagina-treinos p,
+.pagina-treinos li {
+    color: var(--texto-principal);
+}
+
+.pagina-treinos p {
+    line-height: 1.75;
+}
+
+.pagina-treinos main > section {
+    margin-bottom: 28px;
+}
+
+.pagina-treinos button,
+.pagina-treinos input,
+.pagina-treinos select,
+.pagina-treinos textarea {
+    font: inherit;
+}
+
+.pagina-treinos input:not([type=checkbox]):not([type=radio]),
+.pagina-treinos select,
+.pagina-treinos textarea {
+    max-width: 100%;
+    border: 1px solid #536274;
+    border-radius: 7px;
+    background: #0B121B;
+    color: var(--texto-principal);
+    padding: 11px 12px;
+}
+
+.pagina-treinos button:not(.carrossel-controle) {
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pagina-treinos form,
+.pagina-treinos fieldset {
+    color: var(--texto-principal);
+}
+
+.pagina-treinos fieldset {
+    min-width: 0;
+    margin: 0 0 22px;
+    padding: clamp(16px,3vw,26px);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: rgba(19,28,41,.96);
+}
+
+.pagina-treinos legend {
+    max-width: 100%;
+    padding: 7px 13px;
+    border-radius: 6px;
+    background: var(--verde-escuro);
+    color: var(--texto-principal);
+}
+
+.pagina-treinos label {
+    color: var(--texto-principal);
+}
+
+.pagina-treinos img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pagina-treinos a:focus-visible,
+.pagina-treinos button:focus-visible,
+.pagina-treinos input:focus-visible,
+.pagina-treinos select:focus-visible,
+.pagina-treinos textarea:focus-visible {
+    outline: 3px solid var(--verde-principal);
+    outline-offset: 3px;
+}
