@@ -1,0 +1,450 @@
+/* style-dieta.css
+   Páginas de dieta (Déficit, Manutenção, Superávit): variáveis próprias, layout, tabelas de refeições, dicas e exemplos. */
+
+
+
+body.pagina-treinos::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.pagina-treinos main {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 56px) 0 24px;
+}
+
+.pagina-treinos main > section {
+    margin: 0 0 40px;
+    padding: 0;
+    border: 0;
+}
+
+.pagina-treinos main > section:last-child {
+    margin-bottom: 0;
+}
+
+.pagina-treinos main p {
+    max-width: none;
+    margin: 0 0 16px;
+}
+
+.pagina-treinos main a {
+    color: var(--verde-principal, #42E89A);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pagina-treinos main a:hover {
+    text-decoration: underline;
+}
+
+.pagina-treinos main > section > h2 {
+    margin: 0 0 18px;
+    padding: 4px 0 4px 14px;
+    border-left: 4px solid var(--verde-principal, #42E89A);
+}
+
+.pagina-treinos main > section:first-child {
+    text-align: center;
+}
+
+.pagina-treinos main > section:first-child h1 {
+    margin: 0 0 22px;
+    letter-spacing: .02em;
+}
+
+.pagina-treinos main > section:first-child h1::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin: 14px auto 0;
+    border-radius: 4px;
+    background: var(--verde-principal, #42E89A);
+}
+
+.pagina-treinos main > section:first-child a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: rgba(19, 28, 41, .95);
+    transition: background .2s ease, color .2s ease;
+}
+
+.pagina-treinos main > section:first-child a:hover {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+    text-decoration: none;
+}
+
+.pagina-treinos main > section:nth-of-type(2) > p {
+    margin: 0;
+    padding: 18px 22px;
+    border-left: 4px solid var(--verde-principal, #42E89A);
+    border-radius: 0 12px 12px 0;
+    background: rgba(19, 28, 41, .92);
+    font-size: 1.05rem;
+}
+
+.pagina-treinos .exemplo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.pagina-treinos .exemplo div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid rgba(66, 232, 154, .4);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .92);
+    text-align: center;
+}
+
+.pagina-treinos .exemplo dt {
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.pagina-treinos .exemplo dd {
+    margin: 0;
+    color: var(--texto-principal, #F5F7FA);
+    font-size: clamp(1.4rem, 3.4vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.pagina-treinos .exemplo .resultado {
+    margin: 0;
+    padding: 20px;
+    border-color: var(--verde-principal, #42E89A);
+    background: var(--verde-escuro, #123F35);
+}
+
+.pagina-treinos .exemplo .resultado dt,
+.pagina-treinos .exemplo .resultado dd {
+    color: var(--verde-principal, #42E89A);
+}
+
+.pagina-treinos .opcao {
+    overflow: hidden;
+    border: 1px solid var(--borda, #2DD98A);
+    border-radius: 14px;
+    background: rgba(19, 28, 41, .96);
+}
+
+.pagina-treinos .opcao + .opcao {
+    margin-top: 22px;
+}
+
+.pagina-treinos .opcao h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 14px 22px;
+    background: var(--verde-escuro, #123F35);
+    color: var(--texto-principal, #F5F7FA) !important;
+    font-size: 1.1rem;
+}
+
+.pagina-treinos .opcao .tabela {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.pagina-treinos .tabela {
+    overflow-x: auto;
+    border: 1px solid var(--borda, #2DD98A);
+    border-radius: 14px;
+    background: rgba(19, 28, 41, .96);
+    -webkit-overflow-scrolling: touch;
+}
+
+.pagina-treinos .tabela table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+.pagina-treinos .tabela th,
+.pagina-treinos .tabela td {
+    padding: 14px 20px;
+    border: 0;
+    border-bottom: 1px solid rgba(66, 232, 154, .15);
+    text-align: left;
+    vertical-align: top;
+}
+
+.pagina-treinos .tabela thead th {
+    background: rgba(18, 63, 53, .55);
+    color: var(--verde-principal, #42E89A);
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.pagina-treinos .tabela tbody tr:nth-child(even) td {
+    background: rgba(255, 255, 255, .025);
+}
+
+.pagina-treinos .tabela tbody tr:hover td {
+    background: rgba(66, 232, 154, .07);
+}
+
+.pagina-treinos .tabela tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.pagina-treinos .tabela tbody td:first-child {
+    color: var(--texto-principal, #F5F7FA);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pagina-treinos .tabela tfoot th {
+    border-top: 1px solid var(--borda, #2DD98A);
+    border-bottom: 0;
+    background: var(--verde-escuro, #123F35);
+    color: var(--verde-principal, #42E89A);
+    font-size: 1.05rem;
+}
+
+.pagina-treinos .opcao .tabela th:last-child,
+.pagina-treinos .opcao .tabela td:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.pagina-treinos .opcao .tabela td:last-child {
+    color: var(--verde-principal, #42E89A);
+    font-weight: 700;
+}
+
+.pagina-treinos .dicas {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.pagina-treinos .dicas li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid rgba(66, 232, 154, .4);
+    border-radius: 12px;
+    background: rgba(19, 28, 41, .92);
+}
+
+.pagina-treinos .dicas li::before {
+    content: "\2713";
+    display: grid;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--verde-escuro, #123F35);
+    color: var(--verde-principal, #42E89A);
+    font-size: .85rem;
+    font-weight: 800;
+}
+
+.pagina-treinos main small {
+    display: block;
+    padding: 14px 16px;
+    border-left: 3px solid var(--verde-principal, #42E89A);
+    border-radius: 0 8px 8px 0;
+    background: rgba(19, 28, 41, .72);
+    color: var(--texto-principal, #F5F7FA);
+    font-size: .94rem;
+}
+
+.pagina-treinos .links-pagina {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(66, 232, 154, .3);
+}
+
+.pagina-treinos .links-pagina a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 11px 22px;
+    border: 1px solid var(--verde-principal, #42E89A);
+    border-radius: 9px;
+    background: rgba(19, 28, 41, .95);
+    transition: background .2s ease, color .2s ease;
+}
+
+.pagina-treinos .links-pagina a:hover {
+    background: var(--verde-principal, #42E89A);
+    color: #092319;
+    text-decoration: none;
+}
+
+.pagina-treinos .links-pagina a:last-child {
+    background: var(--verde-secundario, #2DD98A);
+    color: var(--verde-escuro, #123F35);
+}
+
+.pagina-treinos .links-pagina a:last-child:hover {
+    filter: brightness(1.1);
+}
+
+.pagina-treinos footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 24px;
+    margin-top: 20px;
+    padding: 18px 20px;
+    border-top: 2px solid var(--borda, #2DD98A);
+    background: var(--fundo-secundario, #0B121B);
+    text-align: center;
+}
+
+.pagina-treinos footer span {
+    color: var(--texto-secundario, #A8B5C7);
+}
+
+.pagina-treinos footer a {
+    display: inline-flex;
+    padding: 5px;
+    color: var(--texto-secundario, #A8B5C7);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pagina-treinos footer a:hover {
+    color: var(--verde-principal, #42E89A);
+}
+
+@media (max-width: 700px) {
+    .pagina-treinos main {
+        width: calc(100% - 28px);
+    }
+
+    .pagina-treinos .links-pagina {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .pagina-treinos .links-pagina a {
+        width: 100%;
+    }
+
+    .pagina-treinos footer {
+        flex-direction: column;
+        padding: 20px 14px;
+    }
+
+    
+    .pagina-treinos .tabela th,
+    .pagina-treinos .tabela td {
+        padding: 12px 14px;
+    }
+
+    .pagina-treinos .tabela tbody td:first-child {
+        white-space: normal;
+    }
+
+    
+    .pagina-treinos .opcao .tabela table,
+    .pagina-treinos .opcao .tabela tbody,
+    .pagina-treinos .opcao .tabela tfoot {
+        display: block;
+    }
+
+    .pagina-treinos .opcao .tabela thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .pagina-treinos .opcao .tabela tbody tr {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2px 12px;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(66, 232, 154, .15);
+    }
+
+    .pagina-treinos .opcao .tabela tbody tr:last-child {
+        border-bottom: 0;
+    }
+
+    .pagina-treinos .opcao .tabela tbody td {
+        padding: 0;
+        border: 0;
+        background: transparent !important;
+    }
+
+    .pagina-treinos .opcao .tabela tbody td:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        color: var(--verde-principal, #42E89A);
+    }
+
+    .pagina-treinos .opcao .tabela tbody td:last-child {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .pagina-treinos .opcao .tabela tbody td:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .pagina-treinos .opcao .tabela tfoot tr {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid var(--borda, #2DD98A);
+        background: var(--verde-escuro, #123F35);
+    }
+
+    .pagina-treinos .opcao .tabela tfoot th {
+        border-top: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .pagina-treinos .opcao h3 {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+}
