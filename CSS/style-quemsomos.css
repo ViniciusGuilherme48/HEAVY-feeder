@@ -1,0 +1,336 @@
+.pagina-quemsomos {
+    --qs-fundo: #060b12;
+    --qs-card: #111a26;
+    --qs-verde: #25d985;
+    --qs-texto: #ffffff;
+    --qs-texto-suave: #b8c2cf;
+    background: var(--qs-fundo);
+    color: var(--qs-texto);
+}
+
+.qs-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+}
+
+.qs-conteudo h1,
+.qs-conteudo h2,
+.qs-conteudo h3 {
+    color: var(--qs-verde);
+    line-height: 1.2;
+}
+
+.qs-conteudo p,
+.qs-conteudo li {
+    line-height: 1.7;
+    color: var(--qs-texto);
+}
+
+.qs-conteudo section + section {
+    margin-top: 72px;
+}
+
+.qs-conteudo h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.qs-hero {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.qs-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.qs-hero-texto {
+    font-size: 1.1rem;
+    color: var(--qs-texto-suave);
+}
+
+.qs-historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.qs-historia-texto p + p {
+    margin-top: 16px;
+}
+
+.qs-foto-grupo {
+    margin: 0;
+}
+
+.qs-foto-grupo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--qs-verde);
+    border-radius: 16px;
+    background: var(--qs-card);
+}
+
+.qs-foto-grupo figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--qs-texto-suave);
+    text-align: center;
+}
+
+.qs-grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.qs-card {
+    background: var(--qs-card);
+    border: 1px solid var(--qs-verde);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.qs-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.qs-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 760px;
+}
+
+.qs-lista li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(37, 217, 133, 0.25);
+}
+
+.qs-lista a {
+    color: var(--qs-verde);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.qs-lista a:hover,
+.qs-lista a:focus-visible {
+    text-decoration: underline;
+}
+
+.qs-equipe-intro {
+    max-width: 640px;
+    margin-bottom: 28px;
+    color: var(--qs-texto-suave);
+}
+
+.qs-grade-equipe {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.qs-membro {
+    background: var(--qs-card);
+    border: 1px solid rgba(37, 217, 133, 0.4);
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.qs-avatar {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    border: 2px solid var(--qs-verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--qs-verde);
+    overflow: hidden;
+}
+
+.qs-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.qs-membro h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.qs-funcao {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.qs-curso {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--qs-texto-suave);
+}
+
+.qs-fechamento {
+    text-align: center;
+}
+
+.qs-slogan {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.qs-botao {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: var(--qs-verde);
+    color: #04110b;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.qs-botao:hover {
+    filter: brightness(1.1);
+}
+
+.qs-botao:focus-visible,
+.qs-lista a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+    .qs-grade-equipe {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .qs-historia {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .qs-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .qs-conteudo {
+        padding: 40px 16px 56px;
+    }
+}
+
+@media (max-width: 440px) {
+    .qs-grade-equipe {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pagina-quemsomos {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pagina-quemsomos .cabecalho-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 86px;
+    padding: 0 48px;
+    background: var(--qs-fundo);
+    border-bottom: 1px solid var(--qs-verde);
+}
+
+.pagina-quemsomos .logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.pagina-quemsomos .logo-principal {
+    display: block;
+    height: 86px;
+    width: auto;
+    max-width: 100%;
+}
+
+.pagina-quemsomos .menu-principal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.pagina-quemsomos .menu-principal a {
+    color: #b8c2cf;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.pagina-quemsomos .menu-principal a:hover,
+.pagina-quemsomos .menu-principal a:focus-visible {
+    color: var(--qs-verde);
+}
+
+.pagina-quemsomos .menu-principal .botao-login {
+    background: var(--qs-verde);
+    color: #04110b;
+    padding: 10px 28px;
+    border-radius: 999px;
+}
+
+.pagina-quemsomos .menu-principal .botao-login:hover,
+.pagina-quemsomos .menu-principal .botao-login:focus-visible {
+    color: #04110b;
+    filter: brightness(1.1);
+}
+
+.pagina-quemsomos .rodape-principal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 24px;
+    padding: 24px 16px;
+    border-top: 1px solid var(--qs-verde);
+    background: var(--qs-fundo);
+    color: var(--qs-texto-suave);
+    font-size: 0.9rem;
+}
+
+.pagina-quemsomos .rodape-principal p {
+    margin: 0;
+}
+
+.pagina-quemsomos .rodape-principal a {
+    color: var(--qs-verde);
+    text-decoration: none;
+}
+
+@media (max-width: 760px) {
+    .pagina-quemsomos .cabecalho-principal {
+        flex-direction: column;
+        padding: 8px 16px 14px;
+    }
+
+    .pagina-quemsomos .logo-principal {
+        height: 64px;
+    }
+
+    .pagina-quemsomos .menu-principal {
+        justify-content: center;
+        gap: 16px;
+    }
+}
