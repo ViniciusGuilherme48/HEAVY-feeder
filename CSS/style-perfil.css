@@ -493,3 +493,52 @@ footer a:hover {
     font-size: 13px;
     color: var(--texto-discreto);
 }
+
+.form-treino {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+.form-treino[hidden] {
+    display: none;
+}
+
+.form-treino label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.mensagem-vazio {
+    margin: 0;
+    color: var(--texto-discreto);
+}
+
+.historico-direita {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.botao-remover {
+    padding: 4px 12px;
+    border: 1px solid var(--negativo);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--negativo);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.botao-remover:hover {
+    background-color: var(--negativo);
+    color: var(--fundo);
+}
