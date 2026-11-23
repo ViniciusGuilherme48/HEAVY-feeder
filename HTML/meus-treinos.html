@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leia seus treinos da semana na Heavy Feeder.">
+    <title>Meus Treinos | Heavy Feeder</title>
+    <link rel="stylesheet" href="../CSS/style-treinos.css">
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-navegacao.css">
+    <link rel="stylesheet" href="../CSS/style-tabela.css">
+    <link rel="stylesheet" href="../CSS/style-cards.css">
+</head>
+<body class="pagina-treinos">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<header class="cabecalho-principal">
+    <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+        <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+    </a>
+    <nav class="menu-principal" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="treinos.html">Treinos</a>
+        <a href="Inicio-dieta.html">Dietas</a>
+        <a href="calculadora.html">Calculadoras</a>
+        <a href="login.html" class="botao-login">Login</a>
+
+        <a href="perfil.html" class="link-perfil" aria-label="Ir para o meu perfil">
+            <img src="IMAGEM/avatar-padrao.png" alt="Foto do perfil" class="foto-perfil-menu">
+        </a>
+    </nav>
+</header>
+<main id="conteudo-principal" class="conteudo-artigo">
+
+    <article>
+        <header class="titulo-artigo">
+            <h1>Meus treinos</h1>
+            <p>Escolha o treino e leia o planejamento de cada dia da semana.</p>
+        </header>
+
+        <div class="seletor-dias" id="seletor-treinos" aria-label="Selecionar treino"></div>
+
+        <section class="plano-semanal" aria-labelledby="titulo-plano">
+            <h2 id="titulo-plano"></h2>
+            <p id="intro-plano"></p>
+
+            <div class="carrossel-semanal" data-carrossel-semanal>
+                <div class="seletor-dias" aria-label="Selecionar dia da semana"><button class="seletor-dia" type="button" data-dia-index="0" aria-pressed="false">Segunda</button><button class="seletor-dia" type="button" data-dia-index="1" aria-pressed="false">Terça</button><button class="seletor-dia" type="button" data-dia-index="2" aria-pressed="false">Quarta</button><button class="seletor-dia" type="button" data-dia-index="3" aria-pressed="false">Quinta</button><button class="seletor-dia" type="button" data-dia-index="4" aria-pressed="false">Sexta</button><button class="seletor-dia" type="button" data-dia-index="5" aria-pressed="false">Sábado</button><button class="seletor-dia" type="button" data-dia-index="6" aria-pressed="false">Domingo</button></div>
+                <div class="janela-carrossel-semanal">
+                    <div class="trilha-semanal" id="trilha-semanal"></div>
+                </div>
+                <div class="navegacao-semanal">
+                    <button class="controle-semanal" type="button" data-anterior aria-label="Treino do dia anterior">← Anterior</button>
+                    <span class="progresso-semanal" aria-live="polite">Segunda-feira</span>
+                    <button class="controle-semanal" type="button" data-proximo aria-label="Treino do próximo dia">Próximo →</button>
+                </div>
+            </div>
+
+            <p class="nota-treino" id="nota-plano"></p>
+            <p id="link-questionario" hidden><a class="botao-login" href="treino-personalizado.html">Montar meu treino personalizado</a></p>
+        </section>
+
+        <section class="treinos-anteriores" aria-labelledby="titulo-anteriores">
+            <h2 id="titulo-anteriores">Treinos anteriores</h2>
+            <p>Os treinos que você já registrou no seu perfil, do mais recente para o mais antigo.</p>
+            <div class="treinos-semana" id="lista-anteriores"></div>
+            <p id="vazio-anteriores" class="nota-treino" hidden>Você ainda não registrou nenhum treino. <a href="perfil.html">Registre no seu perfil</a>.</p>
+        </section>
+    </article>
+
+    <a class="botao-voltar" href="perfil.html" aria-label="Voltar ao perfil">← Voltar ao perfil</a>
+</main>
+<footer class="rodape-principal">
+    <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
+    <nav aria-label="Links do rodapé">
+        <a href="QuemSomos.html">Quem Somos</a>
+        <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
+    </nav>
+</footer>
+
+<script src="../JS/meus-treinos.js"></script>
+</body>
+</html>
