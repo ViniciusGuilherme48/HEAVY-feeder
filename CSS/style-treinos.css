@@ -414,3 +414,16 @@ a {
     background: var(--verde-principal, #42E89A);
     color: #092319;
 }
+
+.pagina-treinos #seletor-treinos {
+    margin-bottom: 24px;
+}
+
+.pagina-treinos #link-questionario {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagina-treinos #link-questionario[hidden] {
+    display: none;
+}
