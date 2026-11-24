@@ -1,0 +1,641 @@
+/* style-perfil.css
+   Página de perfil, organizada em seções:
+   1. Base            5. Abas e painéis        9. Gráfico
+   2. Layout e blocos 6. Listas e objetivos   10. Favoritos
+   3. Botões          7. Dieta                11. Responsivo
+   4. Topo e resumo   8. Formulários e tabela
+   Cabeçalho, menu e rodapé ficam no style-navegacao.css. */
+
+
+/* ===== 1. BASE ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --negativo: #F2766B;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto-principal);
+    min-height: 100vh;
+}
+
+/* Camada do fundo (a imagem é definida no style-global.css) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--texto-principal);
+}
+
+h2,
+h3 {
+    color: var(--texto-secundario);
+}
+
+p {
+    color: var(--texto-principal);
+}
+
+
+/* ===== 2. LAYOUT E BLOCOS ===== */
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bloco,
+.card {
+    background-color: var(--card);
+    border: 2px solid var(--borda);
+    border-radius: 14px;
+    padding: clamp(16px, 3vw, 24px);
+}
+
+.bloco-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* O style-global dá margem em cima de todo h2; aqui ela é zerada */
+.perfil .titulo {
+    margin: 0;
+    font-size: clamp(18px, 2.4vw, 22px);
+}
+
+.acoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.mensagem-vazio {
+    margin: 0;
+    color: var(--texto-discreto);
+}
+
+
+/* ===== 3. BOTÕES ===== */
+
+.botao,
+.botao-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 24px;
+    border: 2px solid var(--verde-secundario);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+/* Seletor mais forte para ganhar do "button { border-radius: 8px }" do style-global
+   e deixar botões <button> e links <a> com o mesmo formato */
+.pagina-treinos .perfil .botao,
+.pagina-treinos .perfil .botao-login {
+    border-radius: 24px;
+}
+
+.botao {
+    background-color: transparent;
+    color: var(--verde-secundario);
+}
+
+.botao-login {
+    background-color: var(--verde-secundario);
+    color: var(--verde-escuro);
+}
+
+@media (hover: hover) {
+    .botao:hover,
+    .botao-login:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(45, 217, 138, .3);
+    }
+
+    .botao:hover {
+        background-color: var(--verde-escuro);
+    }
+}
+
+.botao:active,
+.botao-login:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.botao:focus-visible,
+.botao-login:focus-visible {
+    outline: 2px solid var(--verde-principal);
+    outline-offset: 3px;
+}
+
+/* Botões pequenos (ações dentro das listas) */
+.pagina-treinos .perfil .botao-pequeno,
+.pagina-treinos .perfil .botao-remover {
+    padding: 4px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    cursor: pointer;
+    transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.pagina-treinos .perfil .botao-pequeno:hover {
+    border-color: var(--verde-principal);
+    color: var(--verde-principal);
+}
+
+.pagina-treinos .perfil .botao-remover {
+    border-color: var(--negativo);
+    color: var(--negativo);
+}
+
+.pagina-treinos .perfil .botao-remover:hover {
+    background-color: var(--negativo);
+    color: var(--fundo);
+}
+
+
+/* ===== 4. TOPO E RESUMO ===== */
+
+.topo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--verde-secundario);
+    object-fit: cover;
+    background-color: var(--fundo-secundario);
+}
+
+.dados {
+    flex: 1;
+    min-width: 220px;
+}
+
+.nome {
+    margin: 0 0 4px;
+    font-size: clamp(22px, 4vw, 28px);
+    overflow-wrap: anywhere;
+}
+
+.info {
+    margin: 0;
+    font-size: 15px;
+    color: var(--texto-secundario);
+    overflow-wrap: anywhere;
+}
+
+/* Formulário "Editar perfil" ocupa a linha inteira do topo */
+.topo .formulario {
+    flex-basis: 100%;
+    margin-bottom: 0;
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 16px;
+}
+
+.card {
+    padding: 18px 20px;
+}
+
+.rotulo {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.valor {
+    margin: 0;
+    font-size: clamp(22px, 3.5vw, 28px);
+    font-weight: 700;
+    color: var(--verde-principal);
+}
+
+.detalhe {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--texto-discreto);
+}
+
+
+/* ===== 5. ABAS E PAINÉIS ===== */
+
+.abas {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+}
+
+.pagina-treinos .perfil .aba {
+    flex: 0 0 auto;
+    padding: 9px 18px;
+    border: 1px solid var(--borda);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--texto-secundario);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.pagina-treinos .perfil .aba:hover {
+    color: var(--verde-principal);
+}
+
+.pagina-treinos .perfil .aba[aria-selected="true"] {
+    background-color: var(--verde-secundario);
+    border-color: var(--verde-secundario);
+    color: var(--verde-escuro);
+}
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Painel com dois blocos lado a lado (quebra para uma coluna em telas pequenas) */
+.painel-duplo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.perfil .painel[hidden] {
+    display: none;
+}
+
+
+/* ===== 6. LISTAS E OBJETIVOS ===== */
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.percentual {
+    font-weight: 600;
+    color: var(--verde-principal);
+}
+
+.barra {
+    height: 10px;
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progresso {
+    height: 100%;
+    background-color: var(--verde-secundario);
+    transition: width .3s ease;
+}
+
+/* Linha de botões abaixo de cada objetivo / da dieta */
+.item-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* Listas de histórico (treinos, favoritos, anteriores) */
+.historico {
+    gap: 0;
+}
+
+.historico li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.historico li:last-child {
+    border-bottom: none;
+}
+
+.historico p {
+    margin: 0;
+}
+
+.historico small,
+.data {
+    font-size: 13px;
+    color: var(--texto-discreto);
+}
+
+.historico-direita {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* ===== 7. DIETA ===== */
+
+.nome-dieta {
+    margin: 0 0 12px;
+    font-weight: 600;
+}
+
+.dieta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dieta div {
+    padding: 14px;
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dieta strong {
+    display: block;
+    font-size: clamp(18px, 2.6vw, 22px);
+}
+
+.dieta span {
+    font-size: 13px;
+    color: var(--texto-secundario);
+}
+
+
+/* ===== 8. FORMULÁRIOS E TABELA ===== */
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+.formulario[hidden] {
+    display: none;
+}
+
+.formulario .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.formulario-acoes {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tabela-scroll {
+    overflow-x: auto;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.tabela th,
+.tabela td {
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabela th {
+    font-weight: 600;
+    color: var(--texto-secundario);
+}
+
+.tabela tr:last-child td {
+    border-bottom: none;
+}
+
+.positivo {
+    color: var(--verde-principal);
+}
+
+.negativo {
+    color: var(--negativo);
+}
+
+
+/* ===== 9. GRÁFICO DE PESO ===== */
+
+.grafico-area {
+    margin-bottom: 20px;
+}
+
+.grafico {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.grafico-grade {
+    stroke: var(--borda);
+    stroke-opacity: .25;
+}
+
+.grafico-linha {
+    fill: none;
+    stroke: var(--verde-principal);
+    stroke-width: 3;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.grafico-ponto {
+    fill: var(--card);
+    stroke: var(--verde-principal);
+    stroke-width: 2.5;
+}
+
+.grafico-texto {
+    fill: var(--texto-discreto);
+    font-size: 12px;
+}
+
+
+/* ===== 10. FAVORITOS (estrela ☆/★) ===== */
+
+.pagina-treinos .perfil .botao-favorito {
+    padding: 0 6px;
+    border: none;
+    background: transparent;
+    color: var(--verde-principal);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.pagina-treinos .perfil .botao-favorito:hover {
+    transform: scale(1.2);
+}
+
+.botao-favorito:focus-visible {
+    outline: 2px solid var(--verde-principal);
+    outline-offset: 2px;
+}
+
+
+/* ===== 11. RESPONSIVO =====
+   Fica no fim do arquivo de propósito: assim estas regras
+   vencem as regras normais de cima. */
+
+@media (min-width: 1600px) {
+    .perfil {
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topo {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .foto {
+        order: 1;
+    }
+
+    .dados {
+        flex-basis: 100%;
+        order: 2;
+    }
+
+    .topo > .acoes {
+        order: 3;
+        justify-content: center;
+    }
+
+    .topo .formulario {
+        order: 4;
+        text-align: left;
+    }
+
+    .bloco-cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .acoes,
+    .acoes .botao,
+    .acoes .botao-login,
+    .bloco-cabecalho > .botao {
+        width: 100%;
+    }
+
+    .botao,
+    .botao-login {
+        min-height: 44px;
+    }
+
+    .formulario-acoes > * {
+        flex: 1;
+    }
+
+    .linha {
+        font-size: 15px;
+    }
+
+    .tabela th,
+    .tabela td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 340px) {
+    .dieta {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .botao,
+    .botao-login,
+    .progresso,
+    .botao-favorito {
+        transition: none;
+    }
+
+    .botao:hover,
+    .botao-login:hover,
+    .botao-favorito:hover {
+        transform: none;
+    }
+}

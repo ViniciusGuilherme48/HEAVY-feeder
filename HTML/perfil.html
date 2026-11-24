@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Heavy Feeder</title>
+    <link rel="stylesheet" href="../CSS/style-perfil.css">
+    <link rel="stylesheet" href="../CSS/style-global.css">
+    <link rel="stylesheet" href="../CSS/style-navegacao.css">
+    <link rel="stylesheet" href="../CSS/style-cards.css">
+    <link rel="stylesheet" href="../CSS/style-tabela.css">
+    <link rel="stylesheet" href="../CSS/style-icones.css">
+</head>
+
+<body class="pagina-treinos">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <header class="cabecalho-principal">
+        <a class="logo-link" href="index.html" aria-label="Página inicial da Heavy Feeder">
+            <img src="IMAGEM/logo heavy feeder png.png" alt="Logo Heavy Feeder" class="logo-principal">
+        </a>
+        <nav class="menu-principal" aria-label="Menu principal">
+            <a href="index.html">Início</a>
+            <a href="treinos.html">Treinos</a>
+            <a href="Inicio-dieta.html">Dietas</a>
+            <a href="calculadora.html">Calculadoras</a>
+            <a href="login.html" class="botao-login">Login</a>
+
+            <a href="perfil.html" class="link-perfil" aria-label="Ir para o meu perfil">
+                <img src="IMAGEM/avatar-padrao.png" alt="Foto do perfil" class="foto-perfil-menu">
+            </a>
+        </nav>
+    </header>
+
+    <main class="perfil">
+
+        <!-- ============ TOPO: dados do usuário ============ -->
+        <section class="bloco topo">
+            <img class="foto" src="IMAGEM/avatar-padrao.png" alt="Foto do usuário">
+
+            <div class="dados">
+                <h1 class="nome" id="usuario-nome"></h1>
+                <p class="info" id="usuario-email"></p>
+                <p class="info" id="usuario-desde"></p>
+            </div>
+
+            <div class="acoes">
+                <button class="botao" type="button" id="abrir-usuario">Editar perfil</button>
+                <a class="botao" href="meus-treinos.html">Meus treinos</a>
+                <a class="botao-login" href="login.html">Sair</a>
+            </div>
+
+            <form class="formulario" id="form-usuario" hidden>
+                <label class="campo">Nome
+                    <input type="text" id="nome-usuario" required>
+                </label>
+                <label class="campo">E-mail
+                    <input type="email" id="email-usuario" required>
+                </label>
+                <label class="campo">Altura (cm)
+                    <input type="number" id="altura-usuario" min="100" max="250" required>
+                </label>
+                <label class="campo">Meta de treinos por mês
+                    <input type="number" id="meta-usuario" min="1" max="31" required>
+                </label>
+                <div class="formulario-acoes">
+                    <button class="botao-login" type="submit">Salvar</button>
+                    <button class="botao" type="button" id="cancelar-usuario">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ============ RESUMO: números calculados automaticamente ============ -->
+        <section class="resumo" aria-label="Resumo">
+            <article class="card">
+                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                <p class="rotulo">Peso atual</p>
+                <p class="valor" id="resumo-peso"></p>
+                <p class="detalhe" id="resumo-peso-detalhe"></p>
+            </article>
+            <article class="card">
+                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+                <p class="rotulo">IMC</p>
+                <p class="valor" id="resumo-imc"></p>
+                <p class="detalhe" id="resumo-imc-detalhe"></p>
+            </article>
+            <article class="card">
+                <svg class="icone-card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3 9.5v5"/><path d="M21 9.5v5"/><path d="M6.5 12h11"/></svg>
+                <p class="rotulo">Treinos no mês</p>
+                <p class="valor" id="resumo-treinos"></p>
+                <p class="detalhe" id="resumo-treinos-detalhe"></p>
+            </article>
+        </section>
+
+        <!-- ============ ABAS ============ -->
+        <div class="abas" role="tablist" aria-label="Seções do perfil">
+            <button class="aba" type="button" role="tab" data-aba="objetivos">Objetivos e dieta</button>
+            <button class="aba" type="button" role="tab" data-aba="evolucao">Evolução</button>
+            <button class="aba" type="button" role="tab" data-aba="treinos">Treinos</button>
+            <button class="aba" type="button" role="tab" data-aba="favoritos">Favoritos</button>
+            <button class="aba" type="button" role="tab" data-aba="anteriores">Anteriores</button>
+        </div>
+
+        <!-- ---------- Aba 1: Objetivos e dieta ---------- -->
+        <div class="painel painel-duplo" role="tabpanel" data-painel="objetivos">
+
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Objetivos</h2>
+                    <button class="botao" type="button" id="abrir-objetivo">Novo objetivo</button>
+                </div>
+
+                <form class="formulario" id="form-objetivo" hidden>
+                    <label class="campo">Nome do objetivo
+                        <input type="text" id="nome-objetivo" placeholder="Ex: Correr 5 km" required>
+                    </label>
+                    <div class="formulario-acoes">
+                        <button class="botao-login" type="submit">Salvar</button>
+                        <button class="botao" type="button" id="cancelar-objetivo">Cancelar</button>
+                    </div>
+                </form>
+
+                <ul class="lista" id="lista-objetivos"></ul>
+                <p class="mensagem-vazio" id="vazio-objetivos" hidden>Nenhum objetivo ativo. Crie o primeiro!</p>
+            </section>
+
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo" id="titulo-dieta"></h2>
+                    <div class="acoes">
+                        <button class="botao" type="button" id="abrir-dieta"></button>
+                        <a class="botao" href="Inicio-dieta.html">Ver dietas</a>
+                    </div>
+                </div>
+
+                <form class="formulario" id="form-dieta" hidden>
+                    <label class="campo">Nome da dieta
+                        <input type="text" id="nome-dieta" placeholder="Ex: Dieta de superávit" required>
+                    </label>
+                    <label class="campo">Calorias por dia (kcal)
+                        <input type="number" id="kcal-dieta" min="1" required>
+                    </label>
+                    <label class="campo">Proteínas (g)
+                        <input type="number" id="proteina-dieta" min="0" required>
+                    </label>
+                    <label class="campo">Carboidratos (g)
+                        <input type="number" id="carbo-dieta" min="0" required>
+                    </label>
+                    <label class="campo">Gorduras (g)
+                        <input type="number" id="gordura-dieta" min="0" required>
+                    </label>
+                    <div class="formulario-acoes">
+                        <button class="botao-login" type="submit">Salvar</button>
+                        <button class="botao" type="button" id="cancelar-dieta">Cancelar</button>
+                    </div>
+                </form>
+
+                <div id="area-dieta"></div>
+            </section>
+        </div>
+
+        <!-- ---------- Aba 2: Evolução ---------- -->
+        <div class="painel" role="tabpanel" data-painel="evolucao">
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Evolução</h2>
+                    <button class="botao" type="button" id="abrir-medida">Registrar medidas</button>
+                </div>
+
+                <form class="formulario" id="form-medida" hidden>
+                    <label class="campo">Data
+                        <input type="date" id="data-medida" required>
+                    </label>
+                    <label class="campo">Peso (kg)
+                        <input type="number" id="peso-medida" min="20" max="400" step="0.1" required>
+                    </label>
+                    <label class="campo">Cintura (cm) - opcional
+                        <input type="number" id="cintura-medida" min="30" max="250" step="0.5">
+                    </label>
+                    <div class="formulario-acoes">
+                        <button class="botao-login" type="submit">Salvar</button>
+                        <button class="botao" type="button" id="cancelar-medida">Cancelar</button>
+                    </div>
+                </form>
+
+                <!-- Gráfico de peso (desenhado pelo perfil.js) -->
+                <div class="grafico-area" id="grafico-peso"></div>
+
+                <div class="tabela-scroll" id="tabela-medidas">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Peso</th>
+                                <th>Variação</th>
+                                <th>Cintura</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-medidas"></tbody>
+                    </table>
+                </div>
+                <p class="mensagem-vazio" id="vazio-medidas" hidden>Nenhuma medida registrada ainda.</p>
+            </section>
+        </div>
+
+        <!-- ---------- Aba 3: Treinos ---------- -->
+        <div class="painel" role="tabpanel" data-painel="treinos">
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Histórico de treinos</h2>
+                    <div class="acoes">
+                        <button class="botao" type="button" id="abrir-treino">Registrar treino</button>
+                        <a class="botao" href="treinos.html">Ver treinos</a>
+                    </div>
+                </div>
+
+                <form class="formulario" id="form-treino" hidden>
+                    <label class="campo">Nome do treino
+                        <input type="text" id="nome-treino" placeholder="Ex: Treino A: Peito e tríceps" required>
+                    </label>
+                    <label class="campo">Duração (minutos)
+                        <input type="number" id="duracao-treino" min="1" required>
+                    </label>
+                    <label class="campo">Data
+                        <input type="date" id="data-treino" required>
+                    </label>
+                    <div class="formulario-acoes">
+                        <button class="botao-login" type="submit">Salvar</button>
+                        <button class="botao" type="button" id="cancelar-treino">Cancelar</button>
+                    </div>
+                </form>
+
+                <ul class="lista historico" id="lista-treinos"></ul>
+                <p class="mensagem-vazio" id="vazio-treinos" hidden>Nenhum treino registrado ainda.</p>
+            </section>
+        </div>
+
+        <!-- ---------- Aba 4: Favoritos ---------- -->
+        <div class="painel" role="tabpanel" data-painel="favoritos">
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Favoritos</h2>
+                </div>
+                <ul class="lista historico" id="lista-favoritos"></ul>
+                <p class="mensagem-vazio" id="vazio-favoritos" hidden>Você ainda não favoritou nada. Clique na estrela ☆ de um treino, dieta ou objetivo.</p>
+            </section>
+        </div>
+
+        <!-- ---------- Aba 5: Anteriores ---------- -->
+        <div class="painel painel-duplo" role="tabpanel" data-painel="anteriores">
+
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Dietas anteriores</h2>
+                    <button class="botao" type="button" id="abrir-ant-dietas">Registrar dieta</button>
+                </div>
+
+                <form class="formulario" id="form-ant-dietas" hidden>
+                    <label class="campo">Nome
+                        <input type="text" id="nome-ant-dietas" required>
+                    </label>
+                    <label class="campo">Calorias por dia (kcal)
+                        <input type="number" id="extra-ant-dietas" min="1" required>
+                    </label>
+                    <label class="campo">Mês
+                        <input type="month" id="mes-ant-dietas" required>
+                    </label>
+                    <div class="formulario-acoes">
+                        <button class="botao-login" type="submit">Salvar</button>
+                        <button class="botao" type="button" id="cancelar-ant-dietas">Cancelar</button>
+                    </div>
+                </form>
+
+                <ul class="lista historico" id="lista-ant-dietas"></ul>
+                <p class="mensagem-vazio" id="vazio-ant-dietas" hidden>Nenhuma dieta anterior ainda.</p>
+            </section>
+
+            <section class="bloco">
+                <div class="bloco-cabecalho">
+                    <h2 class="titulo">Objetivos anteriores</h2>
+                    <button class="botao" type="button" id="abrir-ant-objetivos">Registrar objetivo</button>
+                </div>
+
+                <form class="formulario" id="form-ant-objetivos" hidden>
+                    <label class="campo">Nome
+                        <input type="text" id="nome-ant-objetivos" required>
+                    </label>
+                    <label class="campo">Resultado
+                        <select id="extra-ant-objetivos" required>
+                            <option value="Concluído">Concluído</option>
+                            <option value="Não concluído">Não concluído</option>
+                        </select>
+                    </label>
+                    <label class="campo">Mês
+                        <input type="month" id="mes-ant-objetivos" required>
+                    </label>
+                    <div class="formulario-acoes">
+                        <button class="botao-login" type="submit">Salvar</button>
+                        <button class="botao" type="button" id="cancelar-ant-objetivos">Cancelar</button>
+                    </div>
+                </form>
+
+                <ul class="lista historico" id="lista-ant-objetivos"></ul>
+                <p class="mensagem-vazio" id="vazio-ant-objetivos" hidden>Nenhum objetivo anterior ainda.</p>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="rodape-principal">
+        <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
+        <a href="QuemSomos.html"><b>Quem Somos</b></a>
+    </footer>
+
+    <script src="../JS/perfil.js"></script>
+</body>
+
+</html>

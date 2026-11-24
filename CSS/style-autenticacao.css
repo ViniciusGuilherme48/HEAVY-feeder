@@ -1,0 +1,433 @@
+/* style-autenticacao.css
+   Login, criar conta, recuperar/nova senha e cadastro concluído. */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-destaque: #4ef84e;
+    --campo-fundo: #102619;
+    --campo-borda: #315c3a;
+    --texto-suave: #b8c9bb;
+    --texto-suave-2: #9eafa1;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto-principal);
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(../HTML/IMAGEM/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--texto-principal);
+}
+
+h2,
+h3 {
+    color: var(--texto-secundario);
+}
+
+p {
+    color: var(--texto-principal);
+}
+
+.cabecalho-principal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--fundo-secundario);
+    border-radius: 12px;
+    border-bottom: 2px solid var(--borda);
+    padding: 10px 20px;
+}
+
+.rodape-principal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--fundo-secundario);
+    border-radius: 12px;
+    border-top: 2px solid var(--borda);
+    padding: 10px 20px;
+}
+
+footer a {
+    padding: 5px;
+    font-size: 18px;
+    color: var(--texto-secundario);
+    transition: transform .2s ease, color .2s ease;
+}
+
+footer a:hover {
+    color: var(--verde-secundario);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+}
+
+nav a,
+nav button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 5px;
+    font-size: 22px;
+    color: var(--texto-secundario);
+    transition: transform .2s ease, color .2s ease;
+}
+
+nav a:hover {
+    color: var(--verde-secundario);
+}
+
+nav button:hover {
+    text-decoration: underline var(--verde-secundario);
+}
+
+.botao-login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border: 3px solid var(--verde-secundario);
+    border-radius: 24px;
+    padding: 5px 30px;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: var(--verde-secundario);
+    color: var(--verde-escuro);
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.botao-login:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px var(--verde-escuro);
+}
+
+.botao-login:active {
+    transform: scale(1);
+    box-shadow: 0 0 8px var(--verde-principal);
+}
+
+.Bem-vindo,
+footer {
+    margin: auto;
+}
+
+.destaque {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--verde-escuro);
+    border-bottom: 4px solid var(--verde-escuro);
+    padding-bottom: 4px;
+}
+
+figure {
+    text-align: center;
+}
+
+figure img {
+    width: 200px;
+    border-radius: 20px;
+}
+
+#conteudo-principal {
+    max-width: 500px;
+    margin: auto;
+    padding: 28px;
+    text-align: center;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 320px;
+    min-width: 320px;
+    min-height: 240px;
+    border: 2px solid var(--borda);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 50%;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    translate: 6px 6px;
+    box-shadow: 8px 8px 8px 8px var(--fundo-secundario);
+}
+
+.treino-hipertrofia {
+    margin: auto;
+    padding: 28px;
+}
+
+.treino-hipertrofia h1,
+.treino-hipertrofia h2 {
+    text-align: center;
+}
+
+.treino-hipertrofia p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.treino-sugerido {
+    display: flex;
+    justify-content: center;
+}
+
+.container,
+.login-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card,
+.criar-conta-card,
+.recuperar-card,
+.card-nova-senha,
+.card-cadastro-concluido {
+    width: 100%;
+    max-width: 420px;
+    border: 2px solid var(--verde-secundario);
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    display: flex;
+    width: 300px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin: 0 auto 25px;
+}
+
+.login-card h1,
+.criar-conta-card h1,
+.recuperar-card h1,
+.card-nova-senha h1 {
+    text-align: center;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.card-cadastro-concluido h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.subtitulo,
+.texto {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.card-cadastro-concluido p {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]) {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 12px;
+    border: 1px solid var(--campo-borda);
+    background-color: var(--campo-fundo);
+    color: var(--texto-principal);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.recuperar-card input:not([type="checkbox"]) {
+    margin-bottom: 20px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus {
+    border-color: var(--verde-destaque);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--verde-destaque);
+}
+
+.opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 25px;
+    font-size: 12px;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #aebdb1;
+}
+
+.lembrar label {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.opcoes a,
+.termos a {
+    color: var(--verde-destaque);
+}
+
+.termos {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    color: var(--texto-suave-2);
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.termos input {
+    margin-top: 4px;
+}
+
+.termos label {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.botao-entrar,
+.botao-criar-conta,
+.botao-continuar,
+.botao-alterar-senha,
+.conta-criada {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 13px;
+    background-color: var(--verde-secundario);
+    color: #0b1d0e;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.botao-criar-conta {
+    font-size: 17px;
+}
+
+.botao-alterar-senha {
+    margin-top: 7px;
+}
+
+.conta-criada {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.botao-entrar:hover,
+.botao-criar-conta:hover,
+.botao-continuar:hover,
+.botao-alterar-senha:hover,
+.conta-criada:hover {
+    transform: scale(1.02);
+}
+
+.botao-entrar:active,
+.botao-criar-conta:active,
+.botao-continuar:active,
+.botao-alterar-senha:active,
+.conta-criada:active {
+    transform: scale(1);
+}
+
+.voltar {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    color: var(--verde-destaque);
+    font-size: 15px;
+    transition: transform .2s ease;
+}
+
+.voltar:hover {
+    transform: scale(1.02);
+}
+
+.cadastro {
+    text-align: center;
+    color: var(--texto-suave-2);
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.cadastro a {
+    color: var(--verde-destaque);
+}
+
+.check {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--verde-secundario);
+    color: #0b1d0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
