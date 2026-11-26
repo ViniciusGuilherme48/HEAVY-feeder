@@ -43,7 +43,7 @@
         </section>
         <section>
             <h2>Exercícios de musculação</h2>
-            <div class="tabela-responsiva"><table>
+            <div class="tabela"><table>
                 <thead><tr><th>Grupo muscular</th><th>Exemplos de exercícios</th></tr></thead>
                 <tbody>
                     <tr><td>Peito</td><td>Supino reto, supino inclinado, crucifixo</td></tr>
@@ -59,7 +59,7 @@
         </section>
         <section>
             <h2>Exercícios aeróbicos</h2>
-            <div class="tabela-responsiva"><table>
+            <div class="tabela"><table>
                 <thead><tr><th>Atividade</th><th>Benefícios gerais</th><th>Exemplos</th></tr></thead>
                 <tbody>
                     <tr><td>Caminhada</td><td>Acessível e fácil de ajustar</td><td>Caminhada em ritmo confortável ou acelerado</td></tr>
@@ -98,60 +98,10 @@
     <p>Desenvolvido por alunos da Unisal - Campus São José | 2026</p>
     <nav aria-label="Links do rodapé">
         <a href="QuemSomos.html">Quem Somos</a>
-      
+        <a href="mailto:contato@heavyfeeder.com.br">Fale Conosco</a>
     </nav>
 </footer>
 
-<script>
-document.querySelectorAll("[data-carrossel-semanal]").forEach(function (carrossel) {
-    const trilha = carrossel.querySelector(".trilha-semanal");
-    const slides = Array.from(trilha.children);
-    const botoesDias = Array.from(carrossel.querySelectorAll("[data-dia-index]"));
-    const anterior = carrossel.querySelector("[data-anterior]");
-    const proximo = carrossel.querySelector("[data-proximo]");
-    const progresso = carrossel.querySelector(".progresso-semanal");
-    const nomes = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
-    const hoje = (new Date().getDay() + 6) % 7;
-    let indice = hoje;
-
-    const indicador = document.createElement("span");
-    indicador.className = "indicador-hoje";
-    indicador.textContent = "HOJE";
-    botoesDias[hoje].appendChild(indicador);
-
-    function atualizar() {
-        trilha.style.transform = "translateX(-" + (indice * 100) + "%)";
-        botoesDias.forEach(function (botao, i) {
-            botao.setAttribute("aria-pressed", i === indice ? "true" : "false");
-        });
-        progresso.textContent = nomes[indice];
-        anterior.disabled = indice === 0;
-        proximo.disabled = indice === slides.length - 1;
-    }
-
-    botoesDias.forEach(function (botao, i) {
-        botao.addEventListener("click", function () {
-            indice = i;
-            atualizar();
-        });
-    });
-
-    anterior.addEventListener("click", function () {
-        if (indice > 0) {
-            indice--;
-            atualizar();
-        }
-    });
-
-    proximo.addEventListener("click", function () {
-        if (indice < slides.length - 1) {
-            indice++;
-            atualizar();
-        }
-    });
-
-    atualizar();
-});
-</script>
+<script src="../JS/carrossel-semanal.js"></script>
 </body>
 </html>
