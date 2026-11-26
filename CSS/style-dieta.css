@@ -173,64 +173,6 @@ body.pagina-treinos::before {
     border-radius: 0;
 }
 
-.pagina-treinos .tabela {
-    overflow-x: auto;
-    border: 1px solid var(--borda, #2DD98A);
-    border-radius: 14px;
-    background: rgba(19, 28, 41, .96);
-    -webkit-overflow-scrolling: touch;
-}
-
-.pagina-treinos .tabela table {
-    width: 100%;
-    min-width: 0;
-    border-collapse: collapse;
-    background: transparent;
-}
-
-.pagina-treinos .tabela th,
-.pagina-treinos .tabela td {
-    padding: 14px 20px;
-    border: 0;
-    border-bottom: 1px solid rgba(66, 232, 154, .15);
-    text-align: left;
-    vertical-align: top;
-}
-
-.pagina-treinos .tabela thead th {
-    background: rgba(18, 63, 53, .55);
-    color: var(--verde-principal, #42E89A);
-    font-size: .8rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
-
-.pagina-treinos .tabela tbody tr:nth-child(even) td {
-    background: rgba(255, 255, 255, .025);
-}
-
-.pagina-treinos .tabela tbody tr:hover td {
-    background: rgba(66, 232, 154, .07);
-}
-
-.pagina-treinos .tabela tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-.pagina-treinos .tabela tbody td:first-child {
-    color: var(--texto-principal, #F5F7FA);
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.pagina-treinos .tabela tfoot th {
-    border-top: 1px solid var(--borda, #2DD98A);
-    border-bottom: 0;
-    background: var(--verde-escuro, #123F35);
-    color: var(--verde-principal, #42E89A);
-    font-size: 1.05rem;
-}
-
 .pagina-treinos .opcao .tabela th:last-child,
 .pagina-treinos .opcao .tabela td:last-child {
     text-align: right;
@@ -370,15 +312,6 @@ body.pagina-treinos::before {
         padding: 20px 14px;
     }
 
-    
-    .pagina-treinos .tabela th,
-    .pagina-treinos .tabela td {
-        padding: 12px 14px;
-    }
-
-    .pagina-treinos .tabela tbody td:first-child {
-        white-space: normal;
-    }
 
     
     .pagina-treinos .opcao .tabela table,
