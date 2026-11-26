@@ -165,7 +165,7 @@ button:hover {
 }
 
 .pagina-personalizado textarea {
-    min-height: 100px;
+    min-height: 72px;
     resize: vertical;
 }
 
@@ -433,5 +433,64 @@ button:hover {
 
     .pagina-personalizado .barra-progresso-preenchida {
         transition: none;
+    }
+}
+
+
+/* ---- Padronização com a página Personalizar dieta ---- */
+
+.pagina-personalizado main {
+    padding: 0 20px;
+}
+
+.pagina-personalizado main > section hr {
+    margin: 26px 0 0;
+}
+
+.pagina-personalizado legend {
+    font-weight: 700;
+}
+
+.pagina-personalizado .campo {
+    min-width: 0;
+}
+
+.pagina-personalizado fieldset.duas-colunas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+}
+
+.pagina-personalizado fieldset.duas-colunas > legend {
+    grid-column: 1 / -1;
+}
+
+.pagina-personalizado select option {
+    background: #0B121B;
+    color: #F5F7FA;
+}
+
+.pagina-personalizado input::placeholder,
+.pagina-personalizado textarea::placeholder {
+    color: #718096;
+}
+
+.pagina-personalizado .aviso-formulario {
+    max-width: none;
+}
+
+.pagina-treinos.pagina-personalizado .botao-voltar {
+    display: flex;
+    width: fit-content;
+    margin: 36px auto 10px;
+}
+
+@media (max-width: 560px) {
+    .pagina-personalizado main {
+        padding: 0 14px;
+    }
+
+    .pagina-personalizado fieldset.duas-colunas {
+        grid-template-columns: 1fr;
     }
 }
