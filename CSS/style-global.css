@@ -1,99 +1,36 @@
 /* style-global.css
-   Estilos globais do site: variáveis de cor (:root), reset, body, tipografia, imagens, foco, botão voltar e padrões compartilhados por todas as páginas. */
+   Base ÚNICA do site: variáveis (cores, fonte, botões), reset, body, tipografia, formulários e botões padrão.
+   Todas as páginas carregam este arquivo primeiro. Para mudar cor, fonte ou formato de botão do site inteiro, edite as variáveis abaixo. */
 
 
-.pagina-treinos {
-    margin: 0;
-    min-width: 320px;
-    color: var(--texto-principal, #F5F7FA);
-    background: var(--fundo, #070D14);
-    line-height: 1.6;
-}
-
-.pagina-treinos *,
-.pagina-treinos *::before,
-.pagina-treinos *::after {
-    box-sizing: border-box;
-}
-
-.pagina-treinos h1 {
-    color: var(--texto-principal, #F5F7FA);
-    font-size: clamp(28px, 4vw, 42px);
-}
-
-.pagina-treinos h2 {
-    margin-top: 28px;
-    color: var(--verde-principal, #42E89A);
-    font-size: clamp(22px, 3vw, 30px);
-}
-
-.pagina-treinos h3 {
-    color: var(--texto-principal, #F5F7FA);
-}
-
-.pagina-treinos p,
-.pagina-treinos li {
-    color: var(--texto-principal, #F5F7FA);
-}
-
-.pagina-treinos .imagem-secundaria img {
-    max-height: 420px;
-}
-
-.pagina-treinos a:focus-visible {
-    border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .pagina-treinos *,
-    .pagina-treinos *::before,
-    .pagina-treinos *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-    }
-}
-
-.pagina-treinos .botao-voltar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 0 0 24px;
-    padding: 10px 18px;
-    border: 1px solid var(--verde-principal, #42E89A);
-    border-radius: 24px;
-    background: transparent;
-    color: var(--verde-principal, #42E89A);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background .2s ease, color .2s ease, transform .2s ease;
-}
-
-.pagina-treinos .botao-voltar:hover {
-    background: var(--verde-principal, #42E89A);
-    color: var(--verde-escuro, #123F35);
-    transform: translateX(-2px);
-}
-
-@media (max-width: 680px) {
-    .pagina-treinos .botao-voltar {
-        margin-bottom: 18px;
-    }
-}
+/* ===== 1. VARIÁVEIS ===== */
 
 :root {
-    --verde-principal: #42E89A;
-    --verde-secundario: #2DD98A;
-    --verde-escuro: #123F35;
+    /* Cores */
+    --verde-principal: #42E89A;     /* textos de destaque, títulos h2, links, contornos de botão secundário */
+    --verde-secundario: #2DD98A;    /* preenchimento e borda de botão primário */
+    --verde-escuro: #123F35;        /* texto sobre fundo verde (botões) e legendas */
     --fundo: #070D14;
-    --fundo-secundario: #0B121B;
+    --fundo-secundario: #0B121B;    /* cabeçalho, rodapé e campos de formulário */
     --card: #131C29;
     --borda: #2DD98A;
     --texto-principal: #F5F7FA;
     --texto-secundario: #A8B5C7;
     --texto-discreto: #718096;
+    --campo-borda: #536274;
+    --trilho: #273443;              /* fundo de barras de progresso */
+    --negativo: #F2766B;            /* ações destrutivas (remover) */
+
+    /* Tipografia */
+    --fonte: 'Poppins', Arial, sans-serif;
+
+    /* Botões */
+    --raio-botao: 24px;
+    --botao-padding: 9px 22px;
 }
+
+
+/* ===== 2. BASE ===== */
 
 html {
     min-height: 100%;
@@ -107,18 +44,50 @@ body.pagina-treinos {
     min-height: 100vh;
     background: var(--fundo) !important;
     color: var(--texto-principal) !important;
-    font-family: 'Poppins', Arial, sans-serif !important;
+    font-family: var(--fonte) !important;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 body.pagina-treinos::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background-image: url("../HTML/IMAGEM/background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     opacity: .22;
 }
+
+.pagina-treinos *,
+.pagina-treinos *::before,
+.pagina-treinos *::after {
+    box-sizing: border-box;
+}
+
+.pagina-treinos img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pagina-treinos .imagem-secundaria img {
+    max-height: 420px;
+}
+
+.pagina-treinos main > section {
+    margin-bottom: 28px;
+}
+
+.pagina-treinos hr {
+    border: 0;
+    border-top: 1px solid rgba(66, 232, 154, .3);
+}
+
+
+/* ===== 3. TIPOGRAFIA ===== */
 
 .pagina-treinos h1,
 .pagina-treinos h2,
@@ -129,12 +98,13 @@ body.pagina-treinos::before {
 
 .pagina-treinos h1 {
     color: var(--texto-principal) !important;
-    font-size: clamp(28px,4vw,42px);
+    font-size: clamp(28px, 4vw, 42px);
 }
 
 .pagina-treinos h2 {
+    margin-top: 28px;
     color: var(--verde-principal) !important;
-    font-size: clamp(22px,3vw,30px);
+    font-size: clamp(22px, 3vw, 30px);
 }
 
 .pagina-treinos h3 {
@@ -150,9 +120,13 @@ body.pagina-treinos::before {
     line-height: 1.75;
 }
 
-.pagina-treinos main > section {
-    margin-bottom: 28px;
+.pagina-treinos a {
+    color: var(--verde-principal);
+    text-decoration: none;
 }
+
+
+/* ===== 4. FORMULÁRIOS ===== */
 
 .pagina-treinos button,
 .pagina-treinos input,
@@ -165,30 +139,47 @@ body.pagina-treinos::before {
 .pagina-treinos select,
 .pagina-treinos textarea {
     max-width: 100%;
-    border: 1px solid #536274;
+    border: 1px solid var(--campo-borda);
     border-radius: 7px;
-    background: #0B121B;
+    background: var(--fundo-secundario);
     color: var(--texto-principal);
     padding: 11px 12px;
 }
 
-.pagina-treinos button:not(.carrossel-controle) {
-    border-radius: 8px;
-    cursor: pointer;
+.pagina-treinos input::placeholder,
+.pagina-treinos textarea::placeholder {
+    color: var(--texto-discreto);
+}
+
+.pagina-treinos select option {
+    background: var(--fundo-secundario);
+    color: var(--texto-principal);
+}
+
+.pagina-treinos input:not([type=checkbox]):not([type=radio]):focus,
+.pagina-treinos select:focus,
+.pagina-treinos textarea:focus {
+    border-color: var(--verde-principal);
+}
+
+.pagina-treinos input[type=checkbox],
+.pagina-treinos input[type=radio] {
+    accent-color: var(--verde-principal);
 }
 
 .pagina-treinos form,
-.pagina-treinos fieldset {
+.pagina-treinos fieldset,
+.pagina-treinos label {
     color: var(--texto-principal);
 }
 
 .pagina-treinos fieldset {
     min-width: 0;
     margin: 0 0 22px;
-    padding: clamp(16px,3vw,26px);
+    padding: clamp(16px, 3vw, 26px);
     border: 1px solid var(--borda);
     border-radius: 12px;
-    background: rgba(19,28,41,.96);
+    background: rgba(19, 28, 41, .96);
 }
 
 .pagina-treinos legend {
@@ -199,13 +190,110 @@ body.pagina-treinos::before {
     color: var(--texto-principal);
 }
 
-.pagina-treinos label {
-    color: var(--texto-principal);
+
+/* ===== 5. BOTÕES =====
+   Primário  (ação principal): .botao-login .botao-entrar .botao-criar-conta .botao-continuar .botao-alterar-senha .conta-criada .qs-botao .controle-etapa
+   Secundário (contorno):      .botao .botao-voltar .controle-semanal .controle-anterior
+   Não defina cor, raio, fonte nem peso de botão em outros arquivos: use essas classes. */
+
+.pagina-treinos .botao-login,
+.pagina-treinos .botao-entrar,
+.pagina-treinos .botao-criar-conta,
+.pagina-treinos .botao-continuar,
+.pagina-treinos .botao-alterar-senha,
+.pagina-treinos .conta-criada,
+.pagina-treinos .qs-botao,
+.pagina-treinos .controle-etapa,
+.pagina-treinos .botao,
+.pagina-treinos .botao-voltar,
+.pagina-treinos .controle-semanal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: var(--botao-padding);
+    border: 2px solid var(--verde-secundario);
+    border-radius: var(--raio-botao);
+    background: var(--verde-secundario);
+    color: var(--verde-escuro);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
-.pagina-treinos img {
-    max-width: 100%;
-    height: auto;
+.pagina-treinos .botao,
+.pagina-treinos .botao-voltar,
+.pagina-treinos .controle-semanal,
+.pagina-treinos .controle-anterior {
+    border-color: var(--verde-principal);
+    background: transparent;
+    color: var(--verde-principal);
+}
+
+@media (hover: hover) {
+    .pagina-treinos .botao-login:hover,
+    .pagina-treinos .botao-entrar:hover,
+    .pagina-treinos .botao-criar-conta:hover,
+    .pagina-treinos .botao-continuar:hover,
+    .pagina-treinos .botao-alterar-senha:hover,
+    .pagina-treinos .conta-criada:hover,
+    .pagina-treinos .qs-botao:hover,
+    .pagina-treinos .controle-etapa:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(45, 217, 138, .3);
+        text-decoration: none;
+    }
+
+    .pagina-treinos .botao:hover,
+    .pagina-treinos .botao-voltar:hover,
+    .pagina-treinos .controle-semanal:hover:not(:disabled),
+    .pagina-treinos .controle-anterior:hover:not(:disabled) {
+        background: var(--verde-principal);
+        color: var(--verde-escuro);
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+}
+
+.pagina-treinos .botao-login:active,
+.pagina-treinos .botao-entrar:active,
+.pagina-treinos .botao-criar-conta:active,
+.pagina-treinos .botao-continuar:active,
+.pagina-treinos .botao-alterar-senha:active,
+.pagina-treinos .conta-criada:active,
+.pagina-treinos .qs-botao:active,
+.pagina-treinos .controle-etapa:active,
+.pagina-treinos .botao:active,
+.pagina-treinos .botao-voltar:active,
+.pagina-treinos .controle-semanal:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.pagina-treinos .controle-etapa:disabled,
+.pagina-treinos .controle-semanal:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* "Voltar" (link ou botão): sempre centralizado abaixo do conteúdo */
+.pagina-treinos .botao-voltar {
+    display: flex;
+    width: fit-content;
+    min-width: 150px;
+    margin: 36px auto 10px;
+}
+
+
+/* ===== 6. FOCO E MOVIMENTO ===== */
+
+.pagina-treinos a:focus-visible {
+    border-radius: 4px;
 }
 
 .pagina-treinos a:focus-visible,
@@ -215,4 +303,13 @@ body.pagina-treinos::before {
 .pagina-treinos textarea:focus-visible {
     outline: 3px solid var(--verde-principal);
     outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pagina-treinos *,
+    .pagina-treinos *::before,
+    .pagina-treinos *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
 }

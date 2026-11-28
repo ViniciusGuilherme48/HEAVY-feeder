@@ -1,4 +1,4 @@
-* carrossel-semanal.js
+/* carrossel-semanal.js
    Seletor de dias da semana (com destaque de "HOJE") dos planos de treino: Hipertrofia, Emagrecimento e Força.
    Marcação: [data-carrossel-semanal] > .seletor-dias, .trilha-semanal, [data-anterior], [data-proximo].
    Estilos: CSS/style-cards.css */

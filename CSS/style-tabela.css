@@ -16,7 +16,7 @@
     min-width: 560px;
     border-collapse: collapse;
     background: rgba(11, 18, 27, .92);
-    color: var(--texto-principal, #F5F7FA);
+    color: var(--texto-principal);
 }
 
 .pagina-treinos th,
@@ -28,8 +28,8 @@
 }
 
 .pagina-treinos th {
-    background: var(--card, #131C29);
-    color: var(--verde-principal, #42E89A);
+    background: var(--card);
+    color: var(--verde-principal);
 }
 
 @media (max-width: 560px) {
@@ -43,7 +43,7 @@
 
 .pagina-treinos .tabela {
     overflow-x: auto;
-    border: 1px solid var(--borda, #2DD98A);
+    border: 1px solid var(--borda);
     border-radius: 14px;
     background: rgba(19, 28, 41, .96);
     -webkit-overflow-scrolling: touch;
@@ -67,7 +67,7 @@
 
 .pagina-treinos .tabela thead th {
     background: rgba(18, 63, 53, .55);
-    color: var(--verde-principal, #42E89A);
+    color: var(--verde-principal);
     font-size: .8rem;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -86,16 +86,16 @@
 }
 
 .pagina-treinos .tabela tbody td:first-child {
-    color: var(--texto-principal, #F5F7FA);
+    color: var(--texto-principal);
     font-weight: 700;
     white-space: nowrap;
 }
 
 .pagina-treinos .tabela tfoot th {
-    border-top: 1px solid var(--borda, #2DD98A);
+    border-top: 1px solid var(--borda);
     border-bottom: 0;
-    background: var(--verde-escuro, #123F35);
-    color: var(--verde-principal, #42E89A);
+    background: var(--verde-escuro);
+    color: var(--verde-principal);
     font-size: 1.05rem;
 }
 

@@ -1,54 +1,9 @@
 /* style-perfil.css
    Página de perfil, organizada em seções:
-   1. Base            5. Abas e painéis        9. Gráfico
-   2. Layout e blocos 6. Listas e objetivos   10. Favoritos
-   3. Botões          7. Dieta                11. Responsivo
-   4. Topo e resumo   8. Formulários e tabela
-   Cabeçalho, menu e rodapé ficam no style-navegacao.css. */
-
-
-/* ===== 1. BASE ===== */
-
-* {
-    box-sizing: border-box;
-}
-
-:root {
-    --negativo: #F2766B;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--fundo);
-    color: var(--texto-principal);
-    min-height: 100vh;
-}
-
-/* Camada do fundo (a imagem é definida no style-global.css) */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-}
-
-a {
-    text-decoration: none;
-}
-
-h1 {
-    color: var(--texto-principal);
-}
-
-h2,
-h3 {
-    color: var(--texto-secundario);
-}
-
-p {
-    color: var(--texto-principal);
-}
+   2. Layout e blocos   5. Abas e painéis   8. Formulários e tabela   11. Responsivo
+   3. Botões pequenos   6. Listas e objetivos   9. Gráfico
+   4. Topo e resumo     7. Dieta                10. Favoritos
+   Cabeçalho, menu e rodapé: style-navegacao.css. Cores, fonte e botões (.botao, .botao-login): style-global.css. */
 
 
 /* ===== 2. LAYOUT E BLOCOS ===== */
@@ -61,7 +16,6 @@ p {
     max-width: 1100px;
     margin: 0 auto;
     padding: clamp(16px, 4vw, 28px) clamp(12px, 3vw, 20px);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .bloco,
@@ -99,62 +53,8 @@ p {
 }
 
 
-/* ===== 3. BOTÕES ===== */
-
-.botao,
-.botao-login {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px 24px;
-    border: 2px solid var(--verde-secundario);
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
-}
-
-/* Seletor mais forte para ganhar do "button { border-radius: 8px }" do style-global
-   e deixar botões <button> e links <a> com o mesmo formato */
-.pagina-treinos .perfil .botao,
-.pagina-treinos .perfil .botao-login {
-    border-radius: 24px;
-}
-
-.botao {
-    background-color: transparent;
-    color: var(--verde-secundario);
-}
-
-.botao-login {
-    background-color: var(--verde-secundario);
-    color: var(--verde-escuro);
-}
-
-@media (hover: hover) {
-    .botao:hover,
-    .botao-login:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 14px rgba(45, 217, 138, .3);
-    }
-
-    .botao:hover {
-        background-color: var(--verde-escuro);
-    }
-}
-
-.botao:active,
-.botao-login:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-.botao:focus-visible,
-.botao-login:focus-visible {
-    outline: 2px solid var(--verde-principal);
-    outline-offset: 3px;
-}
+/* ===== 3. BOTÕES =====
+   .botao (secundário) e .botao-login (primário) são definidos em style-global.css. */
 
 /* Botões pequenos (ações dentro das listas) */
 .pagina-treinos .perfil .botao-pequeno,
@@ -599,11 +499,6 @@ p {
         width: 100%;
     }
 
-    .botao,
-    .botao-login {
-        min-height: 44px;
-    }
-
     .formulario-acoes > * {
         flex: 1;
     }
@@ -626,15 +521,11 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .botao,
-    .botao-login,
     .progresso,
     .botao-favorito {
         transition: none;
     }
 
-    .botao:hover,
-    .botao-login:hover,
     .botao-favorito:hover {
         transform: none;
     }

@@ -1,6 +1,7 @@
 /* style-icones.css
    Ícones dos cards (Lucide, SVG inline, traço simples). Para trocar a cor ou o tamanho dos ícones, edite este arquivo.
-   Os ícones ficam no canto superior direito do card, fora do fluxo: não alteram altura, espaçamentos nem textos. */
+   Os ícones ficam no canto superior direito do card, fora do fluxo: não alteram altura, espaçamentos nem textos.
+   Animação: flutuação suave em repouso e balanço com brilho ao passar o mouse (ou focar) no card. */
 
 .pagina-treinos .card,
 .card-calculadora {
@@ -13,8 +14,11 @@
     right: 24px;
     width: 30px;
     height: 30px;
-    color: var(--verde-principal, #42E89A);
+    color: var(--verde-principal);
     pointer-events: none;
+    transform-origin: center;
+    transition: filter .3s ease;
+    animation: icone-flutuar 3.6s ease-in-out infinite;
 }
 
 .pagina-treinos .card:has(.card-numero) .icone-card {
@@ -43,5 +47,33 @@
     .icone-calculadora {
         top: 10px;
         right: 10px;
+    }
+}
+
+/* Hover / foco no card: o ícone balança, cresce e brilha */
+.pagina-treinos .card:hover .icone-card,
+.pagina-treinos .card-link:focus-visible .icone-card,
+.card-calculadora:hover .icone-card {
+    filter: drop-shadow(0 0 6px rgba(66, 232, 154, .65));
+    animation: icone-balancar .9s ease-in-out infinite;
+}
+
+@keyframes icone-flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+}
+
+@keyframes icone-balancar {
+    0%, 100% { transform: scale(1.18) rotate(0deg); }
+    25%      { transform: scale(1.18) rotate(-12deg); }
+    75%      { transform: scale(1.18) rotate(12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icone-card,
+    .pagina-treinos .card:hover .icone-card,
+    .pagina-treinos .card-link:focus-visible .icone-card,
+    .card-calculadora:hover .icone-card {
+        animation: none;
     }
 }

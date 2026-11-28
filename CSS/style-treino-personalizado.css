@@ -1,104 +1,6 @@
 /* style-treino-personalizado.css
-   Formulário e questionário da página Treino personalizado. */
-
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #DAF1DE;
-    color: #0B2B26;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    background-color: #0B2B26;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 30px 20px;
-    margin: 0;
-}
-
-body > p {
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 0 20px;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
-}
-
-fieldset {
-    background-color: #FFFFFF;
-    border: 2px solid #235347;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-legend {
-    background-color: #235347;
-    color: #FFFFFF;
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-label {
-    font-weight: bold;
-    color: #0B2B26;
-    display: block;
-    margin-top: 10px;
-}
-
-select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    background-color: #235347;
-    color: #FFFFFF;
-    border: none;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #0B2B26;
-}
+   Formulário em etapas da página Treino personalizado (mesmo padrão da página Personalizar dieta).
+   Cores, fonte e botões vêm de style-global.css. */
 
 .pagina-personalizado main > section {
     max-width: 850px;
@@ -127,7 +29,7 @@ button:hover {
     min-width: 0;
     margin: 0 0 22px;
     padding: clamp(16px, 3vw, 26px);
-    border: 1px solid var(--borda, #2DD98A);
+    border: 1px solid var(--borda);
     border-radius: 12px;
     background: rgba(19, 28, 41, .96);
 }
@@ -136,15 +38,15 @@ button:hover {
     max-width: 100%;
     padding: 7px 13px;
     border-radius: 6px;
-    background: var(--verde-escuro, #123F35);
-    color: var(--texto-principal, #F5F7FA);
+    background: var(--verde-escuro);
+    color: var(--texto-principal);
     white-space: normal;
 }
 
 .pagina-personalizado label {
     display: block;
     margin: 12px 0 6px;
-    color: var(--texto-principal, #F5F7FA);
+    color: var(--texto-principal);
     font-weight: 600;
 }
 
@@ -157,10 +59,10 @@ button:hover {
     min-height: 44px;
     margin: 6px 0 14px;
     padding: 11px 12px;
-    border: 1px solid #536274;
+    border: 1px solid var(--campo-borda);
     border-radius: 7px;
-    background: #0B121B;
-    color: #F5F7FA;
+    background: var(--fundo-secundario);
+    color: var(--texto-principal);
     font: inherit;
 }
 
@@ -174,7 +76,7 @@ button:hover {
     width: auto;
     min-height: auto;
     margin: 8px 8px 8px 0;
-    accent-color: var(--verde-principal, #42E89A);
+    accent-color: var(--verde-principal);
 }
 
 .pagina-personalizado input:focus-visible,
@@ -182,33 +84,13 @@ button:hover {
 .pagina-personalizado textarea:focus-visible,
 .pagina-personalizado button:focus-visible,
 .pagina-treinos a:focus-visible {
-    outline: 3px solid var(--verde-principal, #42E89A);
+    outline: 3px solid var(--verde-principal);
     outline-offset: 3px;
-}
-
-.pagina-personalizado .formulario-personalizado > button,
-.pagina-personalizado .formulario-personalizado button[type="submit"] {
-    display: block;
-    width: 100%;
-    min-height: 48px;
-    margin-top: 16px;
-    padding: 12px 20px;
-    border: 0;
-    border-radius: 8px;
-    background: var(--verde-secundario, #2DD98A);
-    color: var(--verde-escuro, #123F35);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.pagina-personalizado .formulario-personalizado button[type="submit"]:hover {
-    filter: brightness(1.08);
 }
 
 .pagina-personalizado .aviso-formulario {
     padding: 12px 14px;
-    border-left: 3px solid var(--verde-principal, #42E89A);
+    border-left: 3px solid var(--verde-principal);
     background: rgba(19, 28, 41, .9);
     font-size: .92rem;
 }
@@ -265,7 +147,7 @@ button:hover {
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 12px;
-    color: var(--texto-principal, #F5F7FA);
+    color: var(--texto-principal);
     font-weight: 700;
 }
 
@@ -273,7 +155,7 @@ button:hover {
     height: 9px;
     overflow: hidden;
     border-radius: 20px;
-    background: #273443;
+    background: var(--trilho);
 }
 
 .pagina-personalizado .barra-progresso-preenchida {
@@ -281,7 +163,7 @@ button:hover {
     width: 17%;
     height: 100%;
     border-radius: inherit;
-    background: var(--verde-principal, #42E89A);
+    background: var(--verde-principal);
     transition: width .3s ease;
 }
 
@@ -297,19 +179,19 @@ button:hover {
     width: 30px;
     height: 30px;
     place-items: center;
-    border: 1px solid #536274;
+    border: 1px solid var(--campo-borda);
     border-radius: 50%;
-    background: #0B121B;
-    color: #D8E0E8;
+    background: var(--fundo-secundario);
+    color: var(--texto-principal);
     font-size: .85rem;
     font-weight: 700;
 }
 
 .pagina-personalizado .marcador-etapa.ativo,
 .pagina-personalizado .marcador-etapa.concluido {
-    border-color: var(--verde-principal, #42E89A);
-    background: var(--verde-principal, #42E89A);
-    color: #0B121B;
+    border-color: var(--verde-principal);
+    background: var(--verde-principal);
+    color: var(--verde-escuro);
 }
 
 .pagina-personalizado .etapa-formulario[hidden] {
@@ -323,13 +205,13 @@ button:hover {
 .pagina-personalizado .cabecalho-etapa {
     margin: 0 0 18px;
     padding: 18px 20px;
-    border-left: 4px solid var(--verde-principal, #42E89A);
+    border-left: 4px solid var(--verde-principal);
     border-radius: 8px;
     background: rgba(19, 28, 41, .8);
 }
 
 .pagina-personalizado .numero-etapa {
-    color: var(--verde-principal, #42E89A);
+    color: var(--verde-principal);
     font-size: .78rem;
     font-weight: 800;
     letter-spacing: .08em;
@@ -337,7 +219,7 @@ button:hover {
 
 .pagina-personalizado .cabecalho-etapa h2 {
     margin: 6px 0 0;
-    color: var(--texto-principal, #F5F7FA);
+    color: var(--texto-principal);
     font-size: clamp(1.2rem, 3vw, 1.55rem);
 }
 
@@ -353,41 +235,18 @@ button:hover {
 }
 
 .pagina-personalizado .controles-carrossel-formulario .controle-etapa {
-    width: auto;
     min-width: 150px;
     min-height: 48px;
     margin: 0;
-    padding: 12px 20px;
-    border: 1px solid var(--verde-principal, #42E89A);
-    border-radius: 8px;
-    background: var(--verde-secundario, #2DD98A);
-    color: var(--verde-escuro, #123F35);
-    font: inherit;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.pagina-personalizado .controles-carrossel-formulario .controle-anterior {
-    background: transparent;
-    color: var(--texto-principal, #F5F7FA);
-}
-
-.pagina-personalizado .controles-carrossel-formulario .controle-etapa:disabled {
-    opacity: .45;
-    cursor: not-allowed;
 }
 
 .pagina-personalizado .controles-carrossel-formulario .controle-etapa[hidden] {
     display: none !important;
 }
 
-.pagina-personalizado .controles-carrossel-formulario .controle-etapa:hover:not(:disabled) {
-    filter: brightness(1.1);
-}
-
 .pagina-personalizado .aviso-formulario {
     margin-top: 20px;
-    color: var(--texto-principal, #F5F7FA);
+    color: var(--texto-principal);
 }
 
 @keyframes entrada-etapa {
@@ -440,7 +299,7 @@ button:hover {
 /* ---- Padronização com a página Personalizar dieta ---- */
 
 .pagina-personalizado main {
-    padding: 0 20px;
+    padding: clamp(28px, 5vw, 56px) 20px 0;
 }
 
 .pagina-personalizado main > section hr {
@@ -466,28 +325,22 @@ button:hover {
 }
 
 .pagina-personalizado select option {
-    background: #0B121B;
-    color: #F5F7FA;
+    background: var(--fundo-secundario);
+    color: var(--texto-principal);
 }
 
 .pagina-personalizado input::placeholder,
 .pagina-personalizado textarea::placeholder {
-    color: #718096;
+    color: var(--texto-discreto);
 }
 
 .pagina-personalizado .aviso-formulario {
     max-width: none;
 }
 
-.pagina-treinos.pagina-personalizado .botao-voltar {
-    display: flex;
-    width: fit-content;
-    margin: 36px auto 10px;
-}
-
 @media (max-width: 560px) {
     .pagina-personalizado main {
-        padding: 0 14px;
+        padding: 28px 14px 0;
     }
 
     .pagina-personalizado fieldset.duas-colunas {
